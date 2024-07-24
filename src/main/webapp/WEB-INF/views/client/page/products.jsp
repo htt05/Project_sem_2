@@ -2935,7 +2935,7 @@
 										</c:when>
 										<c:otherwise>
 											<a
-												href="${pageContext.servletContext.contextPath}/admin/product?cateid=${category.catId}&pageno=${i}">
+												href="${pageContext.servletContext.contextPath}/${category.catId}/products?pageno=${i}">
 												<span class="btn btn-default btn-sm checkbox-toggle"
 												style="color: blue">${i}</span>
 											</a>
