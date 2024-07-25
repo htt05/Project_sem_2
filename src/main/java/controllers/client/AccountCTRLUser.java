@@ -20,7 +20,6 @@ public class AccountCTRLUser {
 	// GET: dang-nhap
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(Model model) {
-		model.addAttribute("menu", categoryIlpm.search(""));
 		model.addAttribute("page", "login");
 		return "client/index";
 	}

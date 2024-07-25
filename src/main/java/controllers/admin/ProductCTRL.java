@@ -23,6 +23,7 @@ import dao.CategoryIlpm;
 import dao.ProductIlpm;
 import dao.ProductImgIlpm;
 import dto.ProductPage;
+import entities.Category;
 import entities.Product;
 import entities.ProductImg;
 
@@ -134,7 +135,8 @@ public class ProductCTRL {
 				boolean error = true;
 				model.addAttribute("error", error);
 				model.addAttribute("message", "Thêm mới thất bại!");
-				model.addAttribute("acc", pro);
+				model.addAttribute("pro", pro);
+				model.addAttribute("categories", categoryIlpm.search(""));
 				model.addAttribute("page", "product/create");
 				return "admin/index";
 			}
