@@ -39,7 +39,7 @@
 						Contact us </a></li>
 				<li class=" "><a
 					href="${pageContext.servletContext.contextPath}/blogs"> Blog </a></li>
-				<c:if test="${ sessionScope.fullname != null }">
+				<c:if test="${ sessionScope.id != null }">
 					<li class=" "><a
 						href="${pageContext.servletContext.contextPath}/orders/${ sessionScope.id }"> My
 							order </a></li>

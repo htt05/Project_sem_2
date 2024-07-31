@@ -2908,7 +2908,7 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 				</div>
 				<div class="header__icons">
 					<a
-						href="${pageContext.servletContext.contextPath}/${ sessionScope.fullname ? "
+						href="${pageContext.servletContext.contextPath}/${ sessionScope.id ? "
 						login" : "logout" }"
 						class="header__icon header__icon--account link focus-inset small-hide">
 
