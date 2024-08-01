@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="icon" type="image/png"
 	href="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/files/favicone8e6.png?crop=center&amp;height=32&amp;v=1622269929&amp;width=32">
-<link rel="preconnect" href="https://fonts.shopifycdn.com/" crossorigin
+<link rel="preconnect" href="https://fonts.shopifycdn.com/" crossorigin>
 <title>Phono &ndash; Phono (password: buddha)</title>
 
 
