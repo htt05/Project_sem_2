@@ -91,7 +91,7 @@
 						data-id="template--16769563951204__cart-items">
 						<div class="js-contents">
 							<table class="cart-items">
-								<caption class="visually-hidden">Your cart</caption>
+								<caption class="visually-hidden">Your order</caption>
 								<thead>
 									<tr>
 										<th class="caption-with-letter-spacing" colspan="2"
@@ -230,12 +230,12 @@
 		<c:if test="${ orders[0] == null }">
 			<cart-items class="page-width is-empty">
 			<div class="title-wrapper-with-link">
-				<h1 class="title title--primary">Your cart</h1>
+				<h1 class="title title--primary">Your order</h1>
 			</div>
 
 			<div class="cart__warnings">
-				<h1 class="cart__empty-text">Your cart is empty</h1>
-				<a href="${pageContext.servletContext.contextPath}/collection"
+				<h1 class="cart__empty-text">Your order is empty</h1>
+				<a href="${pageContext.servletContext.contextPath}/collections  "
 					class="button"> Continue shopping </a>
 			</div>
 
