@@ -16,6 +16,7 @@ import entities.Account;
 import util.Cipher;
 
 @Controller
+@RequestMapping("account")
 public class AccountCTRLUser {
 	// GET: dang-nhap
 	@RequestMapping(value = "login", method = RequestMethod.GET)
@@ -51,7 +52,7 @@ public class AccountCTRLUser {
 	public String logout(Model model, HttpServletRequest req) {
 		HttpSession session = req.getSession();
 		session.invalidate();
-		return "redirect:/login";
+		return "redirect:/account/login";
 	}
 	
 	@RequestMapping(value = "register", method = RequestMethod.GET)
@@ -74,6 +75,6 @@ public class AccountCTRLUser {
 			return "client/index";
 		}
 		
-		return "redirect:/login";
+		return "redirect:/account/login";
 	}
 }

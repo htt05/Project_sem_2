@@ -56,10 +56,10 @@ public class HomeCTRL {
 		return "client/index";
 	}
 
-	@RequestMapping(value = "categories")
+	@RequestMapping(value = "menu")
 	public String getCategories(Model model) {
-		model.addAttribute("menu", categoryIlpm.search(""));
-		return "client/page/category";
+		model.addAttribute("categories", categoryIlpm.search(""));
+		return "client/layout/menu";
 	}
 
 	@RequestMapping(value = { "{id}/products" })
@@ -88,7 +88,7 @@ public class HomeCTRL {
 		return "client/index";
 	}
 	
-	@RequestMapping(value = { "collection" })
+	@RequestMapping(value = { "collections" })
 	public String collection(Model model) {
 		model.addAttribute("products", productIlpm.search("",8));
 		model.addAttribute("page", "collection");

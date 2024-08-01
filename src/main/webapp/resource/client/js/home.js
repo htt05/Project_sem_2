@@ -1,5 +1,5 @@
 $(function() {
-	$.get(path + "/categories", function(data) {
+	$.get(path + "/menu", function(data) {
 		$('.menu').html(data);
 	});
 });
