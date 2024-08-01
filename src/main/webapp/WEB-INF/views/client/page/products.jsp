@@ -2343,8 +2343,8 @@
 																	class="media media--transparent media--hover-effect">
 
 																	<img
-																		srcset="//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=165 165w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=360 360w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=533 533w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=720 720w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=940 940w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758 1000w"
-																		src="//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&amp;width=533"
+																		srcset="${pageContext.request.contextPath}/${pro.picture};width=165 165w,${pageContext.request.contextPath}/${pro.picture};width=533 533w,${pageContext.request.contextPath}/${pro.picture};width=720 720w,${pageContext.request.contextPath}/${pro.picture};width=940 940w,${pageContext.request.contextPath}/${pro.picture} 1000w"
+																		src="${pageContext.request.contextPath}/${pro.picture}"
 																		sizes="(min-width: 1300px) 292px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
 																		alt="${ pro.proName }" class="motion-reduce"
 																		loading="lazy" width="1000" height="1200">

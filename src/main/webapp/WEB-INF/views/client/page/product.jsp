@@ -321,19 +321,7 @@ a.slick-next.pull-right:before {
 											class="product__media media media--transparent gradient global-media-settings zoom"
 											style="padding-top: 120.0%;" id="ex1">
 											<img
-												srcset="//phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=493 493w,
-        //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=600 600w,
-        //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=713 713w,
-        //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=823 823w,
-        //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=990 990w,
-        
-        
-        
-        
-        
-        
-        //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889 1000w"
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f37bd.jpg?v=1560504889&amp;width=1946"
+												src="${pageContext.servletContext.contextPath }/${pro.picture };width=1946"
 												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
 												loading="lazy" width="973" class="zoom_out" height="1168"
 												alt="">
