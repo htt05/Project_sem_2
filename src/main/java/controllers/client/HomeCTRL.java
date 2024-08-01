@@ -32,7 +32,7 @@ import entities.Order;
 import entities.OrderDetail;
 import entities.Product;
 
-
+//m
 @Controller
 public class HomeCTRL {
 	@Autowired
