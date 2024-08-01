@@ -7,27 +7,6 @@
 		rel="stylesheet" type="text/css" media="all" />
 
 	<div class="customer login">
-		<h1 id="recover" tabindex="-1">Reset your password</h1>
-		<div>
-			<p>We will send you an email to reset your password</p>
-			<form method="post"
-				action="https://phono-demo.myshopify.com/account/recover"
-				accept-charset="UTF-8">
-				<input type="hidden" name="form_type"
-					value="recover_customer_password" /><input type="hidden"
-					name="utf8" value="✓" />
-				<div class="field">
-					<input type="email" value="" name="email" id="RecoverEmail"
-						autocorrect="off" autocapitalize="off" autocomplete="email"
-						placeholder="Email"> <label for="RecoverEmail">
-						Email </label>
-				</div>
-				<button>Submit</button>
-
-				<a href="#login"> Cancel </a>
-			</form>
-		</div>
-
 		<h1 id="login" tabindex="-1">Login</h1>
 		<div>
 			<form method="post" action="login" id="customer_login"
@@ -52,8 +31,8 @@
 				</div>
 				<button>Sign in</button>
 				<div class="link-wrapper">
-					<a href="${pageContext.servletContext.contextPath}/"> Back to home </a> <a
-						href="${pageContext.servletContext.contextPath}/register"> Create account </a>
+					<a href="${pageContext.servletContext.contextPath}/trang-chu"> Back to home </a> <a
+						href="${pageContext.servletContext.contextPath}/account/register"> Create account </a>
 				</div>
 			</form>
 		</div>
