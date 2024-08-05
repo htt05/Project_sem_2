@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /filter/
 /util/
@@ -6,3 +7,9 @@
 /controllers/
 /dao/
 /entities/
+=======
+/controllers/
+/entities/
+/dao/
+>>>>>>> refs/heads/thien
+/dto/

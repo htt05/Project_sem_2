@@ -29,6 +29,7 @@ create table ProductImgs(
 	image nvarchar(250),
 	product_id varchar(10) foreign key references Products(proId)
 )
+go
 
 create table Accounts(
 	id int identity primary key, 
@@ -39,6 +40,7 @@ create table Accounts(
 	address nvarchar(250),
 	role tinyint default 0,
 )
+go
 
 create table Banners(
 	id int identity primary key,
@@ -47,6 +49,7 @@ create table Banners(
 	image nvarchar(250),
 	status bit
 )
+go
 
 CREATE TABLE Orders (
   id varchar(10) primary key,
@@ -58,7 +61,8 @@ CREATE TABLE Orders (
   note text,
   created_at date,
   accountId int foreign key references Accounts(id)
-  )
+)
+go
 
 
 CREATE TABLE OrderDetails (
@@ -66,7 +70,8 @@ CREATE TABLE OrderDetails (
   quantity int,
   orderId varchar(10) foreign key references Orders(id),
   productId varchar(10) foreign key references Products(proId)
- )
+)
+go
 
 
 select * from Categories
