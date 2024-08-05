@@ -5,3 +5,5 @@
 >>>>>>> refs/heads/main
 /controllers/
 /dao/
+/dto/
+/entities/
