@@ -6,6 +6,7 @@
 >>>>>>> refs/heads/main
 /controllers/
 /dao/
+<<<<<<< HEAD
 /entities/
 =======
 /controllers/
@@ -13,3 +14,7 @@
 /dao/
 >>>>>>> refs/heads/thien
 /dto/
+=======
+/dto/
+/entities/
+>>>>>>> refs/heads/phong
