@@ -248,19 +248,8 @@ a.slick-next.pull-right:before {
 											class="product__media media media--transparent gradient global-media-settings zoom"
 											style="padding-top: 120.0%;" id="ex1">
 											<img
-												srcset="//phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=493 493w,
-        //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=600 600w,
-        //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=713 713w,
-        //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=823 823w,
-        //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=990 990w,
-        
-        
-        
-        
-        
-        
-        //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491 1000w"
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p1aa8a.jpg?v=1560495491&amp;width=1946"
+												
+												src="${pageContext.servletContext.contextPath }/${pro.picture }"
 												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
 												width="973" class="zoom_out" height="1168" alt="">
 										</div>
@@ -292,7 +281,7 @@ a.slick-next.pull-right:before {
           
           
           
-          //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889 1000w"
+          //phono-demo.myshopiSlide-Thumbnails-template--16769564246116__main-2y.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889 1000w"
 													src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f37bd.jpg?v=1560504889&amp;width=1946"
 													sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
 													loading="lazy" width="973" height="1168" alt="">
@@ -383,19 +372,8 @@ a.slick-next.pull-right:before {
 											class="product__media media media--transparent gradient global-media-settings zoom"
 											style="padding-top: 120.0%;" id="ex1">
 											<img
-												srcset="//phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=493 493w,
-        //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=600 600w,
-        //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=713 713w,
-        //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=823 823w,
-        //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=990 990w,
-        
-        
-        
-        
-        
-        
-        //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129 1000w"
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f4a36.jpg?v=1695114129&amp;width=1946"
+												
+												src="${pageContext.servletContext.contextPath }/${pro.picture }"
 												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
 												loading="lazy" width="973" class="zoom_out" height="1168"
 												alt="">
@@ -464,17 +442,8 @@ a.slick-next.pull-right:before {
 											aria-controls="GalleryViewer-template--16769564246116__main"
 											aria-describedby="Thumbnail-template--16769564246116__main-0">
 											<img id="Thumbnail-template--16769564246116__main-0"
-												srcset="
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=54 54w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=74 74w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=104 104w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=162 162w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=208 208w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=324 324w,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=416 416w,,
-                              //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491 w
-                            "
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p1583c.jpg?v=1560495491&amp;width=416"
+												
+												src="${pageContext.servletContext.contextPath }/${pro.picture }"
 												sizes="(min-width: 1300px) calc((540 - 4rem) / 4), (min-width: 990px) calc((45.0vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
 												alt="Affinity  M20" height="208" width="208" loading="lazy">
 										</button>
@@ -488,15 +457,15 @@ a.slick-next.pull-right:before {
 											aria-controls="GalleryViewer-template--16769564246116__main"
 											aria-describedby="Thumbnail-template--16769564246116__main-2">
 											<img id="Thumbnail-template--16769564246116__main-2"
-												srcset="
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=59 59x,
+												<%-- srcset="
+                                <!-- //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=59 59x,
                                 //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=118 118w,
                                 //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=84 84w,
                                 //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=168 168w,
                                 //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=130 130w,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=260 260w
-                              "
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60ffcc7.jpg?crop=center&amp;height=84&amp;v=1560504889&amp;width=84"
+                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=260 260w -->
+                              " --%>
+												src="${pageContext.servletContext.contextPath }/${pro.picture }"
 												sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
 												alt="Affinity  M20" height="200" width="200" loading="lazy">
 										</button></li>
@@ -509,15 +478,8 @@ a.slick-next.pull-right:before {
 											aria-controls="GalleryViewer-template--16769564246116__main"
 											aria-describedby="Thumbnail-template--16769564246116__main-3">
 											<img id="Thumbnail-template--16769564246116__main-3"
-												srcset="
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=59 59x,
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=118 118w,
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=84 84w,
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=168 168w,
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=130 130w,
-                                //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=260 260w
-                              "
-												src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f6495.jpg?crop=center&amp;height=84&amp;v=1695114129&amp;width=84"
+												
+												src="${pageContext.servletContext.contextPath }/${pro.picture }"
 												sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
 												alt="Affinity  M20" height="200" width="200" loading="lazy">
 										</button></li>

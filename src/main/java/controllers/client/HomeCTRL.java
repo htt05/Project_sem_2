@@ -81,7 +81,7 @@ public class HomeCTRL {
 	}
 	
 	@RequestMapping(value="product/{id}")
-	public String product(Model model, @PathVariable("id") String proId) {
+	public String product(Model model, @PathVariable("id") String proId ) {
 		Product pro = productIlpm.getById(proId);
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product");
