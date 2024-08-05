@@ -29,6 +29,7 @@ create table ProductImgs(
 	image nvarchar(250),
 	product_id varchar(10) foreign key references Products(proId)
 )
+go
 
 create table Accounts(
 	id int identity primary key, 
@@ -39,6 +40,7 @@ create table Accounts(
 	address nvarchar(250),
 	role tinyint default 0,
 )
+go
 
 create table Banners(
 	id int identity primary key,
@@ -47,6 +49,7 @@ create table Banners(
 	image nvarchar(250),
 	status bit
 )
+go
 
 CREATE TABLE Orders (
   id varchar(10) primary key,
@@ -58,7 +61,8 @@ CREATE TABLE Orders (
   note text,
   created_at date,
   accountId int foreign key references Accounts(id)
-  )
+)
+go
 
 
 CREATE TABLE OrderDetails (
@@ -66,7 +70,8 @@ CREATE TABLE OrderDetails (
   quantity int,
   orderId varchar(10) foreign key references Orders(id),
   productId varchar(10) foreign key references Products(proId)
- )
+)
+go
 
 
 select * from Categories
@@ -90,9 +95,9 @@ SELECT TOP 8 * FROM Products ORDER BY created_at desc
 SELECT * FROM Orders o JOIN Accounts a ON o.accountId =a.id where a.id = 1
 
 INSERT INTO Orders (id, accountId, name, phone, address, totalPrice, status, note, created_at) VALUES
-('000001',1, 'Hoàng Thanh Tùng', '0963644900', '39/27 võ chí công ', 1820000, 0, NULL, '2023-11-29')
+('000001',1, 'Hoï¿½ng Thanh Tï¿½ng', '0963644900', '39/27 vï¿½ chï¿½ cï¿½ng ', 1820000, 0, NULL, '2023-11-29')
 INSERT INTO Orders (id,accountId, name, phone, address, totalPrice, status, note, created_at) VALUES
-('000002',1, 'Tùng', '0963644900', '39/27 võ chí công ', 1820000, 1, NULL, '2023-11-29')
+('000002',1, 'Tï¿½ng', '0963644900', '39/27 vï¿½ chï¿½ cï¿½ng ', 1820000, 1, NULL, '2023-11-29')
 
 INSERT INTO OrderDetails (orderId, productId, quantity) VALUES
 ('000001', 'a01', 3);

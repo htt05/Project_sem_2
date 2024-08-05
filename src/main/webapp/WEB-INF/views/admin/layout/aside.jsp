@@ -42,6 +42,14 @@
 				href="${pageContext.servletContext.contextPath}/admin/order">
 					<i class="fa fa-shopping-cart"></i> <span>Quản lý Đơn hàng </span>
 			</a></li>
+			<li><a
+				href="${pageContext.servletContext.contextPath}/admin/color">
+					<i class="fa fa-list-alt"></i> <span>Quản lý Màu </span>
+			</a></li>
+			<li><a
+				href="${pageContext.servletContext.contextPath}/admin/storage">
+					<i class="fa fa-list-alt"></i> <span>Quản lý Bộ nhớ </span>
+			</a></li>
 		</ul>
 	</section>
 	<!-- /.sidebar -->

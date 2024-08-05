@@ -1,6 +1,3 @@
 /controllers/
-/dao/
-/dto/
 /entities/
-/filter/
-/util/
+/dao/
