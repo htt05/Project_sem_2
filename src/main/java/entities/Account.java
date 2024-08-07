@@ -37,9 +37,26 @@ public class Account implements Serializable{
 	@NotEmpty(message = "Hãy nhập địa chỉ")
 	private String address;
 	private byte role;
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+	private List<Blog> blogs;
 	
 	public Account() {
 		// TODO Auto-generated constructor stub
+	}
+
+
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 

@@ -24,7 +24,6 @@
 
 
 
-
 <meta property="og:site_name" content="Phono (password: buddha)">
 <meta property="og:url" content="index.html">
 <meta property="og:title" content="Phono">
