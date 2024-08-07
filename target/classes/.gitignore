@@ -2,3 +2,5 @@
 /util/
 /controllers/
 /dao/
+/dto/
+/entities/
