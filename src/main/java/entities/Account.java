@@ -37,7 +37,7 @@ public class Account implements Serializable{
 	@NotEmpty(message = "Hãy nhập địa chỉ")
 	private String address;
 	private byte role;
-	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
 	private List<Blog> blogs;
 	
 	public Account() {

@@ -104,6 +104,8 @@ create table CatBlogs(
 )
 go
 
+select*from CatBlogs
+
 create table Blogs(
 	id int primary key identity,
 	accountId int foreign key references Accounts(id),

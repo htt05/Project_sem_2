@@ -7,7 +7,7 @@
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
-		<h1>Danh mục</h1>
+		<h1>Danh mục bài viết</h1>
 	</section>
 	<section class="content">
 		<!-- Default box -->
@@ -30,11 +30,11 @@
 				<div class="box">
 					<div class="box-header">
 						<a
-							href="${pageContext.servletContext.contextPath}/admin/category/add"
+							href="${pageContext.servletContext.contextPath}/admin/category-blog/add"
 							class="btn btn-success">+Thêm mới Danh Mục</a>
 						<div class="box-tools">
 							<form
-								action="${pageContext.servletContext.contextPath}/admin/category/search"
+								action="${pageContext.servletContext.contextPath}/admin/category-blog/search"
 								role="form">
 								<div class="input-group input-group-sm" style="width: 150px;">
 									<input type="text" name="search"
@@ -62,20 +62,20 @@
 								</tr>
 								<c:forEach var="cat" items="${ categories }">
 									<tr>
-										<td>${ cat.catId }</td>
-										<td>${ cat.catName }</td>
+										<td>${ cat.id }</td>
+										<td>${ cat.title }</td>
 										<td>${ cat.status ? '<span
 											class="label label-success">Hiển thị</span>' : '<span
 											class="label label-warning">Tạm ẩn</span>' }</td>
 										<td>${ cat.created_at }</td>
 										<td style="display: flex"><a
-											href="${pageContext.servletContext.contextPath}/admin/category/edit/${cat.catId}"
+											href="${pageContext.servletContext.contextPath}/admin/category-blog/edit/${cat.id}"
 											style="margin-right: 10px"><button type=""
 													class="border-0" class="">
 													<i class="fa fa-edit"></i>
 												</button></a>
 											<form
-												action="${pageContext.servletContext.contextPath}/admin/category/delete/${cat.catId}"
+												action="${pageContext.servletContext.contextPath}/admin/category-blog/delete/${cat.id}"
 												method="get">
 												<button type="submit" class="text-danger"
 													onclick="return confirm('Bạn có chắc chắn muốn xóa')"
