@@ -31,6 +31,7 @@ import entities.Category;
 import entities.Order;
 import entities.OrderDetail;
 import entities.Product;
+import entities.ProductImg;
 
 //m
 @Controller
@@ -83,6 +84,8 @@ public class HomeCTRL {
 	@RequestMapping(value="product/{id}")
 	public String product(Model model, @PathVariable("id") String proId ) {
 		Product pro = productIlpm.getById(proId);
+		List<ProductImg> productImages = pro.getProductImgs();
+        model.addAttribute("productImages", productImages);
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product");
 		return "client/index";
