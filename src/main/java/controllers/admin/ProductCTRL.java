@@ -20,9 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.CategoryIlpm;
+import dao.ColorIlpm;
 import dao.ProductIlpm;
 import dao.ProductImgIlpm;
+import dao.StorageIlpm;
 import dto.ProductPage;
+import entities.Color;
 import entities.Product;
 import entities.ProductImg;
 
@@ -35,6 +38,10 @@ public class ProductCTRL {
 	CategoryIlpm categoryIlpm;
 	@Autowired
 	ProductImgIlpm productImgIlpm;
+	@Autowired
+	ColorIlpm colorIlpm;
+	@Autowired
+	StorageIlpm storageIlpm; 
 
 	@RequestMapping(value = { "product" })
 	public String index(Model model, boolean error, boolean success, String message, Integer pageno, Integer catId) {
@@ -77,6 +84,8 @@ public class ProductCTRL {
 		Product pro = new Product();
 		model.addAttribute("categories", categoryIlpm.search(""));
 		model.addAttribute("pro", pro);
+		model.addAttribute("color", colorIlpm.search(""));
+		model.addAttribute("storage", storageIlpm.search(""));
 		model.addAttribute("page", "product/create");
 		return "admin/index";
 	}
@@ -84,12 +93,13 @@ public class ProductCTRL {
 	@RequestMapping(value = "product/add", method = RequestMethod.POST)
 	public String save(@Valid @ModelAttribute("pro") Product pro, BindingResult result,
 			@RequestParam("photo") MultipartFile photo, @RequestParam(value = "photos") MultipartFile[] photos,
-			HttpServletRequest req, Model model) {
+			HttpServletRequest req, Model model, String[] color, String[] storage) {
 		if (result.hasErrors()) {
-			System.out.println(1);
 			model.addAttribute("pro", pro);
 			model.addAttribute("categories", categoryIlpm.search(""));
 			model.addAttribute("page", "product/create");
+			model.addAttribute("color", colorIlpm.search(""));
+			model.addAttribute("storage", storageIlpm.search(""));
 			return "admin/index";
 		} else {
 			pro.setCreated_at(Date.valueOf(LocalDate.now()));
@@ -136,6 +146,8 @@ public class ProductCTRL {
 				model.addAttribute("message", "Thêm mới thất bại!");
 				model.addAttribute("acc", pro);
 				model.addAttribute("page", "product/create");
+				model.addAttribute("color", colorIlpm.search(""));
+				model.addAttribute("storage", storageIlpm.search(""));
 				return "admin/index";
 			}
 		}
@@ -147,18 +159,25 @@ public class ProductCTRL {
 		model.addAttribute("categories", categoryIlpm.search(""));
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product/edit");
+		model.addAttribute("color", colorIlpm.search(""));
+		model.addAttribute("storage", storageIlpm.search(""));
+		model.addAttribute("arrColor", pro.getColor().split(","));
+		model.addAttribute("arrStorage", pro.getStorage().split(","));
+//		System.out.println(pro.getStorage().split(",").);
 		return "admin/index";
 	}
 
 	@RequestMapping(value = "product/update", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("pro") Product pro, BindingResult result,
 			@RequestParam("image") MultipartFile image, @RequestParam(value = "photos") MultipartFile[] photos,
-			HttpServletRequest req, Model model) {
+			HttpServletRequest req, Model model, String[] color, String[] storage) {
 		if (result.hasErrors()) {
 			System.out.println(1);
 			model.addAttribute("pro", pro);
 			model.addAttribute("categories", categoryIlpm.search(""));
 			model.addAttribute("page", "product/create");
+			model.addAttribute("color", colorIlpm.search(""));
+			model.addAttribute("storage", storageIlpm.search(""));
 			return "admin/index";
 		} else {
 			if (!image.isEmpty()) {
@@ -226,4 +245,23 @@ public class ProductCTRL {
 		return "redirect:/admin/product";
 	}
 	
+	@RequestMapping(value = "product/demo")
+	public String demo(Model model) {
+		model.addAttribute("page", "product/demo");
+		return "admin/index";
+	}
+	
+	@RequestMapping(value = "product/demo", method = RequestMethod.POST)
+	public String demo(Model model, String[] color, String storage) {
+		
+		String strColor = "1,2,3,";
+		String[] test = strColor.split(",");
+		System.out.println(test.length);
+		for (String string : test) {
+			System.out.println(string);
+		}
+//		model.addAttribute("color", strColor);
+		model.addAttribute("page", "product/demo");
+		return "admin/index";
+	}
 }
