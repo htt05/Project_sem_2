@@ -161,8 +161,17 @@ public class ProductCTRL {
 		model.addAttribute("page", "product/edit");
 		model.addAttribute("color", colorIlpm.search(""));
 		model.addAttribute("storage", storageIlpm.search(""));
-		model.addAttribute("arrColor", pro.getColor().split(","));
-		model.addAttribute("arrStorage", pro.getStorage().split(","));
+		if (pro.getColor()!=null) {
+			model.addAttribute("arrColor", pro.getColor().split(","));
+		} else {
+			model.addAttribute("arrColor",null);
+		}
+		if (pro.getStorage()!=null) {
+			model.addAttribute("arrStorage", pro.getStorage().split(","));
+		} else {
+			model.addAttribute("arrStorage",null);
+		}
+		
 //		System.out.println(pro.getStorage().split(",").);
 		return "admin/index";
 	}

@@ -8,4 +8,5 @@ import entities.Storage;
 public interface StorageDAO extends GenericDAO<Storage, Integer>{
 	List<Storage> search(String search);
 	public StoragePage paging(int pageno, int pagesize);
+	public boolean checkUniqueStorage(String storage, String ram);
 }
