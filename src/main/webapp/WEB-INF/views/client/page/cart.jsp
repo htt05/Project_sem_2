@@ -82,8 +82,8 @@
 					class="page-width section-template--16769563951204__cart-items-padding">
 				<div class="title-wrapper-with-link">
 					<h1 class="title title--primary">Your cart</h1>
-					<a href="${pageContext.servletContext.contextPath}/collection" class="underlined-link">Continue
-						shopping</a>
+					<a href="${pageContext.servletContext.contextPath}/collection"
+						class="underlined-link">Continue shopping</a>
 				</div>
 				<form action="/cart" class="cart__contents critical-hidden"
 					method="post" id="cart">
@@ -118,15 +118,14 @@
 												<div
 													class="cart-item__image-container gradient global-media-settings">
 													<img
-														src="//phono-demo.myshopify.com/cdn/shop/products/p7_dd9c198a-6656-4739-9bee-40b506ba7a8c.jpg?v=1560496214&amp;width=300"
+														src="${pageContext.servletContext.contextPath}/${ c.proImage }"
 														class="cart-item__image" alt="Affinity P40 Pro"
 														loading="lazy" width="120" height="150">
 												</div></td>
 
-											<td class="cart-item__details"><p
-													class="caption-with-letter-spacing">Narioxe</p> <a
+											<td class="cart-item__details"><a
 												href="/products/affinity-p40-pro?variant=17773526974564"
-												class="cart-item__name h4 break">${ c.proName }</a>
+												class="cart-item__name h4 break" style="padding-top: 3rem;">${ c.proName }</a>
 												<dl>
 													<div class="product-option">
 														<dd class="product-option strikethrough"
@@ -160,7 +159,8 @@
 											</td>
 
 											<td class="cart-item__quantity">
-												<div class="cart-item__quantity-wrapper">
+												<div class="cart-item__quantity-wrapper"
+													style="padding-top: 3rem;">
 													<quantity-input class="quantity">
 													<button class="quantity__button no-js-hidden" name="minus"
 														type="button">
@@ -241,7 +241,8 @@
 													</div>
 												</div>
 
-												<div class="cart-item__price-wrapper">
+												<div class="cart-item__price-wrapper"
+													style="padding-top: 3rem;">
 													<span class="price price--end"> $${
 														c.salePrice*c.quantity } </span>
 												</div>
@@ -283,7 +284,7 @@
 				data-id="template--16769563951204__cart-footer">
 				<div>
 					<div class="cart__footer">
-						
+
 						<div class="cart__blocks">
 
 							<div class="js-contents">
@@ -297,15 +298,16 @@
 								<small class="tax-note caption-large rte">Taxes and
 									shipping calculated at checkout </small>
 							</div>
-							<div class="cart__ctas">
+							<div class="cart__ctas " style="width: 100%">
 								<noscript>
 									<button type="submit"
 										class="cart__update-button button button--secondary"
 										form="cart">Update</button>
 								</noscript>
 								<a href="${pageContext.servletContext.contextPath}/invoice"
-									id="checkout" class="cart__checkout-button button"
-									name="checkout" disabled form="cart">Check out</a>
+									id="checkout" class="w-100 cart__checkout-button button "
+									style="width: 100%" name="checkout" disabled form="cart">Check
+									out</a>
 							</div>
 
 							<div id="cart-errors"></div>
@@ -347,8 +349,8 @@
 
 			<div class="cart__warnings">
 				<h1 class="cart__empty-text">Your cart is empty</h1>
-				<a href="${pageContext.servletContext.contextPath}/collection" class="button"> Continue shopping
-				</a>
+				<a href="${pageContext.servletContext.contextPath}/collection"
+					class="button"> Continue shopping </a>
 			</div>
 
 			<form action="https://phono-demo.myshopify.com/cart"

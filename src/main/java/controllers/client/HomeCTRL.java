@@ -15,8 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 
 import dao.AccountIlpm;
 import dao.BannerIlpm;
@@ -66,7 +66,7 @@ public class HomeCTRL {
 	@RequestMapping(value = { "{id}/products" })
 	public String products(@PathVariable("id") int id, Model model, @PathVariable("id") Integer catId, Integer pageno) {
 		model.addAttribute("page", "products");
-		Category cat =  categoryIlpm.getById(id);
+		Category cat = categoryIlpm.getById(id);
 		model.addAttribute("category", cat);
 		int max = cat.getProducts().size();
 		catId = catId == null ? 0 : catId;
@@ -77,23 +77,23 @@ public class HomeCTRL {
 		model.addAttribute("currentpage", pageno);
 		model.addAttribute("pagesize", pp.getPageSize());
 		model.addAttribute("max", max);
-		
+
 		return "client/index";
 	}
-	
-	@RequestMapping(value="product/{id}")
-	public String product(Model model, @PathVariable("id") String proId ) {
+
+	@RequestMapping(value = "product/{id}")
+	public String product(Model model, @PathVariable("id") String proId) {
 		Product pro = productIlpm.getById(proId);
 		List<ProductImg> productImages = pro.getProductImgs();
-        model.addAttribute("productImages", productImages);
+		model.addAttribute("productImages", productImages);
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product");
 		return "client/index";
 	}
-	
+
 	@RequestMapping(value = { "collections" })
 	public String collection(Model model) {
-		model.addAttribute("products", productIlpm.search("",8));
+		model.addAttribute("products", productIlpm.search("", 8));
 		model.addAttribute("page", "collection");
 		return "client/index";
 	}
@@ -240,11 +240,28 @@ public class HomeCTRL {
 		model.addAttribute("page", "cart");
 		return "client/index";
 	}
-	
+
 	@RequestMapping(value = "orders/{id}")
 	public String myOrder(@PathVariable("id") Integer userId, Model model) {
 		model.addAttribute("orders", orderIlpm.getOrders(userId));
 		model.addAttribute("user", accountIlpm.getById(userId));
 		model.addAttribute("page", "myorder");
-		return "client/index";	}
+		return "client/index";
+	}
+	
+	@RequestMapping(value ="search")
+	public String searchProducts(@RequestParam(value = "query", required = false) String query, Model model) {
+        List<Product> products = productIlpm.search(query);
+        if (products != null && !products.isEmpty()) {
+            System.out.println("Đã tìm thấy sản phẩm.");
+        } else {
+            System.out.println("Không tìm thấy sản phẩm nào.");
+        }
+        model.addAttribute("products",productIlpm.getAll());
+        model.addAttribute("products", products);
+        model.addAttribute("searchQuery", query);
+		model.addAttribute("page", "searchName");
+		return("client/index");
+		
+	}
 }

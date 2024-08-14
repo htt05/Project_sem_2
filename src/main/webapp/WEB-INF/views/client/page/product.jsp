@@ -355,6 +355,7 @@ a.slick-next.pull-right:before {
 											<h2 class="h1">${ pro.proName }</h2>
 										</a>
 									</div>
+
 									<div class="no-js-hidden"
 										id="price-template--16769564246116__main" role="status">
 										<div
@@ -397,6 +398,82 @@ a.slick-next.pull-right:before {
 									<div class="product-attributes">
 										<p class="product-label">Type:</p>
 										${ pro.category.catName }
+									</div>
+									<div class="product-form__input product-attributes switch-options">
+										<p class="product-label">Color</p>
+										<div class="swatch-group">
+											<input type="radio" id="template--16769564246116__main-1-0"
+												name="Color" value="Black"
+												form="product-form-template--16769564246116__main" checked>
+
+
+											<div data-value="Black" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-0"
+														class="swatch-variant-text">Black</label>
+												</div>
+												<label for="template--16769564246116__main-1-0"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p4c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+											<input type="radio" id="template--16769564246116__main-1-1"
+												name="Color" value="Blue"
+												form="product-form-template--16769564246116__main">
+
+
+											<div data-value="Blue" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-1"
+														class="swatch-variant-text">Blue</label>
+												</div>
+												<label for="template--16769564246116__main-1-1"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p2_e1a0c22b-6b61-414a-a3f1-adedf54e5f35c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+											<input type="radio" id="template--16769564246116__main-1-2"
+												name="Color" value="Grey"
+												form="product-form-template--16769564246116__main">
+
+
+											<div data-value="Grey" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-2"
+														class="swatch-variant-text">Grey</label>
+												</div>
+												<label for="template--16769564246116__main-1-2"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p3_f3bb2833-2126-4c25-996d-30952d6fb0d1c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+										</div>
+									</div>
+									<div class="product-form__input product-attributes switch-options">
+										<legend class="form__label product-label">Ram</legend>
+										<div class="swatch-group">
+											<input type="radio" id="template--16769564246116__main-2-0"
+												name="Inches" value="6.22"
+												form="product-form-template--16769564246116__main" checked>
+
+
+											<label for="template--16769564246116__main-2-0"> 6.22
+											</label> <input type="radio" id="template--16769564246116__main-2-1"
+												name="Inches" value="6.56"
+												form="product-form-template--16769564246116__main">
+
+
+											<label for="template--16769564246116__main-2-1"> 6.56
+											</label> <input type="radio" id="template--16769564246116__main-2-2"
+												name="Inches" value="6.30"
+												form="product-form-template--16769564246116__main">
+
+
+											<label for="template--16769564246116__main-2-2"> 6.30
+											</label>
+
+
+										</div>
 									</div>
 									<div class="advance-product-style"></div>
 
@@ -936,9 +1013,17 @@ keyframes tap-double { 0% {
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -988,7 +1073,15 @@ transform
 
 
 
+
+
+
+
 rotateX
+
+
+
+
 
 
 
@@ -1036,7 +1129,15 @@ rotateX
 
 
 
+
+
+
+
 12
+
+
+
+
 
 
 
@@ -1084,7 +1185,15 @@ rotateX
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1134,9 +1243,17 @@ rotateX
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -1186,6 +1303,10 @@ transform
 
 
 
+
+
+
+
 rotateX
 
 
@@ -1209,7 +1330,15 @@ rotateX
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1259,7 +1388,15 @@ rotateX
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1309,9 +1446,17 @@ rotateX
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -1361,6 +1506,10 @@ transform
 
 
 
+
+
+
+
 rotateX
 
 
@@ -1384,7 +1533,15 @@ rotateX
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1434,7 +1591,15 @@ rotateX
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1460,6 +1625,10 @@ rotateX
 ;
 }
 50
+
+
+
+
 
 
 
@@ -1511,7 +1680,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -1559,7 +1736,15 @@ rotateX
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1609,7 +1794,15 @@ rotateX
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1666,9 +1859,17 @@ keyframes tap-circle { 0% {
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -1718,7 +1919,15 @@ transform
 
 
 
+
+
+
+
 scale
+
+
+
+
 
 
 
@@ -1766,7 +1975,15 @@ scale
 
 
 
+
+
+
+
 1
+
+
+
+
 
 
 
@@ -1814,7 +2031,15 @@ scale
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1863,6 +2088,10 @@ opacity
 
 
 
+
+
+
+
 :
 
 
@@ -1888,7 +2117,15 @@ opacity
 
 
 
+
+
+
+
 .6
+
+
+
+
 
 
 
@@ -1938,9 +2175,17 @@ opacity
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -1990,6 +2235,10 @@ transform
 
 
 
+
+
+
+
 scale
 
 
@@ -2013,7 +2262,15 @@ scale
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2063,7 +2320,15 @@ scale
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2088,6 +2353,10 @@ scale
 
 ;
 opacity
+
+
+
+
 
 
 
@@ -2137,7 +2406,15 @@ opacity
 
 
 
+
+
+
+
 .5
+
+
+
+
 
 
 
