@@ -34,13 +34,71 @@ public class Blog  implements Serializable {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date created_at; 
 	private Integer accountId;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "accountId", insertable = false, updatable = false)
-	private Account account;
 	private Integer catBlogId;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "catBlogId", insertable = false, updatable = false)
 	private CatBlog catBlog;
+	public Blog() {
+		// TODO Auto-generated constructor stub
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDes() {
+		return des;
+	}
+	public void setDes(String des) {
+		this.des = des;
+	}
+	public String getDesDetail() {
+		return desDetail;
+	}
+	public void setDesDetail(String desDetail) {
+		this.desDetail = desDetail;
+	}
+	public Date getCreated_at() {
+		return created_at;
+	}
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
+	public Integer getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+	public Integer getCatBlogId() {
+		return catBlogId;
+	}
+	public void setCatBlogId(Integer catBlogId) {
+		this.catBlogId = catBlogId;
+	}
+	public CatBlog getCatBlog() {
+		return catBlog;
+	}
+	public void setCatBlog(CatBlog catBlog) {
+		this.catBlog = catBlog;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }
 //id int primary key identity,
 //accountId int foreign key references Accounts(id),

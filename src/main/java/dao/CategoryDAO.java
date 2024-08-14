@@ -8,5 +8,5 @@ import entities.Category;
 
 public interface CategoryDAO extends GenericDAO<Category, Integer>{
 	public List<Category> search(String search);
-	public CategoryPage paging(int pageno, int pagesize);
+	public CategoryPage paging(int pageno, int pagesize, String search);
 }

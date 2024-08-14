@@ -24,13 +24,6 @@ public class OrderDetail implements Serializable {
 	private int quantity;
 	private String orderId;
 	private String productId;
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "orderId", insertable = false, updatable = false)
-//	private Order order;
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "productId", insertable = false, updatable = false)
-//	private Product product;
-
 	public OrderDetail() {
 		// TODO Auto-generated constructor stub
 	}

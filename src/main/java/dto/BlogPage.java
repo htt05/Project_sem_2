@@ -2,39 +2,46 @@ package dto;
 
 import java.util.List;
 
-import entities.Banner;
 
-public class BannerPage {
-	private List<Banner> banners;
+public class BlogPage {
+	private List<BlogvsAccount> blogs;
 	private int totalPages;
 	private int pageSize;
 	private int currentPage;
-	public BannerPage() {
+
+	public BlogPage() {
 		// TODO Auto-generated constructor stub
 	}
-	public List<Banner> getBanners() {
-		return banners;
+
+	public List<BlogvsAccount> getBlogs() {
+		return blogs;
 	}
-	public void setBanners(List<Banner> banners) {
-		this.banners = banners;
+
+	public void setBlogs(List<BlogvsAccount> blogs) {
+		this.blogs = blogs;
 	}
+
 	public int getTotalPages() {
 		return totalPages;
 	}
+
 	public void setTotalPages(int totalPages) {
 		this.totalPages = totalPages;
 	}
+
 	public int getPageSize() {
 		return pageSize;
 	}
+
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
 	public int getCurrentPage() {
 		return currentPage;
 	}
+
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
 	}
-	
 }

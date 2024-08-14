@@ -77,12 +77,17 @@ public class CategoryIlpm implements CategoryDAO{
 	}
 
 	@Override
-	public CategoryPage paging(int pageno, int pagesize) {
+	public CategoryPage paging(int pageno, int pagesize, String search) {
+		if (search.isEmpty() || search.equalsIgnoreCase("")) {
+			search = "%";
+		} else {
+			search = "%" + search + "%";
+		}
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		int records = 0;
-		Query query = null;
-		query = session.createQuery("from Category");
+		Query query = session.createQuery("from Category where catName like :name");
+		query.setParameter("name", search);
 		records = query.getResultList().size();
 		query.setFirstResult((pageno - 1) * pagesize).setMaxResults(pagesize).getResultList();
 		List result = query.getResultList();

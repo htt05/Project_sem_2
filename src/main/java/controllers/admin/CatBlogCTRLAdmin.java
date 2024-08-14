@@ -14,117 +14,113 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import dao.CategoryIlpm;
-import dto.CategoryPage;
-import dto.OrderPage;
+import dao.BlogIlpm;
+import dao.CatBlogImpl;
+import dto.CatBlogPage;
+import entities.CatBlog;
 import entities.Category;
 
 @Controller
 @RequestMapping("admin")
-public class CategoryCTRL {
+public class CatBlogCTRLAdmin {
 	@Autowired
-	CategoryIlpm categoryIlpm;
+	CatBlogImpl catBlogImpl;
+	@Autowired
+	BlogIlpm blogIlpm;
 
-	@RequestMapping(value = { "category" })
+	@RequestMapping(value = { "category-blog" })
 	public String index(Model model, boolean error, boolean success, String message, Integer pageno) {
 		model.addAttribute("error", error);
 		model.addAttribute("success", success);
 		model.addAttribute("message", message);
-		model.addAttribute("page", "category/index");
+		model.addAttribute("page", "catBlog/index");
 		pageno = pageno == null ? 1 : pageno;
-		CategoryPage pp = categoryIlpm.paging(pageno, 5, "");
+		CatBlogPage pp = catBlogImpl.paging(pageno, 5);
 		model.addAttribute("categories", pp.getCategories());
 		model.addAttribute("totalpage", pp.getTotalPages());
 		model.addAttribute("currentpage", pageno);
 		return "admin/index";
 	}
 
-	@RequestMapping(value = "category/search", method = RequestMethod.GET)
-	public String search(Model model, String search, Integer pageno) {
-		System.out.println(search);
-		model.addAttribute("page", "category/index");
-		pageno = pageno == null ? 1 : pageno;
-		CategoryPage pp = categoryIlpm.paging(pageno, 5, search);
-		model.addAttribute("categories", pp.getCategories());
-		model.addAttribute("totalpage", pp.getTotalPages());
-		model.addAttribute("currentpage", pageno);
+	@RequestMapping(value = "category-blog/search", method = RequestMethod.GET)
+	public String search(Model model, String search) {
+		model.addAttribute("categories", catBlogImpl.search(search));
+		model.addAttribute("search", search);
+		model.addAttribute("page", "catBlog/index");
 		return "admin/index";
 	}
 
-	@RequestMapping(value = "category/add", method = RequestMethod.GET)
+	@RequestMapping(value = "category-blog/add", method = RequestMethod.GET)
 	public String create(Model model) {
-		Category cat = new Category();
+		CatBlog cat = new CatBlog();
 		model.addAttribute("cat", cat);
-		model.addAttribute("page", "category/create");
+		model.addAttribute("page", "catBlog/create");
 		return "admin/index";
 	}
 
-	@RequestMapping(value = "category/add", method = RequestMethod.POST)
-	public String save(@Valid @ModelAttribute("cat") Category cat, BindingResult result, Model model) {
+	@RequestMapping(value = "category-blog/add", method = RequestMethod.POST)
+	public String save(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("cat", cat);
-			model.addAttribute("page", "category/create");
+			model.addAttribute("page", "category-blog/create");
 			return "admin/index";
 		} else {
 			cat.setCreated_at(Date.valueOf(LocalDate.now()));
 			try {
-				categoryIlpm.insert(cat);
+				catBlogImpl.insert(cat);
 				boolean success = true;
 				model.addAttribute("success", success);
 				model.addAttribute("message", "Thêm mới thành công!");
-				return "redirect:/admin/category";
+				return "redirect:/admin/category-blog";
 			} catch (Exception e) {
 				boolean error = true;
 				model.addAttribute("error", error);
 				model.addAttribute("message", "Thêm mới thất bại!");
 				model.addAttribute("cat", cat);
-				model.addAttribute("categories", categoryIlpm.search(""));
-				model.addAttribute("page", "category/create");
+				model.addAttribute("page", "category-blog/create");
 				return "admin/index";
 			}
 
 		}
 	}
 
-	@RequestMapping(value = "category/edit/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "category-blog/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable("id") int id, Model model) {
-		Category cat = categoryIlpm.getById(id);
+		CatBlog cat = catBlogImpl.getById(id);
 		model.addAttribute("cat", cat);
-		model.addAttribute("page", "category/edit");
+		model.addAttribute("page", "catBlog/edit");
 		return "admin/index";
 	}
 
-	@RequestMapping(value = "category/update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("cat") Category cat, BindingResult result, Model model) {
+	@RequestMapping(value = "category-blog/update", method = RequestMethod.POST)
+	public String update(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("cat", cat);
-			model.addAttribute("page", "category/edit");
+			model.addAttribute("page", "catBlog/edit");
 			return "admin/index";
 		} else {
 			cat.setCreated_at(Date.valueOf(LocalDate.now()));
 			try {
-				categoryIlpm.update(cat);
+				catBlogImpl.update(cat);
 				boolean success = true;
 				model.addAttribute("success", success);
 				model.addAttribute("message", "Cập nhật thành công!");
-				return "redirect:/admin/category";
+				return "redirect:/admin/category-blog";
 			} catch (Exception e) {
 				boolean error = true;
 				model.addAttribute("error", error);
 				model.addAttribute("message", "Cập nhật thất bại, vui lòng xem lại!");
-				model.addAttribute("acc", cat);
-				model.addAttribute("categories", categoryIlpm.search(""));
-				model.addAttribute("page", "category/edit");
+				model.addAttribute("cat", cat);
+				model.addAttribute("page", "catBlog/edit");
 				return "admin/index";
 			}
 		}
-
 	}
-
-	@RequestMapping(value = "category/delete/{id}", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "category-blog/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("id") int id, Model model) {
 		try {
-			categoryIlpm.delete(id);
+			catBlogImpl.delete(id);
 			boolean success = true;
 			model.addAttribute("success", success);
 			model.addAttribute("message", "Đã xóa thành công!");
@@ -133,6 +129,6 @@ public class CategoryCTRL {
 			model.addAttribute("error", error);
 			model.addAttribute("message", "Không thể xóa, vui lòng xem lại!");
 		}
-		return "redirect:/admin/category";
+		return "redirect:/admin/category-blog";
 	}
 }
