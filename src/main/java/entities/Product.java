@@ -53,6 +53,8 @@ public class Product implements Serializable{
 	private Category category;
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 	private List<ProductImg> productImgs;
+	private String color;
+	private String storage;
 //	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
 //	@JoinColumn(name = "productId", insertable = false, updatable = false)
 //	private List<OrderDetail> orderDetails;
@@ -152,5 +154,16 @@ public class Product implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getStorage() {
+		return storage;
+	}
+	public void setStorage(String storage) {
+		this.storage = storage;
+	}
 }
