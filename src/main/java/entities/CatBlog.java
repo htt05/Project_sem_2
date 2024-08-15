@@ -30,7 +30,6 @@ public class CatBlog implements Serializable {
 	@NotEmpty(message = "Tên danh mục không được để trống")
 	private String title;
 	private boolean status;
-<<<<<<< HEAD
 	@Temporal(value = TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date created_at; 
@@ -72,8 +71,6 @@ public class CatBlog implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-=======
->>>>>>> refs/remotes/origin/phong
 }
 //id int identity primary key,
 //title nvarchar(200),
