@@ -1,14 +1,6 @@
 package controllers.client;
 
-import java.security.SecureRandom;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,10 +14,15 @@ import dao.AccountIlpm;
 import dao.BannerIlpm;
 import dao.BlogIlpm;
 import dao.CategoryIlpm;
+import dao.ColorIlpm;
 import dao.OrderDetailIlpm;
 import dao.OrderIlpm;
 import dao.ProductIlpm;
+
 import dto.BlogPage;
+
+import dao.StorageIlpm;
+
 import dto.Cart;
 import dto.ProductPage;
 import entities.Account;
@@ -47,6 +44,10 @@ public class HomeCTRL {
 	AccountIlpm accountIlpm;
 	@Autowired
 	BlogIlpm blogIlpm;
+	@Autowired
+	ColorIlpm colorIlpm;
+	@Autowired
+	StorageIlpm storageIlpm;
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -81,12 +82,16 @@ public class HomeCTRL {
 	}
 
 	@RequestMapping(value = "product/{id}")
-	public String product(Model model, @PathVariable("id") String proId) {
+	public String product(Model model, @PathVariable("id") String proId, String[] color, String[] storage) {
 		Product pro = productIlpm.getById(proId);
 		List<ProductImg> productImages = pro.getProductImgs();
 		model.addAttribute("productImages", productImages);
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product");
+		model.addAttribute("color", colorIlpm.search(""));
+		model.addAttribute("storage", storageIlpm.search(""));
+		model.addAttribute("arrColor", pro.getColor());
+		model.addAttribute("arrStorage", pro.getStorage());
 		return "client/index";
 	}
 
@@ -110,7 +115,7 @@ public class HomeCTRL {
 	}
 
 	@RequestMapping(value = { "blogs" })
-	public String blogs(Model model,  Integer pageno) {
+	public String blogs(Model model, Integer pageno) {
 		pageno = pageno == null ? 1 : pageno;
 		BlogPage pp = blogIlpm.paging(pageno, 6);
 		model.addAttribute("blogs", pp.getBlogs());
@@ -119,28 +124,26 @@ public class HomeCTRL {
 		model.addAttribute("page", "blogs");
 		return "client/index";
 	}
-	
+
 	@RequestMapping(value = { "blog/{id}" })
 	public String blog(Model model, @PathVariable("id") Integer id) {
 		model.addAttribute("blog", blogIlpm.getblog(id));
 		model.addAttribute("page", "blog");
 		return "client/index";
 	}
-	
-	
-	@RequestMapping(value ="search")
+
+	@RequestMapping(value = "search")
 	public String searchProducts(@RequestParam(value = "query", required = false) String query, Model model) {
-        List<Product> products = productIlpm.search(query);
-        if (products != null && !products.isEmpty()) {
-            System.out.println("Đã tìm thấy sản phẩm.");
-        } else {
-            System.out.println("Không tìm thấy sản phẩm nào.");
-        }
-        model.addAttribute("products",productIlpm.getAll());
-        model.addAttribute("products", products);
-        model.addAttribute("searchQuery", query);
+		List<Product> products = productIlpm.search(query);
+		if (products != null && !products.isEmpty()) {
+			System.out.println("Đã tìm thấy sản phẩm.");
+		} else {
+			System.out.println("Không tìm thấy sản phẩm nào.");
+		}
+		model.addAttribute("products", productIlpm.getAll());
+		model.addAttribute("products", products);
+		model.addAttribute("searchQuery", query);
 		model.addAttribute("page", "searchName");
-		return("client/index");
-		
+		return ("client/index");
 	}
 }

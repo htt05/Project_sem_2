@@ -399,78 +399,55 @@ a.slick-next.pull-right:before {
 										<p class="product-label">Type:</p>
 										${ pro.category.catName }
 									</div>
-									<div class="product-form__input product-attributes switch-options">
+									<div
+										class="product-form__input product-attributes switch-options">
 										<p class="product-label">Color</p>
 										<div class="swatch-group">
-											<input type="radio" id="template--16769564246116__main-1-0"
-												name="Color" value="Black"
-												form="product-form-template--16769564246116__main" checked>
+											<c:forEach var="ac" items="${arrColor}" varStatus="status">
+												<c:forEach var="c" items="${color}">
+													<c:if test="${ac==c.id }">
+														<input type="radio"
+															id="template--16769564246116__main-${status.index}"
+															name="Color" value="${c.name}"
+															form="product-form-template--16769564246116__main"
+															<c:if test="${status.first}">checked</c:if> />
+
+														<div data-value="${c.name}" class="swatch-element">
+															<div class="tooltip">
+																<label
+																	for="template--16769564246116__main-${status.index}"
+																	class="swatch-variant-text">${c.name}</label>
+															</div>
+															<label
+																for="template--16769564246116__main-${status.index}"
+																class="swatch-variant-image"
+																style="background: ${c.color} !important"></label>
+														</div>
+													</c:if>
+												</c:forEach>
+											</c:forEach>
 
 
-											<div data-value="Black" class="swatch-element">
-												<div class="tooltip">
-													<label for="template--16769564246116__main-1-0"
-														class="swatch-variant-text">Black</label>
-												</div>
-												<label for="template--16769564246116__main-1-0"
-													class="swatch-variant-image"
-													style="background-image: url('../cdn/shop/products/p4c633.jpg?v=1560495855&amp;width=460');"></label>
 
-											</div>
-											<input type="radio" id="template--16769564246116__main-1-1"
-												name="Color" value="Blue"
-												form="product-form-template--16769564246116__main">
-
-
-											<div data-value="Blue" class="swatch-element">
-												<div class="tooltip">
-													<label for="template--16769564246116__main-1-1"
-														class="swatch-variant-text">Blue</label>
-												</div>
-												<label for="template--16769564246116__main-1-1"
-													class="swatch-variant-image"
-													style="background-image: url('../cdn/shop/products/p2_e1a0c22b-6b61-414a-a3f1-adedf54e5f35c633.jpg?v=1560495855&amp;width=460');"></label>
-
-											</div>
-											<input type="radio" id="template--16769564246116__main-1-2"
-												name="Color" value="Grey"
-												form="product-form-template--16769564246116__main">
-
-
-											<div data-value="Grey" class="swatch-element">
-												<div class="tooltip">
-													<label for="template--16769564246116__main-1-2"
-														class="swatch-variant-text">Grey</label>
-												</div>
-												<label for="template--16769564246116__main-1-2"
-													class="swatch-variant-image"
-													style="background-image: url('../cdn/shop/products/p3_f3bb2833-2126-4c25-996d-30952d6fb0d1c633.jpg?v=1560495855&amp;width=460');"></label>
-
-											</div>
 										</div>
 									</div>
-									<div class="product-form__input product-attributes switch-options">
+									<div
+										class="product-form__input product-attributes switch-options">
 										<legend class="form__label product-label">Ram</legend>
 										<div class="swatch-group">
-											<input type="radio" id="template--16769564246116__main-2-0"
-												name="Inches" value="6.22"
-												form="product-form-template--16769564246116__main" checked>
+											<c:forEach var="storage" items="${storage }"
+												varStatus="status">
+												<input type="radio"
+													id="template--16769564246116__main-2-${status.index }"
+													name="Inches" value="${storage.storage }/${storage.ram }"
+													form="product-form-template--16769564246116__main" checked>
 
 
-											<label for="template--16769564246116__main-2-0"> 6.22
-											</label> <input type="radio" id="template--16769564246116__main-2-1"
-												name="Inches" value="6.56"
-												form="product-form-template--16769564246116__main">
+												<label
+													for="template--16769564246116__main-2-${status.index }">
+													${storage.storage }/${storage.ram } </label>
+											</c:forEach>
 
-
-											<label for="template--16769564246116__main-2-1"> 6.56
-											</label> <input type="radio" id="template--16769564246116__main-2-2"
-												name="Inches" value="6.30"
-												form="product-form-template--16769564246116__main">
-
-
-											<label for="template--16769564246116__main-2-2"> 6.30
-											</label>
 
 
 										</div>
@@ -662,13 +639,15 @@ a.slick-next.pull-right:before {
 												enctype="multipart/form-data" novalidate="novalidate"
 												data-type="add-to-cart-form">
 												<div class="product-form__buttons">
-													<button type="submit" name="add"
-														class="product-form__submit button button--full-width button--secondary">
+													<button type="button" name="add"
+														class="product-form__submit button button--full-width button--secondary"
+														onclick="addCart('${pro.proId}')">
 														<span>Add to cart </span>
 													</button>
 													<button type="button"
 														class="product-form__submit button button--full-width button--secondary"
-														data-testid="Checkout-button">Buy it now</button>
+														data-testid="Checkout-button"
+														onclick="addCart('${pro.proId}')">Buy it now</button>
 												</div>
 												<input type="hidden" name="product-id" value="1852911353956"><input
 													type="hidden" name="section-id"
@@ -1017,9 +996,25 @@ keyframes tap-double { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1077,7 +1072,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
+
+
+
+
+
+
+
+
 
 
 
@@ -1133,7 +1144,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 12
+
+
+
+
+
+
+
+
 
 
 
@@ -1189,7 +1216,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1247,9 +1290,25 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1307,6 +1366,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1334,7 +1401,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -1392,7 +1475,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1450,9 +1549,25 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1510,6 +1625,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1537,7 +1660,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -1595,7 +1734,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1625,6 +1780,14 @@ rotateX
 ;
 }
 50
+
+
+
+
+
+
+
+
 
 
 
@@ -1684,7 +1847,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -1740,7 +1919,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -1798,7 +1993,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1863,9 +2074,25 @@ keyframes tap-circle { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1923,7 +2150,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 scale
+
+
+
+
+
+
+
+
 
 
 
@@ -1979,7 +2222,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
 
 
 
@@ -2035,7 +2294,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -2092,6 +2367,14 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
@@ -2121,7 +2404,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 .6
+
+
+
+
+
+
+
+
 
 
 
@@ -2179,9 +2478,25 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -2239,6 +2554,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 scale
 
 
@@ -2266,7 +2589,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -2324,7 +2663,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -2353,6 +2708,14 @@ scale
 
 ;
 opacity
+
+
+
+
+
+
+
+
 
 
 
@@ -2410,7 +2773,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 .5
+
+
+
+
+
+
+
+
 
 
 
