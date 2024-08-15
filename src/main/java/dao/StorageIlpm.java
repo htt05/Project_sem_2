@@ -108,4 +108,17 @@ public class StorageIlpm implements StorageDAO{
 		return check;
 	}
 
+	@Override
+	public boolean checkUniqueStorage(String storage, String ram) {
+		boolean check = false;
+		Session session = sessionFactory.openSession();
+		Query query = null;
+		int records = session.createQuery("from Storage where storage like :storage and ram like :ram").setParameter("storage", storage).setParameter("ram", ram).getResultList().size();
+		if (records==0) {
+			check = true;
+		}
+		session.close();
+		return check;
+	}
+
 }

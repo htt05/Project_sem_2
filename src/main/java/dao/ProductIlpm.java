@@ -113,4 +113,13 @@ public class ProductIlpm implements ProductDAO {
 		return fp;
 	}
 
+	@Override
+	public List<Product> getAll() {
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		List<Product> products = session.createQuery("from Product", Product.class).list();
+		session.getTransaction().commit();
+		return products;
+	}
+	
 }

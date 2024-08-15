@@ -38,7 +38,7 @@
 								<label for="">Storage</label>
 								<f:input path="storage" type="text" class="form-control"
 									id="" value="${ storage.storage }" />
-								<f:errors cssClass="text-danger" path="name"></f:errors>
+								<f:errors cssClass="text-danger" path="storage"></f:errors>
 							</div>
 							<f:hidden path="id" class="form-control" id=""
 								value="${ storage.id }" />

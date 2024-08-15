@@ -60,6 +60,12 @@ public class StorageCTRLAdmin {
 			model.addAttribute("page", "storage/create");
 			return "admin/index";
 		} else {
+			if (!storageIlpm.checkUniqueStorage(storage.getStorage(), storage.getRam())) {
+				model.addAttribute("storage", storage);
+				model.addAttribute("page", "storage/create");
+				model.addAttribute("message", "Thêm mới thất bại, chỉ số bộ nhớ bị trùng!");
+				return "admin/index";
+			}
 			try {
 				storageIlpm.insert(storage);
 				boolean success = true;
@@ -88,6 +94,12 @@ public class StorageCTRLAdmin {
 
 	@RequestMapping(value = "storage/update", method = RequestMethod.POST)
 	public String update(@ModelAttribute("storage") Storage storage, Model model) {
+		if (!storageIlpm.checkUniqueStorage(storage.getStorage(), storage.getRam())) {
+			model.addAttribute("storage", storage);
+			model.addAttribute("page", "storage/create");
+			model.addAttribute("message", "Cập nhật thất bại, chỉ số bộ nhớ bị trùng!");
+			return "admin/index";
+		}
 		try {
 			storageIlpm.update(storage);
 			boolean success = true;

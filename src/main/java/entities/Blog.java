@@ -26,6 +26,7 @@ public class Blog  implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+<<<<<<< HEAD
 	private String img;
 	private String title;
 	private String des;
@@ -99,6 +100,8 @@ public class Blog  implements Serializable {
 		return serialVersionUID;
 	}
 
+=======
+>>>>>>> refs/remotes/origin/phong
 }
 //id int primary key identity,
 //accountId int foreign key references Accounts(id),

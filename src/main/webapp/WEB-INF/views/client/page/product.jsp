@@ -198,193 +198,64 @@ a.slick-next.pull-right:before {
 								<ul id="Slider-Gallery-template--16769564246116__main"
 									class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile two-column"
 									role="list">
-									<li id="Slide-template--16769564246116__main-3739582070884"
-										class="product__media-item grid__item slider__slide is-active"
-										data-media-id="template--16769564246116__main-3739582070884">
+									<c:set var="i" value="0" />
+									<c:forEach var="image" items="${productImages}">
+										<c:set var="i" value="${i + 1}" />
+										<li id="Slide-template--16769564246116__main-3739582070884"
+											class="product__media-item grid__item slider__slide ${i == 1 ? 'is-active' : ''}"
+											data-media-id="template--16769564246116__main-${i }">
 
 
-										<noscript>
-											<div
-												class="product__media media gradient global-media-settings zoom"
-												style="padding-top: 120.0%;" id="ex1">
-												<img
-													srcset="//phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=493 493w,
-          //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=600 600w,
-          //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=713 713w,
-          //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=823 823w,
-          //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491&width=990 990w,
-          
-          
-          
-          
-          
-          
-          //phono-demo.myshopify.com/cdn/shop/products/p1.jpg?v=1560495491 1000w"
-													src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p1aa8a.jpg?v=1560495491&amp;width=1946"
-													sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-													width="973" height="1168" alt="">
-											</div>
-										</noscript> <modal-opener
-											class="product__modal-opener product__modal-opener--image no-js-hidden"
-											data-modal="#ProductModal-template--16769564246116__main">
-										<span
-											class="product__media-icon motion-reduce quick-add-hidden"
-											aria-hidden="true"><svg aria-hidden="true"
-												focusable="false" role="presentation" class="icon icon-plus"
-												width="19" height="19" viewBox="0 0 19 19" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
+											<noscript>
+												<div
+													class="product__media media gradient global-media-settings zoom"
+													style="padding-top: 120.0%;" id="ex1">
+													<img
+														src="${pageContext.servletContext.contextPath}/${image.image }?v=1560495491&amp;width=1946"
+														sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+														width="973" height="1168" alt="">
+												</div>
+											</noscript> <modal-opener
+												class="product__modal-opener product__modal-opener--image no-js-hidden"
+												data-modal="#ProductModal-template--16769564246116__main">
+											<span
+												class="product__media-icon motion-reduce quick-add-hidden"
+												aria-hidden="true"><svg aria-hidden="true"
+													focusable="false" role="presentation"
+													class="icon icon-plus" width="19" height="19"
+													viewBox="0 0 19 19" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
-													fill="currentColor" />
+														d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+														fill="currentColor" />
   <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
-													fill="currentColor" />
+														d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+														fill="currentColor" />
   <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
-													fill="currentColor" />
+														d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+														fill="currentColor" />
 </svg> </span>
 
-										<div
-											class="product__media media media--transparent gradient global-media-settings zoom"
-											style="padding-top: 120.0%;" id="ex1">
-											<img
-												
-												src="${pageContext.servletContext.contextPath }/${pro.picture }"
-												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-												width="973" class="zoom_out" height="1168" alt="">
-										</div>
-										<button class="product__media-toggle quick-add-hidden"
-											type="button" aria-haspopup="dialog"
-											data-media-id="3739582070884">
-											<span class="visually-hidden"> Open media 1 in modal </span>
-										</button>
-										</modal-opener>
-									</li>
-									<li id="Slide-template--16769564246116__main-3740010709092"
-										class="product__media-item grid__item slider__slide"
-										data-media-id="template--16769564246116__main-3740010709092">
-
-
-										<noscript>
 											<div
-												class="product__media media gradient global-media-settings zoom"
+												class="product__media media media--transparent gradient global-media-settings zoom"
 												style="padding-top: 120.0%;" id="ex1">
 												<img
-													srcset="//phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=493 493w,
-          //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=600 600w,
-          //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=713 713w,
-          //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=823 823w,
-          //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=990 990w,
-          
-          
-          
-          
-          
-          
-          //phono-demo.myshopiSlide-Thumbnails-template--16769564246116__main-2y.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889 1000w"
-													src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f37bd.jpg?v=1560504889&amp;width=1946"
+													src="${pageContext.servletContext.contextPath}/${image.image }?v=1560495491&amp;width=1946"
 													sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-													loading="lazy" width="973" height="1168" alt="">
+													width="973" class="zoom_out" height="1168" alt="">
 											</div>
-										</noscript> <modal-opener
-											class="product__modal-opener product__modal-opener--image no-js-hidden"
-											data-modal="#ProductModal-template--16769564246116__main">
-										<span
-											class="product__media-icon motion-reduce quick-add-hidden"
-											aria-hidden="true"><svg aria-hidden="true"
-												focusable="false" role="presentation" class="icon icon-plus"
-												width="19" height="19" viewBox="0 0 19 19" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
-													fill="currentColor" />
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
-													fill="currentColor" />
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
-													fill="currentColor" />
-</svg> </span>
+											<button class="product__media-toggle quick-add-hidden"
+												type="button" aria-haspopup="dialog"
+												data-media-id="3739582070884">
+												<span class="visually-hidden"> Open media 1 in modal
+												</span>
+											</button>
+											</modal-opener>
+										</li>
 
-										<div
-											class="product__media media media--transparent gradient global-media-settings zoom"
-											style="padding-top: 120.0%;" id="ex1">
-											<img
-												src="${pageContext.servletContext.contextPath }/${pro.picture };width=1946"
-												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-												loading="lazy" width="973" class="zoom_out" height="1168"
-												alt="">
-										</div>
-										<button class="product__media-toggle quick-add-hidden"
-											type="button" aria-haspopup="dialog"
-											data-media-id="3740010709092">
-											<span class="visually-hidden"> Open media 2 in modal </span>
-										</button>
-										</modal-opener>
-									</li>
-									<li id="Slide-template--16769564246116__main-23770669121636"
-										class="product__media-item grid__item slider__slide"
-										data-media-id="template--16769564246116__main-23770669121636">
+									</c:forEach>
 
 
-										<noscript>
-											<div
-												class="product__media media gradient global-media-settings zoom"
-												style="padding-top: 120.0%;" id="ex1">
-												<img
-													srcset="//phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=493 493w,
-          //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=600 600w,
-          //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=713 713w,
-          //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=823 823w,
-          //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129&width=990 990w,
-          
-          
-          
-          
-          
-          
-          //phono-demo.myshopify.com/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f.jpg?v=1695114129 1000w"
-													src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/files/p11_a7f2670a-f1e2-4d6c-b70c-d2174f29576f4a36.jpg?v=1695114129&amp;width=1946"
-													sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-													loading="lazy" width="973" height="1168" alt="">
-											</div>
-										</noscript> <modal-opener
-											class="product__modal-opener product__modal-opener--image no-js-hidden"
-											data-modal="#ProductModal-template--16769564246116__main">
-										<span
-											class="product__media-icon motion-reduce quick-add-hidden"
-											aria-hidden="true"><svg aria-hidden="true"
-												focusable="false" role="presentation" class="icon icon-plus"
-												width="19" height="19" viewBox="0 0 19 19" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
-													fill="currentColor" />
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
-													fill="currentColor" />
-  <path fill-rule="evenodd" clip-rule="evenodd"
-													d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
-													fill="currentColor" />
-</svg> </span>
-
-										<div
-											class="product__media media media--transparent gradient global-media-settings zoom"
-											style="padding-top: 120.0%;" id="ex1">
-											<img
-												
-												src="${pageContext.servletContext.contextPath }/${pro.picture }"
-												sizes="(min-width: 1300px) 540px, (min-width: 990px) calc(45.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-												loading="lazy" width="973" class="zoom_out" height="1168"
-												alt="">
-										</div>
-										<button class="product__media-toggle quick-add-hidden"
-											type="button" aria-haspopup="dialog"
-											data-media-id="23770669121636">
-											<span class="visually-hidden"> Open media 3 in modal </span>
-										</button>
-										</modal-opener>
-									</li>
 								</ul>
 								<div class="slider-buttons no-js-hidden quick-add-hidden">
 									<button type="button" class="slider-button slider-button--prev"
@@ -432,57 +303,33 @@ a.slick-next.pull-right:before {
 								<ul
 									id="Slider-Thumbnails-template--16769564246116__main slider-vert-height"
 									class="thumbnail-list list-unstyled slider slider--mobile">
-									<li id="Slide-Thumbnails-template--16769564246116__main-0"
-										class="thumbnail-list__item slider__slide"
-										data-target="template--16769564246116__main-3739582070884"
-										data-media-position="1">
-										<button
-											class="thumbnail global-media-settings global-media-settings--no-shadow thumbnail--narrow"
-											aria-label="Load image 1 in gallery view" aria-current="true"
-											aria-controls="GalleryViewer-template--16769564246116__main"
-											aria-describedby="Thumbnail-template--16769564246116__main-0">
-											<img id="Thumbnail-template--16769564246116__main-0"
-												
-												src="${pageContext.servletContext.contextPath }/${pro.picture }"
-												sizes="(min-width: 1300px) calc((540 - 4rem) / 4), (min-width: 990px) calc((45.0vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
-												alt="Affinity  M20" height="208" width="208" loading="lazy">
-										</button>
-									</li>
-									<li id="Slide-Thumbnails-template--16769564246116__main-2"
-										class="thumbnail-list__item slider__slide"
-										data-target="template--16769564246116__main-3740010709092"
-										data-media-position="2"><button
-											class="thumbnail global-media-settings global-media-settings--no-shadow thumbnail--narrow"
-											aria-label="Load image 2 in gallery view"
-											aria-controls="GalleryViewer-template--16769564246116__main"
-											aria-describedby="Thumbnail-template--16769564246116__main-2">
-											<img id="Thumbnail-template--16769564246116__main-2"
-												<%-- srcset="
-                                <!-- //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=59 59x,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=118 118w,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=84 84w,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=168 168w,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=130 130w,
-                                //phono-demo.myshopify.com/cdn/shop/products/p12_478985b1-2717-4f19-b6a7-e3e30df3c60f.jpg?v=1560504889&width=260 260w -->
-                              " --%>
-												src="${pageContext.servletContext.contextPath }/${pro.picture }"
-												sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
-												alt="Affinity  M20" height="200" width="200" loading="lazy">
-										</button></li>
-									<li id="Slide-Thumbnails-template--16769564246116__main-3"
-										class="thumbnail-list__item slider__slide"
-										data-target="template--16769564246116__main-23770669121636"
-										data-media-position="3"><button
-											class="thumbnail global-media-settings global-media-settings--no-shadow thumbnail--narrow"
-											aria-label="Load image 3 in gallery view"
-											aria-controls="GalleryViewer-template--16769564246116__main"
-											aria-describedby="Thumbnail-template--16769564246116__main-3">
-											<img id="Thumbnail-template--16769564246116__main-3"
-												
-												src="${pageContext.servletContext.contextPath }/${pro.picture }"
-												sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
-												alt="Affinity  M20" height="200" width="200" loading="lazy">
-										</button></li>
+									<c:set var="i" value="0" />
+									<c:forEach var="image" items="${productImages}"
+										varStatus="status">
+										<c:if test="${status.count <= 4}">
+											<c:set var="i" value="${i + 1}" />
+
+											<li id="Slide-Thumbnails-template--16769564246116__main-${i}"
+												class="thumbnail-list__item slider__slide"
+												data-target="template--16769564246116__main-${i}"
+												data-media-position="1">
+												<button
+													class="thumbnail global-media-settings global-media-settings--no-shadow thumbnail--narrow"
+													aria-label="Load image 1 in gallery view"
+													aria-current="true"
+													aria-controls="GalleryViewer-template--16769564246116__main"
+													aria-describedby="Thumbnail-template--16769564246116__main-${i}">
+													<img id="Thumbnail-template--16769564246116__main-${i}"
+														src="${pageContext.servletContext.contextPath}/${image.image}?v=1560495491&amp;width=416"
+														sizes="(min-width: 1300px) calc((540 - 4rem) / 4), (min-width: 990px) calc((45.0vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
+														alt="Affinity M20" height="208" width="208" loading="lazy">
+												</button>
+											</li>
+										</c:if>
+									</c:forEach>
+
+
+
 								</ul>
 								<button type="button"
 									class="slider-button slider-button--next small-hide medium-hide large-up-hide"
@@ -508,6 +355,7 @@ a.slick-next.pull-right:before {
 											<h2 class="h1">${ pro.proName }</h2>
 										</a>
 									</div>
+
 									<div class="no-js-hidden"
 										id="price-template--16769564246116__main" role="status">
 										<div
@@ -550,6 +398,82 @@ a.slick-next.pull-right:before {
 									<div class="product-attributes">
 										<p class="product-label">Type:</p>
 										${ pro.category.catName }
+									</div>
+									<div class="product-form__input product-attributes switch-options">
+										<p class="product-label">Color</p>
+										<div class="swatch-group">
+											<input type="radio" id="template--16769564246116__main-1-0"
+												name="Color" value="Black"
+												form="product-form-template--16769564246116__main" checked>
+
+
+											<div data-value="Black" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-0"
+														class="swatch-variant-text">Black</label>
+												</div>
+												<label for="template--16769564246116__main-1-0"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p4c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+											<input type="radio" id="template--16769564246116__main-1-1"
+												name="Color" value="Blue"
+												form="product-form-template--16769564246116__main">
+
+
+											<div data-value="Blue" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-1"
+														class="swatch-variant-text">Blue</label>
+												</div>
+												<label for="template--16769564246116__main-1-1"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p2_e1a0c22b-6b61-414a-a3f1-adedf54e5f35c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+											<input type="radio" id="template--16769564246116__main-1-2"
+												name="Color" value="Grey"
+												form="product-form-template--16769564246116__main">
+
+
+											<div data-value="Grey" class="swatch-element">
+												<div class="tooltip">
+													<label for="template--16769564246116__main-1-2"
+														class="swatch-variant-text">Grey</label>
+												</div>
+												<label for="template--16769564246116__main-1-2"
+													class="swatch-variant-image"
+													style="background-image: url('../cdn/shop/products/p3_f3bb2833-2126-4c25-996d-30952d6fb0d1c633.jpg?v=1560495855&amp;width=460');"></label>
+
+											</div>
+										</div>
+									</div>
+									<div class="product-form__input product-attributes switch-options">
+										<legend class="form__label product-label">Ram</legend>
+										<div class="swatch-group">
+											<input type="radio" id="template--16769564246116__main-2-0"
+												name="Inches" value="6.22"
+												form="product-form-template--16769564246116__main" checked>
+
+
+											<label for="template--16769564246116__main-2-0"> 6.22
+											</label> <input type="radio" id="template--16769564246116__main-2-1"
+												name="Inches" value="6.56"
+												form="product-form-template--16769564246116__main">
+
+
+											<label for="template--16769564246116__main-2-1"> 6.56
+											</label> <input type="radio" id="template--16769564246116__main-2-2"
+												name="Inches" value="6.30"
+												form="product-form-template--16769564246116__main">
+
+
+											<label for="template--16769564246116__main-2-2"> 6.30
+											</label>
+
+
+										</div>
 									</div>
 									<div class="advance-product-style"></div>
 
@@ -1081,9 +1005,33 @@ keyframes tap-double { 0% {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1117,7 +1065,31 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 rotateX
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1149,7 +1121,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 12
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1181,7 +1177,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1215,9 +1235,33 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1251,6 +1295,18 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1266,7 +1322,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1300,7 +1380,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1334,9 +1438,33 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1370,6 +1498,18 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1385,7 +1525,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1419,7 +1583,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1437,6 +1625,18 @@ rotateX
 ;
 }
 50
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1472,7 +1672,31 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1504,7 +1728,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1538,7 +1786,31 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1579,9 +1851,33 @@ keyframes tap-circle { 0% {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1615,7 +1911,31 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 scale
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1647,7 +1967,31 @@ scale
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1679,7 +2023,31 @@ scale
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1712,6 +2080,18 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -1729,7 +2109,31 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .6
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1763,9 +2167,33 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1799,6 +2227,18 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 scale
 
 
@@ -1814,7 +2254,31 @@ scale
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1848,7 +2312,31 @@ scale
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1865,6 +2353,18 @@ scale
 
 ;
 opacity
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1898,7 +2398,31 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .5
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
