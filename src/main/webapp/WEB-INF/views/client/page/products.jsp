@@ -2353,14 +2353,14 @@
 															</div>
 															<div class="quick-add">
 																<product-form>
-																<button
+																<a
 																	id="quick-add-template--16769563983972__product-grid1852911353956-submit"
 																	type="submit" name="add"
 																	class="quick-add__submit button button--full-width button--primary"
 																	aria-haspopup="dialog"
 																	aria-labelledby="quick-add-template--16769563983972__product-grid1852911353956-submit title-template--16769563983972__product-grid-1852911353956"
 																	aria-live="polite" data-sold-out-message="true"
-																	onclick="addCart('${pro.proId}')">
+																	href="${pageContext.servletContext.contextPath}/product/${pro.proId}">
 																	<span>Add to cart </span> <span
 																		class="sold-out-message hidden"> Sold out </span>
 																	<div class="loading-overlay__spinner hidden">
@@ -2373,7 +2373,7 @@
 																				r="30"></circle>
                       </svg>
 																	</div>
-																</button>
+																</a>
 																</product-form>
 															</div>
 															<div class="card__content">

@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import dao.AccountIlpm;
 import dao.BannerIlpm;
 import dao.CategoryIlpm;
+import dao.ColorIlpm;
 import dao.OrderDetailIlpm;
 import dao.OrderIlpm;
 import dao.ProductIlpm;
+import dao.StorageIlpm;
 import dto.Cart;
 import dto.ProductPage;
 import entities.Account;
@@ -48,6 +50,10 @@ public class HomeCTRL {
 	OrderDetailIlpm orderDetailIlpm;
 	@Autowired
 	AccountIlpm accountIlpm;
+	@Autowired
+	ColorIlpm colorIlpm;
+	@Autowired
+	StorageIlpm storageIlpm; 
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -82,12 +88,16 @@ public class HomeCTRL {
 	}
 
 	@RequestMapping(value = "product/{id}")
-	public String product(Model model, @PathVariable("id") String proId) {
+	public String product(Model model, @PathVariable("id") String proId, String[] color, String[] storage) {
 		Product pro = productIlpm.getById(proId);
 		List<ProductImg> productImages = pro.getProductImgs();
 		model.addAttribute("productImages", productImages);
 		model.addAttribute("pro", pro);
 		model.addAttribute("page", "product");
+		model.addAttribute("color", colorIlpm.search(""));
+		model.addAttribute("storage", storageIlpm.search(""));
+		model.addAttribute("arrColor", pro.getColor());
+		model.addAttribute("arrStorage", pro.getStorage());
 		return "client/index";
 	}
 
