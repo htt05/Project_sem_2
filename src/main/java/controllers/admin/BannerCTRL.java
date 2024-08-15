@@ -37,6 +37,7 @@ public class BannerCTRL {
 		model.addAttribute("success", success);
 		model.addAttribute("message", message);
 		model.addAttribute("page", "banner/index");
+		
 		pageno = pageno == null ? 1 : pageno;
 		BannerPage pp = bannerIlpm.paging(pageno, 5);
 		model.addAttribute("banners", pp.getBanners());

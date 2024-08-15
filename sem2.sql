@@ -100,8 +100,11 @@ create table CatBlogs(
 	id int identity primary key,
 	title nvarchar(200),
 	status bit,
+	create_at date
 )
 go
+
+select*from CatBlogs
 
 create table Blogs(
 	id int primary key identity,
@@ -110,7 +113,7 @@ create table Blogs(
 	title nvarchar(100),
 	des nvarchar(250),
 	desDetail text,
-	createAt date,
+	created_at date,
 	catBlogId int foreign key references CatBlogs(id)
 )
 go

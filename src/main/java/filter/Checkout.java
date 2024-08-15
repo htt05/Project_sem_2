@@ -47,8 +47,8 @@ public class Checkout extends HttpFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
 		String uri = req.getRequestURI();
-		if ((session == null || session.getAttribute("id") == null) && !uri.contains("login"))
-			res.sendRedirect(req.getContextPath() + "/login");
+		if ((session == null || session.getAttribute("id") == null) && !uri.contains("account/login"))
+			res.sendRedirect(req.getContextPath() + "/account/login");
 // pass the request along the filter chain
 		chain.doFilter(request, response);
 	}

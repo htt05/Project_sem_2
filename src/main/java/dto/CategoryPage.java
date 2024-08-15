@@ -36,6 +36,4 @@ public class CategoryPage {
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
 	}
-	
-
 }

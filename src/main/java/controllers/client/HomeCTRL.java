@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.AccountIlpm;
 import dao.BannerIlpm;
+import dao.BlogIlpm;
 import dao.CategoryIlpm;
 import dao.OrderDetailIlpm;
 import dao.OrderIlpm;
 import dao.ProductIlpm;
+import dto.BlogPage;
 import dto.Cart;
 import dto.ProductPage;
 import entities.Account;
@@ -47,6 +49,8 @@ public class HomeCTRL {
 	OrderDetailIlpm orderDetailIlpm;
 	@Autowired
 	AccountIlpm accountIlpm;
+	@Autowired
+	BlogIlpm blogIlpm;
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -108,7 +112,19 @@ public class HomeCTRL {
 	}
 
 	@RequestMapping(value = { "blogs" })
-	public String blogs(Model model) {
+	public String blogs(Model model,  Integer pageno) {
+		pageno = pageno == null ? 1 : pageno;
+		BlogPage pp = blogIlpm.paging(pageno, 6);
+		model.addAttribute("blogs", pp.getBlogs());
+		model.addAttribute("totalpage", pp.getTotalPages());
+		model.addAttribute("currentpage", pageno);
+		model.addAttribute("page", "blogs");
+		return "client/index";
+	}
+	
+	@RequestMapping(value = { "blog/{id}" })
+	public String blog(Model model, @PathVariable("id") Integer id) {
+		model.addAttribute("blog", blogIlpm.getblog(id));
 		model.addAttribute("page", "blog");
 		return "client/index";
 	}

@@ -21,7 +21,6 @@
 		<!-- sidebar menu: : style can be found in sidebar.less -->
 
 		<ul class="sidebar-menu" data-widget="tree">
-
 			<li><a
 				href="${pageContext.servletContext.contextPath}/admin/category">
 					<i class="fa fa-bar-chart"></i> <span>Quản lý Danh mục </span>
@@ -39,17 +38,30 @@
 					<i class="fa fa-users"></i> <span>Quản lý Tài khoản </span>
 			</a></li>
 			<li><a
-				href="${pageContext.servletContext.contextPath}/admin/order">
-					<i class="fa fa-shopping-cart"></i> <span>Quản lý Đơn hàng </span>
+				href="${pageContext.servletContext.contextPath}/admin/order"> <i
+					class="fa fa-shopping-cart"></i> <span>Quản lý Đơn hàng </span>
 			</a></li>
 			<li><a
-				href="${pageContext.servletContext.contextPath}/admin/color">
-					<i class="fa fa-list-alt"></i> <span>Quản lý Màu </span>
+				href="${pageContext.servletContext.contextPath}/admin/color"> <i
+					class="fa fa-list-alt"></i> <span>Quản lý Màu </span>
 			</a></li>
 			<li><a
 				href="${pageContext.servletContext.contextPath}/admin/storage">
 					<i class="fa fa-list-alt"></i> <span>Quản lý Bộ nhớ </span>
 			</a></li>
+			<li class="treeview"><a href="#"> <i class="fa fa-dashboard"></i>
+					<span>Quản lí Bài viết</span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a
+						href="${pageContext.servletContext.contextPath}/admin/category-blog"><i
+							class="fa fa-circle-o"></i>Danh Mục bài viết</a></li>
+					<li><a
+						href="${pageContext.servletContext.contextPath}/admin/blog"><i
+							class="fa fa-circle-o"></i>Bài viết</a></li>
+				</ul></li>
 		</ul>
 	</section>
 	<!-- /.sidebar -->

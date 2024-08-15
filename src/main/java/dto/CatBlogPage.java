@@ -2,39 +2,47 @@ package dto;
 
 import java.util.List;
 
-import entities.Banner;
+import entities.CatBlog;
 
-public class BannerPage {
-	private List<Banner> banners;
+public class CatBlogPage {
+	private List<CatBlog> categories;
 	private int totalPages;
 	private int pageSize;
 	private int currentPage;
-	public BannerPage() {
+
+	public CatBlogPage() {
 		// TODO Auto-generated constructor stub
 	}
-	public List<Banner> getBanners() {
-		return banners;
+
+	public List<CatBlog> getCategories() {
+		return categories;
 	}
-	public void setBanners(List<Banner> banners) {
-		this.banners = banners;
+
+	public void setCategories(List<CatBlog> categories) {
+		this.categories = categories;
 	}
+
 	public int getTotalPages() {
 		return totalPages;
 	}
+
 	public void setTotalPages(int totalPages) {
 		this.totalPages = totalPages;
 	}
+
 	public int getPageSize() {
 		return pageSize;
 	}
+
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
 	public int getCurrentPage() {
 		return currentPage;
 	}
+
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
 	}
-	
 }
