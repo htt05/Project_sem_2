@@ -238,149 +238,48 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 													<div
 														class="dt-sc-dropdown-menu dt-sc--main-menu--mega  dt-sc_main-menu--has-links">
 														<ul class="sub-menu-lists   dt-sc-column  five-column    ">
-
+															<c:forEach var="cat" items="${ categories }">
+																<li class=""><a class="headding"
+																	href="collections/android-phones.html">
+																		${cat.catName } </a>
+																	<ul>
+																		<li class=""><a href="products/affinity-m20.html">
+																				<span> Affinity M20 </span>
+																		</a></li>
+																		<li class=""><a
+																			href="products/affinity-p40-pro.html"> <span>
+																					Affinity P40 Pro </span>
+																		</a></li>
+																		<li class=""><a href="products/po-v40-thinq.html">
+																				<span> PO V40 ThinQ </span>
+																		</a></li>
+																		<li class=""><a href="products/tencho-7-3.html">
+																				<span> Tencho 7.3 </span>
+																		</a></li>
+																		<li class=""><a href="products/tencho-8-1.html">
+																				<span> Tencho 8.1 </span>
+																		</a></li>
+																		<li class=""><a href="#"> <span>
+																					Nexian </span>
+																		</a></li>
+																		<li class=""><a href="#"> <span>
+																					Ningbo </span>
+																		</a></li>
+																		<li class=""><a href="#"> <span> Fix A
+																					Phone </span>
+																		</a></li>
+																		<li class=""><a href="#"> <span>
+																					Hisense </span>
+																		</a></li>
+																		<li class=""><a href="#"> <span> Force
+																					Cell </span>
+																		</a></li>
+																	</ul></li>
+															</c:forEach>
 															<!-- Image with text -->
 															<!-- Image with text  End-->
-															<li class=""><a class="headding"
-																href="collections/android-phones.html"> SSD Card </a>
-																<ul>
-																	<li class=""><a href="products/affinity-m20.html">
-																			<span> Affinity M20 </span>
-																	</a></li>
-																	<li class=""><a
-																		href="products/affinity-p40-pro.html"> <span>
-																				Affinity P40 Pro </span>
-																	</a></li>
-																	<li class=""><a href="products/po-v40-thinq.html">
-																			<span> PO V40 ThinQ </span>
-																	</a></li>
-																	<li class=""><a href="products/tencho-7-3.html">
-																			<span> Tencho 7.3 </span>
-																	</a></li>
-																	<li class=""><a href="products/tencho-8-1.html">
-																			<span> Tencho 8.1 </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Nexian
-																		</span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Ningbo
-																		</span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Fix A
-																				Phone </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Hisense </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Force
-																				Cell </span>
-																	</a></li>
-																</ul></li>
-															<li class=""><a class="headding"
-																href="collections/dual-sim-phones.html"> Power Banks
-															</a>
-																<ul>
-																	<li class=""><a href="products/spots-8-lite.html">
-																			<span> Spots 8 Lite </span>
-																	</a></li>
-																	<li class=""><a href="products/spots-era-5x.html">
-																			<span> Spots ERA 5X </span>
-																	</a></li>
-																	<li class=""><a href="products/tencho-8-1.html">
-																			<span> Tencho 8.1 </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Phonelink </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Musah
-																		</span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Connect 4 </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Alcatel </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				MobiAir </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Beat
-																				Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Hunk
-																				Cell </span>
-																	</a></li>
-																</ul></li>
-															<li class=""><a class="headding"
-																href="collections/windows-phone.html"> Earphone </a>
-																<ul>
-																	<li class=""><a
-																		href="products/spots-y93-1815.html"> <span>
-																				Spots Y93 1815 </span>
-																	</a></li>
-																	<li class=""><a
-																		href="products/tencho-f12-pro.html"> <span>
-																				Tencho F12 Pro </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Telefonika </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				T-Blast </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Alcatel </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Ampy </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Crystal Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> MOI
-																				Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Groove
-																				Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Olly
-																				Cell </span>
-																	</a></li>
-																</ul></li>
-															<li class=""><a class="headding"
-																href="collections/latest-product.html"> Android </a>
-																<ul>
-																	<li class=""><a
-																		href="products/tencho-10-lite.html"> <span>
-																				Tencho 10 Lite </span>
-																	</a></li>
-																	<li class=""><a href="products/tencho-7-3.html">
-																			<span> Tencho 7.3 </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Spectrum </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Hisense </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				Bluesky </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span>
-																				GreatDid </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Mastic
-																		</span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Pigeon
-																				Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Arise
-																				Cell </span>
-																	</a></li>
-																	<li class=""><a href="#"> <span> Ritz
-																				Cell </span>
-																	</a></li>
-																</ul></li>
+
+
 															<!-- Image with text -->
 															<li class="dt-sc-menu-image-with-text top-level-link">
 																<div class="dt-sc-mega_menu text-center">
@@ -579,121 +478,20 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 								<div
 									class="dt-sc-dropdown-menu dt-sc--main-menu--mega  dt-sc_main-menu--has-links">
 									<ul class="sub-menu-lists   dt-sc-column  five-column    ">
-										<li class=""><a class="headding"
-											href="collections/android-phones.html"> SSD Card </a>
-											<ul>
-												<li class=""><a href="products/affinity-m20.html">
-														<span> Affinity M20 </span>
-												</a></li>
-												<li class=""><a href="products/affinity-p40-pro.html">
-														<span> Affinity P40 Pro </span>
-												</a></li>
-												<li class=""><a href="products/po-v40-thinq.html">
-														<span> PO V40 ThinQ </span>
-												</a></li>
-												<li class=""><a href="products/tencho-7-3.html"> <span>
-															Tencho 7.3 </span>
-												</a></li>
-												<li class=""><a href="products/tencho-8-1.html"> <span>
-															Tencho 8.1 </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Nexian </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Ningbo </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Fix A Phone
-													</span>
-												</a></li>
-												<li class=""><a href="#"> <span> Hisense </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Force Cell
-													</span>
-												</a></li>
-											</ul></li>
-										<li class=""><a class="headding"
-											href="collections/dual-sim-phones.html"> Power Banks </a>
-											<ul>
-												<li class=""><a href="products/spots-8-lite.html">
-														<span> Spots 8 Lite </span>
-												</a></li>
-												<li class=""><a href="products/spots-era-5x.html">
-														<span> Spots ERA 5X </span>
-												</a></li>
-												<li class=""><a href="products/tencho-8-1.html"> <span>
-															Tencho 8.1 </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Phonelink </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Musah </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Connect 4 </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Alcatel </span>
-												</a></li>
-												<li class=""><a href="#"> <span> MobiAir </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Beat Cell </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Hunk Cell </span>
-												</a></li>
-											</ul></li>
-										<li class=""><a class="headding"
-											href="collections/windows-phone.html"> Earphone </a>
-											<ul>
-												<li class=""><a href="products/spots-y93-1815.html">
-														<span> Spots Y93 1815 </span>
-												</a></li>
-												<li class=""><a href="products/tencho-f12-pro.html">
-														<span> Tencho F12 Pro </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Telefonika
-													</span>
-												</a></li>
-												<li class=""><a href="#"> <span> T-Blast </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Alcatel </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Ampy </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Crystal
-															Cell </span>
-												</a></li>
-												<li class=""><a href="#"> <span> MOI Cell </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Groove Cell
-													</span>
-												</a></li>
-												<li class=""><a href="#"> <span> Olly Cell </span>
-												</a></li>
-											</ul></li>
-										<li class=""><a class="headding"
-											href="collections/latest-product.html"> Android </a>
-											<ul>
-												<li class=""><a href="products/tencho-10-lite.html">
-														<span> Tencho 10 Lite </span>
-												</a></li>
-												<li class=""><a href="products/tencho-7-3.html"> <span>
-															Tencho 7.3 </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Spectrum </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Hisense </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Bluesky </span>
-												</a></li>
-												<li class=""><a href="#"> <span> GreatDid </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Mastic </span>
-												</a></li>
-												<li class=""><a href="#"> <span> Pigeon Cell
-													</span>
-												</a></li>
-												<li class=""><a href="#"> <span> Arise Cell
-													</span>
-												</a></li>
-												<li class=""><a href="#"> <span> Ritz Cell </span>
-												</a></li>
-											</ul></li>
+										<c:forEach var="cat" items="${ categories }">
+											<li class=""><a class="headding"
+												href="collections/android-phones.html"> ${cat.catName }
+											</a>
+												<ul>
+													<c:forEach var="product" items="${cat.products}">
+														<li class=""><a
+															href="${pageContext.servletContext.contextPath}/product/${ product.proId }">
+																<span> ${product.proName} </span>
+														</a></li>
+
+													</c:forEach>
+												</ul></li>
+										</c:forEach>
 
 
 
@@ -723,7 +521,7 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 								</div>
 							</div>
 						</li>
-<%-- 						<li class="0 text-menu top-level-link dt-sc-child "><a
+						<%-- 						<li class="0 text-menu top-level-link dt-sc-child "><a
 							href="${pageContext.servletContext.contextPath}/"
 							class="  dt-sc-nav-link  dropdown"> <span> Shop </span>
 						</a></li>
@@ -785,7 +583,8 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 		</div>
 		<!-- end desktop menu -->
 		<div class="header__icons">
-			<a href="${pageContext.servletContext.contextPath}/account/${empty sessionScope.id ? 'login' : 'logout' }"
+			<a
+				href="${pageContext.servletContext.contextPath}/account/${empty sessionScope.id ? 'login' : 'logout' }"
 				class="header__icon header__icon--account link focus-inset small-hide">
 
 
@@ -836,41 +635,28 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 						tabindex="-1">
 						<predictive-search class="search-modal__form"
 							data-loading-text="Loading...">
-						<form action="https://phono-demo.myshopify.com/search"
+						<form
+							action="${pageContext.servletContext.contextPath}/search"
 							method="get" role="search" class="search search-modal__form">
 							<div class="field">
 								<input class="search__input field__input" id="Search-In-Modal"
-									type="search" name="q" value="" placeholder="Search"
-									role="combobox" aria-expanded="false"
+									type="search" name="query" value="${param.query}"
+									placeholder="Search" role="combobox" aria-expanded="false"
 									aria-owns="predictive-search-results-list"
 									aria-controls="predictive-search-results-list"
 									aria-haspopup="listbox" aria-autocomplete="list"
 									autocorrect="off" autocomplete="off" autocapitalize="off"
 									spellcheck="false"> <label class="field__label"
-									for="Search-In-Modal">Search</label> <input type="hidden"
-									name="options[prefix]" value="last">
+									for="Search-In-Modal">Search</label>
 								<button class="search__button field__button" aria-label="Search">
 									<svg class="icon icon-search" aria-hidden="true"
 										focusable="false" role="presentation">
-                            <use href="#icon-search">
-                          </svg>
+                <use href="#icon-search"></use>
+            </svg>
 								</button>
 							</div>
-							<div class="predictive-search predictive-search--header"
-								tabindex="-1" data-predictive-search>
-								<div class="predictive-search__loading-state">
-									<svg aria-hidden="true" focusable="false" role="presentation"
-										class="spinner" viewBox="0 0 66 66"
-										xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none"
-											stroke-width="6" cx="33" cy="33" r="30"></circle>
-                          </svg>
-								</div>
-							</div>
-
-							<span class="predictive-search-status visually-hidden"
-								role="status" aria-hidden="true"></span>
 						</form>
+
 						</predictive-search>
 						<button type="button"
 							class="search-modal__close-button modal__close-button link link--text focus-inset"
