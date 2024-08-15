@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -99,6 +100,27 @@ public class BlogIlpm implements BlogDAO {
 		fp.setTotalPages(totalpage);
 		session.close();
 		return fp;
+	}
+
+	@Override
+	public BlogvsAccount getblog(Integer id) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		Query query = null;
+		query = session.createQuery(
+				"SELECT b.id, b.img, b.title, b.des, b.desDetail, b.created_at, b.accountId, b.catBlogId, b.catBlog, a.fullName, a.email FROM Blog b JOIN Account a on b.accountId = a.id where b.id = :id");
+		query.setParameter("id", id);
+		List<Object[]> result =  query.getResultList();
+		System.out.println(result);
+		BlogvsAccount blogvsAccount = null;
+		for (Object[] rs : result) {
+			BlogvsAccount ba = new BlogvsAccount((Integer) rs[0], (String) rs[1], (String) rs[2], (String) rs[3],
+					(String) rs[4], (Date) rs[5], (Integer) rs[6], (Integer) rs[7], (CatBlog) rs[8], (String) rs[9],
+					(String) rs[10]);
+			blogvsAccount = ba;
+		}
+		session.close();
+		return blogvsAccount;
 	}
 
 }

@@ -8,7 +8,7 @@
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
-		<h1>Danh mục bài viết</h1>
+		<h1>Bài viết</h1>
 	</section>
 	<section class="content">
 		<!-- Default box -->
@@ -30,9 +30,8 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<a
-							href="${pageContext.servletContext.contextPath}/admin/blog/add"
-							class="btn btn-success">+Thêm mới Danh Mục</a>
+						<a href="${pageContext.servletContext.contextPath}/admin/blog/add"
+							class="btn btn-success">+Thêm mới Bài viết</a>
 						<div class="box-tools">
 							<form
 								action="${pageContext.servletContext.contextPath}/admin/blog/search"
@@ -65,15 +64,37 @@
 									</h4>
 									<p>${ blog.desDetail }</p>
 									<ul class="list-inline">
-										<li><a href="${pageContext.servletContext.contextPath}/admin/blog/edit/${ blog.id }" class="link-black text-sm"><i
+										<li><a
+											href="${pageContext.servletContext.contextPath}/admin/blog/update/${ blog.id }"
+											class="link-black text-sm"><i
 												class="fa fa-edit margin-r-5"></i>Update</a></li>
-										<li><a href="${pageContext.servletContext.contextPath}/admin/blog/delete/${ blog.id }" class="link-black text-sm"><i
+										<li><a
+											href="${pageContext.servletContext.contextPath}/admin/blog/delete/${ blog.id }"
+											class="link-black text-sm"><i
 												class="fa fa-trash margin-r-5"></i>Delete</a></li>
 									</ul>
 								</div>
 							</div>
 						</c:forEach>
 						<!-- /.box-body -->
+						<div class="mailbox-controls">
+							<c:forEach var="i" begin="1" end="${totalpage}">
+								<c:choose>
+									<c:when test="${i==currentpage}">
+										<span class="btn btn-default btn-sm checkbox-toggle">${ i }</span>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.servletContext.contextPath}/admin/blog?pageno=${i}">
+											<span class="btn btn-default btn-sm checkbox-toggle"
+											style="color: blue">${i}</span>
+										</a>
+										</i>
+
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+						</div>
 					</div>
 					<!-- /.box -->
 				</div>
