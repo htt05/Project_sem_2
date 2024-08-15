@@ -272,6 +272,6 @@ public class HomeCTRL {
         model.addAttribute("searchQuery", query);
 		model.addAttribute("page", "searchName");
 		return("client/index");
-		
+		//m
 	}
 }
