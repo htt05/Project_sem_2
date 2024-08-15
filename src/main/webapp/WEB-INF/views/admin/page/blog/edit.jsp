@@ -18,8 +18,7 @@
 								<p id="helpId" class="form-text text-danger">${ message }</p>
 							</div>
 							<div class="pull-right">
-								<a
-									href="${pageContext.servletContext.contextPath}/admin/blog"
+								<a href="${pageContext.servletContext.contextPath}/admin/blog"
 									class="btn btn-success">Back</a>
 							</div>
 						</div>
@@ -30,7 +29,8 @@
 						modelAttribute="blog">
 						<div class="box-body">
 							<div>
-							<f:hidden path="id"/>
+								<f:hidden path="id" />
+
 								<div class="form-group">
 									<label for="">Tiêu đề bài viết</label>
 									<f:input path="title" type="text" class="form-control" />
@@ -57,9 +57,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputEmail1">Ảnh</label> <input
-											name="photo" type="file" class="form-control"
-											accept="image/*" /> 
+									<label for="exampleInputEmail1">Ảnh</label> <input name="photo"
+										type="file" class="form-control" accept="image/*" />
+									<f:hidden path="img" />
 								</div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Nội dung bài viết</label>
