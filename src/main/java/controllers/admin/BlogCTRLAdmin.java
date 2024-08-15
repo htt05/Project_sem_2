@@ -153,6 +153,7 @@ public class BlogCTRLAdmin {
 				model.addAttribute("blog", blog);
 				model.addAttribute("page", "blog/edit");
 				return "admin/index";
+				
 			}
 		}
 	}
