@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+/controllers/
+/dao/
+/dto/
+/entities/
 /filter/
 /util/
->>>>>>> refs/heads/main
-/controllers/
-/dao/
-<<<<<<< HEAD
-/entities/
-=======
-/controllers/
-/entities/
-/dao/
->>>>>>> refs/heads/thien
-/dto/
-=======
-/dto/
-/entities/
->>>>>>> refs/heads/phong

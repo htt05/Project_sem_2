@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="check" value="" />
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
@@ -91,7 +92,69 @@
 											<small id="helpId" class="form-text text-danger"> </small>
 										</div>
 									</div>
-
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="exampleInputEmail1">Màu</label> <label class="">
+												<ul style="list-style: none">
+													<c:forEach var="c" items="${color}">
+														<c:set var="check" value=""></c:set>
+														<c:forEach var="ac" items="${arrColor}">
+															<c:if test="${c.id==ac }">
+																<li
+																	style="display: inline-block; border-width: 1px; border-color: #090d141a; cursor: default; background: ${c.color}; height: 15px; width: 15px; border-radius: 9999px; margin: .125rem; margin-left: 20px;">
+																	<div style="margin-left: 15px;">
+																		<input type="checkbox" name="color" value="${c.id}"
+																			checked>
+																	</div>
+																</li>
+																<c:set var="check" value="checked"></c:set>
+															</c:if>
+														</c:forEach>
+														<c:if test="${empty check}">
+															<li
+																style="display: inline-block; border-width: 1px; border-color: #090d141a; cursor: default; background: ${c.color}; height: 15px; width: 15px; border-radius: 9999px; margin: .125rem; margin-left: 20px;">
+																<div style="margin-left: 15px;">
+																	<input type="checkbox" name="color" value="${c.id}">
+																</div>
+															</li>
+														</c:if>
+													</c:forEach>
+												</ul>
+											</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="exampleInputEmail1">Bộ nhớ</label> <label
+												class="">
+												<ul style="list-style: none">
+													<c:forEach var="s" items="${storage}">
+														<c:set var="check" value=""></c:set>
+														<c:forEach var="as" items="${arrStorage}">
+															<c:if test="${s.id==as }">
+																<li style="display: inline-block;">
+																	<div style="margin-left: 15px;">
+																		<input type="checkbox" name="storage"
+																			value="${s.id}" checked>${s.storage} &
+																		${s.ram}
+																	</div>
+																</li>
+																<c:set var="check" value="checked"></c:set>
+															</c:if>
+														</c:forEach>
+														<c:if test="${empty check}">
+															<li style="display: inline-block;">
+																<div style="margin-left: 15px;">
+																	<input type="checkbox" name="storage" value="${s.id}">${s.storage}
+																	& ${s.ram}
+																</div>
+															</li>
+														</c:if>
+													</c:forEach>
+												</ul>
+											</label>
+										</div>
+									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">

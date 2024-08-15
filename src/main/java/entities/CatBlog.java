@@ -30,6 +30,5 @@ public class CatBlog implements Serializable {
 	@NotEmpty(message = "Tên danh mục không được để trống")
 	private String title;
 	private boolean status;
-	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
-	private List<> products;
+
 }
