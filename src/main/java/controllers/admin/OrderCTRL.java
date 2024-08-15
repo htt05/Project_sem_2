@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.OrderDetailIlpm;
 import dao.OrderIlpm;
 import dto.OrderPage;
 import dto.ProductPage;
@@ -21,6 +22,8 @@ import entities.Product;
 public class OrderCTRL {
 	@Autowired
 	OrderIlpm orderIlpm;
+	@Autowired
+	OrderDetailIlpm orderDetailIlpm;
 
 	@RequestMapping(value = "order", method = RequestMethod.GET)
 	public String index(Model model, Integer pageno) {
@@ -45,7 +48,7 @@ public class OrderCTRL {
 	@RequestMapping(value = "order/view/{id}", method = RequestMethod.GET)
 	public String view(Model model, @PathVariable("id") String id) {
 		model.addAttribute("order", orderIlpm.getById(id));
-		model.addAttribute("orderViews", orderIlpm.getAll(id));
+		model.addAttribute("orderViews", orderDetailIlpm.getAllCart(id));
 		model.addAttribute("page", "order/detail");
 		return "admin/index";
 	}

@@ -3,7 +3,6 @@ package dto;
 import java.util.List;
 
 import entities.Banner;
-import entities.Category;
 
 public class BannerPage {
 	private List<Banner> banners;

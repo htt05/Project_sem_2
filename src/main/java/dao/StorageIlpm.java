@@ -95,7 +95,6 @@ public class StorageIlpm implements StorageDAO{
 		session.close();
 		return sp;
 	}
-
 	@Override
 	public boolean checkUniqueStorage(String storage, String ram) {
 		boolean check = false;
@@ -108,5 +107,4 @@ public class StorageIlpm implements StorageDAO{
 		session.close();
 		return check;
 	}
-
 }

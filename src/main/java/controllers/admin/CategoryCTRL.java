@@ -32,7 +32,7 @@ public class CategoryCTRL {
 		model.addAttribute("message", message);
 		model.addAttribute("page", "category/index");
 		pageno = pageno == null ? 1 : pageno;
-		CategoryPage pp = categoryIlpm.paging(pageno, 5);
+		CategoryPage pp = categoryIlpm.paging(pageno, 5, "");
 		model.addAttribute("categories", pp.getCategories());
 		model.addAttribute("totalpage", pp.getTotalPages());
 		model.addAttribute("currentpage", pageno);
@@ -40,10 +40,14 @@ public class CategoryCTRL {
 	}
 
 	@RequestMapping(value = "category/search", method = RequestMethod.GET)
-	public String search(Model model, String search) {
-		model.addAttribute("categories", categoryIlpm.search(search));
-		model.addAttribute("search", search);
+	public String search(Model model, String search, Integer pageno) {
+		System.out.println(search);
 		model.addAttribute("page", "category/index");
+		pageno = pageno == null ? 1 : pageno;
+		CategoryPage pp = categoryIlpm.paging(pageno, 5, search);
+		model.addAttribute("categories", pp.getCategories());
+		model.addAttribute("totalpage", pp.getTotalPages());
+		model.addAttribute("currentpage", pageno);
 		return "admin/index";
 	}
 
@@ -91,21 +95,28 @@ public class CategoryCTRL {
 	}
 
 	@RequestMapping(value = "category/update", method = RequestMethod.POST)
-	public String update(@ModelAttribute("cat") Category cat, Model model) {
-		try {
-			categoryIlpm.update(cat);
-			boolean success = true;
-			model.addAttribute("success", success);
-			model.addAttribute("message", "Cập nhật thành công!");
-			return "redirect:/admin/category";
-		} catch (Exception e) {
-			boolean error = true;
-			model.addAttribute("error", error);
-			model.addAttribute("message", "Cập nhật thất bại, vui lòng xem lại!");
-			model.addAttribute("acc", cat);
-			model.addAttribute("categories", categoryIlpm.search(""));
+	public String update(@Valid @ModelAttribute("cat") Category cat, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("cat", cat);
 			model.addAttribute("page", "category/edit");
 			return "admin/index";
+		} else {
+			cat.setCreated_at(Date.valueOf(LocalDate.now()));
+			try {
+				categoryIlpm.update(cat);
+				boolean success = true;
+				model.addAttribute("success", success);
+				model.addAttribute("message", "Cập nhật thành công!");
+				return "redirect:/admin/category";
+			} catch (Exception e) {
+				boolean error = true;
+				model.addAttribute("error", error);
+				model.addAttribute("message", "Cập nhật thất bại, vui lòng xem lại!");
+				model.addAttribute("acc", cat);
+				model.addAttribute("categories", categoryIlpm.search(""));
+				model.addAttribute("page", "category/edit");
+				return "admin/index";
+			}
 		}
 
 	}

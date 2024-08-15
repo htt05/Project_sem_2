@@ -24,15 +24,31 @@ public class OrderDetail implements Serializable {
 	private int quantity;
 	private String orderId;
 	private String productId;
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "orderId", insertable = false, updatable = false)
-//	private Order order;
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "productId", insertable = false, updatable = false)
-//	private Product product;
+	private int colorId;
+	private int storageId;
 
 	public OrderDetail() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getColorId() {
+		return colorId;
+	}
+
+	public void setColorId(int colorId) {
+		this.colorId = colorId;
+	}
+
+	public int getStorageId() {
+		return storageId;
+	}
+
+	public void setStorageId(int storageId) {
+		this.storageId = storageId;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public int getId() {

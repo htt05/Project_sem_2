@@ -79,23 +79,6 @@ public class OrderIlpm implements OrderDAO {
 	}
 
 	@Override
-	public List<Cart> getAll(String orderId) {
-		List<Cart> list = new ArrayList<Cart>();
-		Session session = sessionFactory.openSession();
-		Query query = session.createQuery(
-				"SELECT p.proId, p.proName, p.picture, p.salePrice, p.price, p.discount, od.quantity FROM OrderDetail  od JOIN Product p  ON od.productId = p.proId WHERE od.orderId = :id");
-		query.setParameter("id", orderId);
-		List<Object[]> results = query.getResultList();
-		for (Object[] rs : results) {
-			Cart orderView = new Cart((String) rs[0], (String) rs[1], (String) rs[2], (Double) rs[3], (Float) rs[4],
-					(Integer) rs[5], (Integer) rs[6]);
-			list.add(orderView);
-		}
-		session.close();
-		return list;
-	}
-
-	@Override
 	public List<Order> getOrders(int userId) {
 		List<Order> list = new ArrayList<Order>();
 		Session session = sessionFactory.openSession();

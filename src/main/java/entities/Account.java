@@ -42,6 +42,10 @@ public class Account implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 	public int getId() {
 		return id;
