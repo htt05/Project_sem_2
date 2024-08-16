@@ -147,6 +147,9 @@
 															${ order.status == 3 ? selected
 										: '' }Đã
 												giao</f:option>
+												<f:option value="4">
+															${ order.status == 4 ? selected
+										: '' }Hủy đơn hàng</f:option>
 										</c:when>
 										<c:when test="${ order.status == 1 }">
 											<f:option value="1">

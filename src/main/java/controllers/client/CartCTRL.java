@@ -12,8 +12,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.AccountIlpm;
@@ -179,5 +181,13 @@ public class CartCTRL {
 		model.addAttribute("user", accountIlpm.getById(userId));
 		model.addAttribute("page", "myorder");
 		return "client/index";
+	}
+	
+	@RequestMapping(value = "order/cancel", method = RequestMethod.POST)
+	public String update(Integer userId, String id, Byte status, Model model) {
+		Order order = orderIlpm.getById(id);
+		order.setStatus(status);
+		orderIlpm.update(order);
+		return "redirect:/orders/"+userId;
 	}
 }

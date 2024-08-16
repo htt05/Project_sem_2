@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- =============================================== -->
 
 <!-- Content Wrapper. Contains page content -->
@@ -61,6 +62,7 @@
 									<th>Giá</th>
 									<th>Giảm giá</th>
 									<th>Số lượng</th>
+									<th>Ngày tạo</th>
 									<th>Trạng thái</th>
 									<th>Tùy chọn</th>
 									<th></th>
@@ -76,6 +78,8 @@
 										<td>${ pro.price }đ</td>
 										<td>${ pro.discount }%</td>
 										<td>${ pro.available }</td>
+										<td><fmt:formatDate value="${pro.created_at}"
+											pattern="dd-MM-yyyy" /></td>
 										<td><c:choose>
 												<c:when test="${ pro.status == 0 }">
 													<span class="label label-warning">Tạm ẩn</span>

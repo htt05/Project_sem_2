@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
 <main id="MainContent" class="content-for-layout focus-none" role="main"
 	style="padding-bottom: 30px">
 	<div id="shopify-section-template--16769563951204__cart-items"
@@ -106,7 +107,7 @@
 								</thead>
 
 								<tbody>
-									<c:forEach var="o" items="${ orders }">
+									<c:forEach var="order" items="${ orders }">
 										<tr class="cart-item" id="CartItem-1">
 											<td class="cart-item__media"><a
 												href="/products/affinity-p40-pro?variant=17773526974564"
@@ -120,23 +121,35 @@
 														loading="lazy" width="120" height="150">
 												</div></td>
 
-											<td class="cart-item__details">
-												<p class="cart-item__name h4 break">${ o.name }</p>
+											<td class="cart-item__details"><span>Person
+													ordering: </span><span>${ user.fullName }</span>
 												<dl>
 													<div class="product-option">
-														<dt class="product-option">$${ o.totalPrice }</dt>
+														<dt class="product-option">$${ order.totalPrice }</dt>
 													</div>
 													<div class="product-option">
 														<dt>Status:</dt>
 														<dd>
 															<c:choose>
-																<c:when test="${o.status == 0}"> Unprocess</c:when>
-																<c:when test="${ o.status == 1 }">Processing</c:when>
-																<c:when test="${ o.status == 2 }">Delivering</c:when>
-																<c:when test="${ o.status == 3 }">Delivered</c:when>
+																<c:when test="${ order.status == 0 }"> Unprocess</c:when>
+																<c:when test="${ order.status == 1 }">Processing</c:when>
+																<c:when test="${ order.status == 2 }">Delivering</c:when>
+																<c:when test="${ order.status == 3 }">Delivered</c:when>
+																<c:when test="${ order.status == 4 }">Canceled</c:when>
 															</c:choose>
 														</dd>
 													</div>
+													<c:if test="${ order.status == 0 }">
+														<div class="product-option">
+															<form action="${pageContext.servletContext.contextPath}/order/cancel" method="POST">
+																<input type="hidden" name="userId" value="${ user.id }" />
+																<input type="hidden" name="id" value="${ order.id }" />
+																<input type="hidden" name="status" value="4" />
+																<button type="submit" class="btn btn-primary"
+																	onclick="return confirm('Are you sure you want to cancel your order?')">Cancel</button>
+															</form>
+														</div>
+													</c:if>
 												</dl>
 
 												<p class="product-option"></p>
@@ -164,15 +177,15 @@
 													<dl>
 														<div class="product-option">
 															<dt>Receiver:</dt>
-															<dd>${ o.name }</dd>
+															<dd>${ order.name }</dd>
 														</div>
 														<div class="product-option">
 															<dt class="product-option">Phone:</dt>
-															<dd class="product-option">${ o.phone }</dd>
+															<dd class="product-option">${ order.phone }</dd>
 														</div>
 														<div class="product-option">
 															<dt class="product-option">Address:</dt>
-															<dd class="product-option">${ o.address }</dd>
+															<dd class="product-option">${ order.address }</dd>
 														</div>
 													</dl>
 												</div>
@@ -209,7 +222,7 @@
 												</div>
 
 												<div class="cart-item__price-wrapper">
-													<span class="price price--end"> $${ o.totalPrice } </span>
+													<span class="price price--end"> $${ order.totalPrice } </span>
 												</div>
 											</td>
 										</tr>
