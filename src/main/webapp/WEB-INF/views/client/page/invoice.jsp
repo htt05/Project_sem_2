@@ -193,20 +193,19 @@
 									<c:forEach var="c" items="${ carts }">
 										<tr class="cart-item" id="CartItem-1">
 											<td class="cart-item__media"><a
-												href="/products/affinity-p40-pro?variant=17773526974564"
+												href="${pageContext.servletContext.contextPath}/product/${c.proId}"
 												class="cart-item__link" aria-hidden="true" tabindex="-1">
 											</a>
 												<div
 													class="cart-item__image-container gradient global-media-settings">
 													<img
-														src="//phono-demo.myshopify.com/cdn/shop/products/p7_dd9c198a-6656-4739-9bee-40b506ba7a8c.jpg?v=1560496214&amp;width=300"
+														src="${pageContext.servletContext.contextPath}/${ c.proImage }?v=1560496214&amp;width=300"
 														class="cart-item__image" alt="Affinity P40 Pro"
 														loading="lazy" width="120" height="150">
 												</div></td>
 
-											<td class="cart-item__details"><p
-													class="caption-with-letter-spacing">Narioxe</p> <a
-												href="/products/affinity-p40-pro?variant=17773526974564"
+											<td class="cart-item__details"><a
+												href="${pageContext.servletContext.contextPath}/product/${c.proId}"
 												class="cart-item__name h4 break">${ c.proName }</a>
 												<dl>
 													<div class="product-option">
@@ -217,6 +216,14 @@
 													<div class="product-option">
 														<dt>Discount:</dt>
 														<dd>${ c.discount }%</dd>
+													</div>
+													<div class="product-option">
+														<dt>Color:</dt>
+														<dd>${ c.name }</dd>
+													</div>
+													<div class="product-option">
+														<dt>Ram/Storage:</dt>
+														<dd>${ c.ram }/${ c.storage }</dd>
 													</div>
 												</dl>
 
@@ -242,53 +249,7 @@
 
 											<td class="cart-item__quantity">
 												<div class="cart-item__quantity-wrapper">
-													<quantity-input class="quantity">
-													<button class="quantity__button no-js-hidden" name="minus"
-														type="button">
-														<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-															focusable="false" role="presentation"
-															class="icon icon-minus" fill="none" viewBox="0 0 10 2">
-  <path fill-rule="evenodd" clip-rule="evenodd"
-																d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
-																fill="currentColor">
-</path></svg>
-
-													</button>
-													<input class="quantity__input" type="number"
-														onchange="updateCart('${c.proId}',this.value)"
-														value="${c.quantity}" min="1" max="100" />
-													<button class="quantity__button no-js-hidden" name="plus"
-														type="button">
-														<span class="visually-hidden">Increase quantity for
-															Affinity P40 Pro</span>
-														<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-															focusable="false" role="presentation"
-															class="icon icon-plus" fill="none" viewBox="0 0 10 10">
-  <path fill-rule="evenodd" clip-rule="evenodd"
-																d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-																fill="currentColor">
-</path></svg>
-
-													</button>
-													</quantity-input>
-
-													<cart-remove-button id="Remove-1" data-index="1">
-													<button class="button button--tertiary"
-														onclick="removeItem('${c.proId}')">
-														<svg xmlns="http://www.w3.org/2000/svg"
-															viewBox="0 0 16 16" aria-hidden="true" focusable="false"
-															role="presentation" class="icon icon-remove">
-  <path
-																d="M14 3h-3.53a3.07 3.07 0 00-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 005.53 3H2a.5.5 0 000 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 00.5-.5V4H14a.5.5 0 000-1zM6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02zm4.84 11.52h-7.5V4h7.5v9.5z"
-																fill="currentColor"></path>
-  <path
-																d="M6.55 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5zM9.45 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5z"
-																fill="currentColor"></path>
-																
-</svg>
-
-													</button>
-													</cart-remove-button>
+													<p>${ c.quantity }</p>
 												</div>
 												<div class="cart-item__error" id="Line-item-error-1"
 													role="alert">
@@ -369,8 +330,8 @@
 							class="text-area field__input" name="note" id="Cart-note"
 							placeholder="Order special instructions"></textarea></cart-note>
 						<div class="cart__blocks">
-							<input type="hidden" name="totalPrice" value="${ totalPrice }"/>
-								<div class="js-contents">
+							<input type="hidden" name="totalPrice" value="${ totalPrice }" />
+							<div class="js-contents">
 								<div class="totals">
 									<h2 class="totals__subtotal">Subtotal</h2>
 									<p class="totals__subtotal-value">$${ totalPrice } USD</p>
@@ -378,44 +339,45 @@
 								<div></div>
 								<small class="tax-note caption-large rte">Taxes and
 									shipping calculated at checkout </small>
+							</div>
+							<div class="cart__ctas">
+								<noscript>
+									<button type="submit"
+										class="cart__update-button button button--secondary"
+										form="cart">Update</button>
+								</noscript>
+								<button class="cart__checkout-button button">Order</button>
+							</div>
+							</form>
+							<div id="cart-errors"></div>
 						</div>
-						<div class="cart__ctas">
-							<noscript>
-								<button type="submit"
-									class="cart__update-button button button--secondary"
-									form="cart">Update</button>
-							</noscript>
-							<button class="cart__checkout-button button">Order</button>  
-						</div>
-						</form>
-						<div id="cart-errors"></div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				function isIE() {
-					const ua = window.navigator.userAgent;
-					const msie = ua.indexOf('MSIE ');
-					const trident = ua.indexOf('Trident/');
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					function isIE() {
+						const ua = window.navigator.userAgent;
+						const msie = ua.indexOf('MSIE ');
+						const trident = ua.indexOf('Trident/');
 
-					return (msie > 0 || trident > 0);
-				}
+						return (msie > 0 || trident > 0);
+					}
 
-				if (!isIE())
-					return;
-				const cartSubmitInput = document.createElement('input');
-				cartSubmitInput.setAttribute('name', 'checkout');
-				cartSubmitInput.setAttribute('type', 'hidden');
-				document.querySelector('#cart').appendChild(cartSubmitInput);
-				document.querySelector('#checkout').addEventListener('click',
-						function(event) {
-							document.querySelector('#cart').submit();
-						});
-			});
-		</script>
+					if (!isIE())
+						return;
+					const cartSubmitInput = document.createElement('input');
+					cartSubmitInput.setAttribute('name', 'checkout');
+					cartSubmitInput.setAttribute('type', 'hidden');
+					document.querySelector('#cart')
+							.appendChild(cartSubmitInput);
+					document.querySelector('#checkout').addEventListener(
+							'click', function(event) {
+								document.querySelector('#cart').submit();
+							});
+				});
+			</script>
 		</div>
 		</c:if>
 		<c:if test="${ carts[0] == null }">
