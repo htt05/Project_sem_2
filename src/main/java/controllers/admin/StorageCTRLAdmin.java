@@ -11,15 +11,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.ProductIlpm;
 import dao.StorageIlpm;
 import dto.ColorPage;
 import dto.StoragePage;
 import entities.Color;
+import entities.Product;
 import entities.Storage;
 
 @Controller
 @RequestMapping(value = "admin")
 public class StorageCTRLAdmin {
+	@Autowired
+	ProductIlpm productIlpm;
 	@Autowired
 	StorageIlpm storageIlpm;
 	
@@ -119,6 +123,23 @@ public class StorageCTRLAdmin {
 
 	@RequestMapping(value = "storage/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("id") int id, Model model) {
+		boolean check = false;
+		String strId = Integer.toString(id);
+		for (Product p : productIlpm.search("")) {
+			if (p.getStorage()!=null) {
+				for (String str : p.getStorage().split(",")) {			
+					if (str.equals(strId)) {
+						check = true;
+					}
+				}
+			}
+		}
+		if (check) {
+			boolean error = true;
+			model.addAttribute("error", error);
+			model.addAttribute("message", "Không thể xóa, có sản phẩm liên quan!");
+			return "redirect:/admin/storage";
+		}
 		try {
 			storageIlpm.delete(id);
 			boolean success = true;

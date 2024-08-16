@@ -15,14 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.ColorIlpm;
+import dao.ProductIlpm;
 import dto.CategoryPage;
 import dto.ColorPage;
 import entities.Category;
 import entities.Color;
+import entities.Product;
 
 @Controller
 @RequestMapping("admin")
 public class ColorCTRLAdmin {
+	@Autowired
+	ProductIlpm productIlpm;
 	@Autowired
 	ColorIlpm colorIlpm;
 	
@@ -110,6 +114,23 @@ public class ColorCTRLAdmin {
 
 	@RequestMapping(value = "color/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("id") int id, Model model) {
+		boolean check = false;
+		String strId = Integer.toString(id);
+		for (Product p : productIlpm.search("")) {
+			if (p.getColor()!=null) {
+				for (String str : p.getColor().split(",")) {			
+					if (str.equals(strId)) {
+						check = true;
+					}
+				}
+			}
+		}
+		if (check) {
+			boolean error = true;
+			model.addAttribute("error", error);
+			model.addAttribute("message", "Không thể xóa, có sản phẩm liên quan!");
+			return "redirect:/admin/color";
+		}
 		try {
 			colorIlpm.delete(id);
 			boolean success = true;
