@@ -112,20 +112,20 @@
 									<c:forEach var="c" items="${ carts }">
 										<tr class="cart-item" id="CartItem-1">
 											<td class="cart-item__media"><a
-												href="/products/affinity-p40-pro?variant=17773526974564"
+												href="${pageContext.servletContext.contextPath}/product/${c.proId}"
 												class="cart-item__link" aria-hidden="true" tabindex="-1">
 											</a>
 												<div
 													class="cart-item__image-container gradient global-media-settings">
 													<img
-														src="${pageContext.servletContext.contextPath}/${ c.proImage }"
+														src="${pageContext.servletContext.contextPath}/${ c.proImage }?v=1560496214&amp;width=300"
 														class="cart-item__image" alt="Affinity P40 Pro"
 														loading="lazy" width="120" height="150">
 												</div></td>
 
 											<td class="cart-item__details"><a
-												href="/products/affinity-p40-pro?variant=17773526974564"
-												class="cart-item__name h4 break" style="padding-top: 3rem;">${ c.proName }</a>
+												href="${pageContext.servletContext.contextPath}/product/${c.proId}"
+												class="cart-item__name h4 break">${ c.proName }</a>
 												<dl>
 													<div class="product-option">
 														<dd class="product-option strikethrough"
@@ -135,6 +135,14 @@
 													<div class="product-option">
 														<dt>Discount:</dt>
 														<dd>${ c.discount }%</dd>
+													</div>
+													<div class="product-option">
+														<dt>Color:</dt>
+														<dd>${ c.name }</dd>
+													</div>
+													<div class="product-option">
+														<dt>Ram/Storage:</dt>
+														<dd>${ c.ram }/${ c.storage }</dd>
 													</div>
 												</dl>
 

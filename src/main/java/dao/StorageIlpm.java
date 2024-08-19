@@ -93,8 +93,9 @@ public class StorageIlpm implements StorageDAO{
 		int totalpage = records % pagesize == 0 ? records / pagesize : (records / pagesize) + 1;
 		sp.setTotalPages(totalpage);
 		session.close();
-		return sp;
+		return sp; 
 	}
+	
 	@Override
 	public boolean checkUniqueStorage(String storage, String ram) {
 		boolean check = false;
@@ -107,4 +108,6 @@ public class StorageIlpm implements StorageDAO{
 		session.close();
 		return check;
 	}
+	
+
 }

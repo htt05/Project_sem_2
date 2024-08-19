@@ -1,14 +1,6 @@
 package controllers.client;
 
-import java.security.SecureRandom;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +23,12 @@ import dao.ProductIlpm;
 import dao.StorageIlpm;
 
 import dto.BlogPage;
+
 import dto.BlogvsAccount;
+
+
+import dao.StorageIlpm;
+
 import dto.Cart;
 import dto.ProductPage;
 import entities.Account;
@@ -54,13 +51,15 @@ public class HomeCTRL {
 	@Autowired
 	AccountIlpm accountIlpm;
 	@Autowired
+	BlogIlpm blogIlpm;
+	@Autowired
 	ColorIlpm colorIlpm;
 	@Autowired
 	StorageIlpm storageIlpm;
-	@Autowired
-	BlogIlpm blogIlpm;
+
 	@Autowired
 	CatBlogImpl catBlogImpl;
+
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -129,18 +128,20 @@ public class HomeCTRL {
 
 	@RequestMapping(value = { "blogs" })
 	public String blogs(@RequestParam(value = "cblogId", required = false, defaultValue = "0") int cblogId,
-			@RequestParam(value = "pageno", required = false, defaultValue = "1") Integer pageno,
-			Model model) {
-		pageno = pageno == null ? 1 : pageno;
-		BlogPage pp = blogIlpm.paging(pageno, 6);
-		List<BlogvsAccount> cateBlog = blogIlpm.search(cblogId);
-		model.addAttribute("cateBlog", cateBlog);
-		model.addAttribute("totalpage", pp.getTotalPages());
-		model.addAttribute("currentpage", pageno);
-		model.addAttribute("blog", catBlogImpl.gettAll());
-		model.addAttribute("page", "blogs");
-		return "client/index";
+	                    @RequestParam(value = "pageno", required = false, defaultValue = "1") Integer pageno,
+	                    Model model) {
+	    pageno = (pageno == null) ? 1 : pageno;
+	    BlogPage pp = blogIlpm.paging(pageno, 6);
+	    List<BlogvsAccount> cateBlog = blogIlpm.search(cblogId);
+	    model.addAttribute("cateBlog", cateBlog);
+	    model.addAttribute("totalpage", pp.getTotalPages());
+	    model.addAttribute("currentpage", pageno);
+	    model.addAttribute("blog", catBlogImpl.gettAll());
+	    model.addAttribute("page", "blogs");
+	    
+	    return "client/index";
 	}
+
 
 	@RequestMapping(value = { "blog/{id}" })
 	public String blog(Model model, @PathVariable("id") Integer id) {
@@ -162,6 +163,6 @@ public class HomeCTRL {
 		model.addAttribute("searchQuery", query);
 		model.addAttribute("page", "searchName");
 		return ("client/index");
-		// m
+
 	}
 }

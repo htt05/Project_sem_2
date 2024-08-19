@@ -52,7 +52,8 @@
 									<td>${ order.name }</td>
 									<td>${ order.address }</td>
 									<td>${ order.phone }</td>
-									<td>${ order.created_at }</td>
+									<td><fmt:formatDate value="${order.created_at}"
+											pattern="dd-MM-yyyy" /></td>
 									<td><c:choose>
 											<c:when test="${ order.status == 0}">
 												<span class="label label-default">Chưa xử lí</span>
@@ -65,6 +66,9 @@
 											</c:when>
 											<c:when test="${ order.status == 3}">
 												<span class="label label-success">Đã giao</span>
+											</c:when>
+											<c:when test="${ order.status == 4}">
+												<span class="label label-danger">Đã hủy</span>
 											</c:when>
 										</c:choose></td>
 									<td><fmt:formatNumber value="${ order.totalPrice }"

@@ -12,8 +12,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.AccountIlpm;
@@ -45,14 +47,14 @@ public class CartCTRL {
 	StorageIlpm storageIlpm;
 
 	@RequestMapping(value = "addToCart")
-	public @ResponseBody void addItem(String proId, Integer colorId, Integer storageId, HttpServletRequest req) {
+	public String addItem(String proId, Integer colorId, Integer storageId, HttpServletRequest req, Model model) {
 		List<Cart> carts = new ArrayList<>();
 		HttpSession session = req.getSession();
 		Product pro = productIlpm.getById(proId);
 		Color c = colorIlpm.getById(colorId);
 		Storage s = storageIlpm.getById(storageId);
 		if (session.getAttribute("cart") == null) {
-			Cart cart = new Cart(c.getId(), c.getColor(), s.getId(), s.getRam(), s.getStorage(), pro.getProId(),
+			Cart cart = new Cart(c.getId(), c.getName(), s.getId(), s.getRam(), s.getStorage(), pro.getProId(),
 					pro.getProName(), pro.getPicture(), pro.getSalePrice(), pro.getPrice(), pro.getDiscount(), 1);
 			carts.add(cart);
 			session.setAttribute("cart", carts);
@@ -60,20 +62,22 @@ public class CartCTRL {
 			carts = (List<Cart>) session.getAttribute("cart");
 			boolean duplicate = false;
 			for (Cart cart : carts) {
-				if (proId.equalsIgnoreCase(cart.getProId())) {
+				if (proId.equalsIgnoreCase(cart.getProId()) && colorId == cart.getColorId() && storageId == cart.getStorageId()) {
 					cart.setQuantity(cart.getQuantity() + 1);
 					duplicate = true;
 					break;
 				}
+				
 			}
 			if (duplicate)
 				session.setAttribute("cart", carts);
 			else {
-				Cart cart = new Cart(c.getId(), c.getColor(), s.getId(), s.getRam(), s.getStorage(), pro.getProId(),
+				Cart cart = new Cart(c.getId(), c.getName(), s.getId(), s.getRam(), s.getStorage(), pro.getProId(),
 						pro.getProName(), pro.getPicture(), pro.getSalePrice(), pro.getPrice(), pro.getDiscount(), 1);
 				carts.add(cart);
 			}
 		}
+		return "redirect:/product/"+proId;
 	}
 
 	@RequestMapping(value = "updateCart/{proId}/{quantity}")
@@ -85,8 +89,6 @@ public class CartCTRL {
 			carts = (List<Cart>) session.getAttribute("cart");
 			for (Cart cart : carts) {
 				if (proId.equalsIgnoreCase(cart.getProId())) {
-					System.out.println("setquantity");
-					System.out.println(proId);
 					cart.setQuantity(quantity);
 					break;
 				}
@@ -156,6 +158,8 @@ public class CartCTRL {
 				o.setOrderId(orderId);
 				o.setProductId(cart.getProId());
 				o.setQuantity(cart.getQuantity());
+				o.setColorId(cart.getColorId());
+				o.setStorageId(cart.getStorageId());
 				orderDetailIlpm.insert(o);
 			}
 			System.out.println("đặt hàng thành công");
@@ -177,5 +181,13 @@ public class CartCTRL {
 		model.addAttribute("user", accountIlpm.getById(userId));
 		model.addAttribute("page", "myorder");
 		return "client/index";
+	}
+	
+	@RequestMapping(value = "order/cancel", method = RequestMethod.POST)
+	public String update(Integer userId, String id, Byte status, Model model) {
+		Order order = orderIlpm.getById(id);
+		order.setStatus(status);
+		orderIlpm.update(order);
+		return "redirect:/orders/"+userId;
 	}
 }

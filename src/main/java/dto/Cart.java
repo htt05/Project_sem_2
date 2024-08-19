@@ -8,7 +8,7 @@ public class Cart implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int colorId;
-	private String color;
+	private String name;
 	private int storageId;
 	private String ram;
 	private String storage;
@@ -22,12 +22,11 @@ public class Cart implements Serializable {
 	public Cart() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Cart(int colorId, String color, int storageId, String ram, String storage, String proId, String proName,
+	public Cart(int colorId, String name, int storageId, String ram, String storage, String proId, String proName,
 			String proImage, Double salePrice, Float price, int discount, int quantity) {
 		super();
 		this.colorId = colorId;
-		this.color = color;
+		this.name = name;
 		this.storageId = storageId;
 		this.ram = ram;
 		this.storage = storage;
@@ -39,24 +38,17 @@ public class Cart implements Serializable {
 		this.discount = discount;
 		this.quantity = quantity;
 	}
-
-	public String getProId() {
-		return proId;
-	}
-	public void setProId(String proId) {
-		this.proId = proId;
-	}
 	public int getColorId() {
 		return colorId;
 	}
 	public void setColorId(int colorId) {
 		this.colorId = colorId;
 	}
-	public String getColor() {
-		return color;
+	public String getName() {
+		return name;
 	}
-	public void setColor(String color) {
-		this.color = color;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getStorageId() {
 		return storageId;
@@ -75,6 +67,12 @@ public class Cart implements Serializable {
 	}
 	public void setStorage(String storage) {
 		this.storage = storage;
+	}
+	public String getProId() {
+		return proId;
+	}
+	public void setProId(String proId) {
+		this.proId = proId;
 	}
 	public String getProName() {
 		return proName;
@@ -115,5 +113,6 @@ public class Cart implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 	
 }
