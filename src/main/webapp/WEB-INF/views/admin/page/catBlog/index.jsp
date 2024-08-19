@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- =============================================== -->
 
 <!-- Content Wrapper. Contains page content -->
@@ -57,6 +57,7 @@
 								<tr>
 									<th>Mã số</th>
 									<th>Tên</th>
+									<th>Ảnh</th>
 									<th>Trạng thái</th>
 									<th>Ngày tạo</th>
 									<th>Tùy chọn</th>
@@ -65,11 +66,14 @@
 									<tr>
 										<td>${ cat.id }</td>
 										<td>${ cat.title }</td>
+										<td><img
+											src="${pageContext.servletContext.contextPath}/${ cat.img }"
+											width="100px" alt=""></td>
 										<td>${ cat.status ? '<span
 											class="label label-success">Hiển thị</span>' : '<span
 											class="label label-warning">Tạm ẩn</span>' }</td>
-										<td><fmt:formatDate
-												value="${cat.created_at}" pattern="dd-MM-yyyy" /></td>
+										<td><fmt:formatDate value="${cat.created_at}"
+												pattern="dd-MM-yyyy" /></td>
 										<td style="display: flex"><a
 											href="${pageContext.servletContext.contextPath}/admin/category-blog/edit/${cat.id}"
 											style="margin-right: 10px"><button type=""

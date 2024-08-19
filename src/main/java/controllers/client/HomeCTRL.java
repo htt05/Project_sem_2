@@ -21,13 +21,15 @@ import dao.OrderIlpm;
 import dao.ProductIlpm;
 
 import dao.StorageIlpm;
-
 import dto.BlogPage;
+
 
 import dto.BlogvsAccount;
 
 
 import dao.StorageIlpm;
+
+import dto.BlogvsAccount;
 
 import dto.Cart;
 import dto.ProductPage;
@@ -56,10 +58,8 @@ public class HomeCTRL {
 	ColorIlpm colorIlpm;
 	@Autowired
 	StorageIlpm storageIlpm;
-
 	@Autowired
 	CatBlogImpl catBlogImpl;
-
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -128,6 +128,7 @@ public class HomeCTRL {
 
 	@RequestMapping(value = { "blogs" })
 	public String blogs(@RequestParam(value = "cblogId", required = false, defaultValue = "0") int cblogId,
+
 	                    @RequestParam(value = "pageno", required = false, defaultValue = "1") Integer pageno,
 	                    Model model) {
 	    pageno = (pageno == null) ? 1 : pageno;
@@ -140,6 +141,7 @@ public class HomeCTRL {
 	    model.addAttribute("page", "blogs");
 	    
 	    return "client/index";
+
 	}
 
 
