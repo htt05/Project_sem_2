@@ -13,19 +13,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import dao.AccountIlpm;
 import dao.BannerIlpm;
 import dao.BlogIlpm;
+import dao.CatBlogImpl;
 import dao.CategoryIlpm;
 import dao.ColorIlpm;
 import dao.OrderDetailIlpm;
 import dao.OrderIlpm;
 import dao.ProductIlpm;
-
+import dao.StorageIlpm;
 import dto.BlogPage;
 
 import dao.StorageIlpm;
-
+import dto.BlogvsAccount;
 import dto.Cart;
 import dto.ProductPage;
 import entities.Account;
+import entities.Blog;
+import entities.CatBlog;
 import entities.Category;
 import entities.Order;
 import entities.OrderDetail;
@@ -48,6 +51,8 @@ public class HomeCTRL {
 	ColorIlpm colorIlpm;
 	@Autowired
 	StorageIlpm storageIlpm;
+	@Autowired
+	CatBlogImpl catBlogImpl;
 
 	@RequestMapping(value = { "/", "trang-chu" })
 	public String index(Model model) {
@@ -71,7 +76,7 @@ public class HomeCTRL {
 		int max = cat.getProducts().size();
 		catId = catId == null ? 0 : catId;
 		pageno = pageno == null ? 1 : pageno;
-		ProductPage pp = productIlpm.paging(catId, pageno, 5);
+		ProductPage pp = productIlpm.paging(catId, pageno, 1);
 		model.addAttribute("products", pp.getProducts());
 		model.addAttribute("totalpage", pp.getTotalPages());
 		model.addAttribute("currentpage", pageno);
@@ -115,12 +120,15 @@ public class HomeCTRL {
 	}
 
 	@RequestMapping(value = { "blogs" })
-	public String blogs(Model model, Integer pageno) {
+	public String blogs(@RequestParam(value = "cblogId", required = false, defaultValue = "0") int cblogId,
+			@RequestParam(value = "pageno", required = false, defaultValue = "1") Integer pageno, Model model) {
 		pageno = pageno == null ? 1 : pageno;
 		BlogPage pp = blogIlpm.paging(pageno, 6);
-		model.addAttribute("blogs", pp.getBlogs());
+		List<BlogvsAccount> cateBlog = blogIlpm.search(cblogId);
+		model.addAttribute("cateBlog", cateBlog);
 		model.addAttribute("totalpage", pp.getTotalPages());
 		model.addAttribute("currentpage", pageno);
+		model.addAttribute("blog", catBlogImpl.gettAll());
 		model.addAttribute("page", "blogs");
 		return "client/index";
 	}

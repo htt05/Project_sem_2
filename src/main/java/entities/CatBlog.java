@@ -30,6 +30,7 @@ public class CatBlog implements Serializable {
 	@NotEmpty(message = "Tên danh mục không được để trống")
 	private String title;
 	private boolean status;
+	private String img;
 	@Temporal(value = TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date created_at; 
@@ -38,6 +39,15 @@ public class CatBlog implements Serializable {
 	public CatBlog() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	public int getId() {
 		return id;
 	}

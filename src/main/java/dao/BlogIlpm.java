@@ -6,7 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +23,6 @@ import entities.CatBlog;
 public class BlogIlpm implements BlogDAO {
 	@Autowired
 	SessionFactory sessionFactory;
-
-	@Override
-	public List<Blog> search(Integer key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Blog getById(Integer key) {
@@ -110,7 +106,7 @@ public class BlogIlpm implements BlogDAO {
 		query = session.createQuery(
 				"SELECT b.id, b.img, b.title, b.des, b.desDetail, b.created_at, b.accountId, b.catBlogId, b.catBlog, a.fullName, a.email FROM Blog b JOIN Account a on b.accountId = a.id where b.id = :id");
 		query.setParameter("id", id);
-		List<Object[]> result =  query.getResultList();
+		List<Object[]> result = query.getResultList();
 		System.out.println(result);
 		BlogvsAccount blogvsAccount = null;
 		for (Object[] rs : result) {
@@ -121,6 +117,46 @@ public class BlogIlpm implements BlogDAO {
 		}
 		session.close();
 		return blogvsAccount;
+	}
+
+	@Override
+	public List<BlogvsAccount> search(int cblogId) {
+		Session session = null;
+		List<BlogvsAccount> result = new ArrayList<>();
+
+		try {
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+
+			// Truy vấn JPQL để tạo đối tượng BlogvsAccount
+			String hql = "select new dto.BlogvsAccount(b.id, b.img, b.title, b.des, b.desDetail, b.created_at, "
+					+ "b.accountId, b.catBlogId, b.catBlog, a.fullName, a.email) " + "from Blog b "
+					+ "left join b.catBlog c " + "left join Account a on a.id = b.accountId "
+					+ "where (:cblogId = 0 or b.catBlogId = :cblogId)";
+
+			TypedQuery<BlogvsAccount> query = session.createQuery(hql, BlogvsAccount.class);
+			query.setParameter("cblogId", cblogId);
+			result = query.getResultList();
+
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			if (session != null) {
+				session.getTransaction().rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+
+		return result;
+	}
+
+	@Override
+	public List<Blog> search(Integer key) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

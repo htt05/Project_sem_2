@@ -1,8 +1,11 @@
 package controllers.admin;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import dao.BlogIlpm;
 import dao.CatBlogImpl;
@@ -59,12 +64,23 @@ public class CatBlogCTRLAdmin {
 	}
 
 	@RequestMapping(value = "category-blog/add", method = RequestMethod.POST)
-	public String save(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result, Model model) {
+	public String save(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result,
+			@RequestParam(value = "photo") MultipartFile image, HttpServletRequest req, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("cat", cat);
 			model.addAttribute("page", "category-blog/create");
 			return "admin/index";
 		} else {
+			if (!image.isEmpty()) {
+				String uploadRootPath = req.getServletContext().getRealPath("resource/images");
+				File destination = new File(uploadRootPath + "/" + image.getOriginalFilename());
+				try {
+					image.transferTo(destination);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				cat.setImg("resource/images/" + image.getOriginalFilename());
+			}
 			cat.setCreated_at(Date.valueOf(LocalDate.now()));
 			try {
 				catBlogImpl.insert(cat);
@@ -93,12 +109,23 @@ public class CatBlogCTRLAdmin {
 	}
 
 	@RequestMapping(value = "category-blog/update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result, Model model) {
+	public String update(@Valid @ModelAttribute("cat") CatBlog cat, BindingResult result,
+			@RequestParam(value = "photo") MultipartFile image, HttpServletRequest req, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("cat", cat);
 			model.addAttribute("page", "catBlog/edit");
 			return "admin/index";
 		} else {
+			if (!image.isEmpty()) {
+				String uploadRootPath = req.getServletContext().getRealPath("resource/images");
+				File destination = new File(uploadRootPath + "/" + image.getOriginalFilename());
+				try {
+					image.transferTo(destination);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				cat.setImg("resource/images/" + image.getOriginalFilename());
+			}
 			cat.setCreated_at(Date.valueOf(LocalDate.now()));
 			try {
 				catBlogImpl.update(cat);
@@ -116,7 +143,7 @@ public class CatBlogCTRLAdmin {
 			}
 		}
 	}
-	
+
 	@RequestMapping(value = "category-blog/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("id") int id, Model model) {
 		try {

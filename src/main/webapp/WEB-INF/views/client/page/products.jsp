@@ -176,6 +176,26 @@
 	background: var(--gradient-base-background-2);
 	border-radius: 5px;
 }
+
+.pag {
+	margin-right: 1rem;
+	padding-top: 3px;
+	text-align: center;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background: black;
+	color: white;
+	display:block;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+}
+.current{
+	background:red;
+}
 </style>
 		<div
 			class=" page-width  section-template--16769563983972__product-grid-padding isolate">
@@ -848,7 +868,8 @@
 
 															<h3 class="card__heading h5"
 																id="title-template--16769563983972__product-grid-1852908372068">
-																<a href="${pageContext.servletContext.contextPath}/product/a01"
+																<a
+																	href="${pageContext.servletContext.contextPath}/product/a01"
 																	class="full-unstyled-link"> Tencho 10 Lite </a>
 															</h3>
 															<div class="card-information new--tag">
@@ -1173,7 +1194,8 @@
 
 															<h3 class="card__heading h5"
 																id="title-template--16769563983972__product-grid-1852925640804">
-																<a href="${pageContext.servletContext.contextPath}/product/a02"
+																<a
+																	href="${pageContext.servletContext.contextPath}/product/a02"
 																	class="full-unstyled-link"> Spots 8 Lite </a>
 															</h3>
 															<div class="card-information new--tag">
@@ -1494,7 +1516,8 @@
 
 															<h3 class="card__heading h5"
 																id="title-template--16769563983972__product-grid-1852915613796">
-																<a href="${pageContext.servletContext.contextPath}/product/a01"
+																<a
+																	href="${pageContext.servletContext.contextPath}/product/a01"
 																	class="full-unstyled-link"> Spots ERA 5X </a>
 															</h3>
 															<div class="card-information new--tag">
@@ -1573,631 +1596,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="widget product-sidebar-type-collection">
-								<h5 class="sidebar_title">Products</h5>
-								<div class="dT_VProdWrapperOther">
-									<ul class="product-list-style"
-										data-id="template--16769563983972__product-grid">
-										<li class="item">
-											<link
-												href="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/t/11/assets/component-rating9b61.css?v=105275374934313132631712829870"
-												rel="stylesheet" type="text/css" media="all" />
-											<div class="card-wrapper underline-links-hover">
-												<div
-													class="card
-      card--card
-       card--media
-       color-background-1 gradient
-      "
-													style="--ratio-percent: 125.0%;">
-													<div class="card__inner  ratio"
-														style="--ratio-percent: 125.0%;">
-														<div class="card__media">
-															<div class="media media--transparent media--hover-effect">
-
-																<img
-																	srcset="//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381&width=165 165w,//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381&width=360 360w,//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381&width=533 533w,//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381&width=720 720w,//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381&width=940 940w,//phono-demo.myshopify.com/cdn/shop/products/p2.jpg?v=1613556381 1000w"
-																	src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p2a7ea.jpg?v=1613556381&amp;width=533"
-																	sizes="(min-width: 1300px) 292px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-																	alt="Tencho 7.3" class="motion-reduce" loading="lazy"
-																	width="1000" height="1200">
-
-															</div>
-														</div>
-														<div class="quick-add">
-
-															<product-form>
-															<form method="post"
-																action="https://phono-demo.myshopify.com/cart/add"
-																id="quick-add-template--16769563983972__product-grid1852908077156"
-																accept-charset="UTF-8" class="form shopify-product-form"
-																enctype="multipart/form-data" novalidate="novalidate"
-																data-type="add-to-cart-form">
-																<input type="hidden" name="form_type" value="product" /><input
-																	type="hidden" name="utf8" value="✓" /><input
-																	type="hidden" name="id" class="variant-push"
-																	value="17773492797540" disabled>
-																<button
-																	id="quick-add-template--16769563983972__product-grid1852908077156-submit"
-																	type="submit" name="add"
-																	class="quick-add__submit button button--full-width button--primary"
-																	aria-haspopup="dialog"
-																	aria-labelledby="quick-add-template--16769563983972__product-grid1852908077156-submit title-template--16769563983972__product-grid-1852908077156"
-																	aria-live="polite" data-sold-out-message="true">
-																	<span>Add to cart </span> <span
-																		class="sold-out-message hidden"> Sold out </span>
-																	<div class="loading-overlay__spinner hidden">
-																		<svg aria-hidden="true" focusable="false"
-																			role="presentation" class="spinner"
-																			viewBox="0 0 66 66"
-																			xmlns="http://www.w3.org/2000/svg">
-                        <circle class="path" fill="currentColor"
-																				fill-rule="evenodd" stroke-width="7" cx="33" cy="33"
-																				r="30"></circle>
-                      </svg>
-																	</div>
-																</button>
-																<input type="hidden" name="product-id"
-																	value="1852908077156" /><input type="hidden"
-																	name="section-id"
-																	value="template--16769563983972__product-grid" />
-															</form>
-															</product-form>
-														</div>
-														<div class="card__content">
-															<div class="card__information">
-																<h3 class="card__heading">
-																	<a href="../products/tencho-7-3.html"
-																		class="full-unstyled-link"> Tencho 7.3 </a>
-																</h3>
-															</div>
-															<div class="card__badge bottom left"></div>
-															<ul class="product-icons top-aligned">
-																<li><dtx-wishlist> <a
-																		href="javascript:void(0);" class="add-wishlist"
-																		data-product_handle="tencho-7-3"> </a></dtx-wishlist></li>
-																<li><modal-opener
-																		data-modal="#QuickAdd-1852908077156">
-																	<button
-																		id="quick-add-template--16769563983972__product-grid1852908077156-submit"
-																		type="submit" name="add"
-																		class="quick-add__submit  button--full-width button--secondary"
-																		aria-haspopup="dialog"
-																		aria-labelledby="quick-add-template--16769563983972__product-grid1852908077156-submit title-template--16769563983972__product-grid-1852908077156"
-																		data-product-url="/products/tencho-7-3">
-																		<svg version="1.1" id="Layer_1" class="icon icon-eye"
-																			xmlns="http://www.w3.org/2000/svg"
-																			xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-																			y="0px" width="22" height="22" viewBox="0 0 22 22"
-																			style="enable-background: new 0 0 22 22;"
-																			xml:space="preserve">
-<g>
-	<path fill-rule="evenodd" clip-rule="evenodd"
-																				d="M21,11.1c0,0.3-0.1,0.5-0.2,0.8c-1,1.7-2.5,3.1-4.2,4.1c-1.8,1-3.6,1.6-5.6,1.6c-2,0-3.8-0.5-5.6-1.6
-		c-1.8-1-3.2-2.4-4.2-4.1c-0.2-0.3-0.2-0.5-0.2-0.8s0.1-0.5,0.2-0.8c1-1.7,2.5-3.1,4.2-4.1c1.8-1,3.6-1.6,5.6-1.6
-		c2,0,3.8,0.5,5.6,1.6c1.8,1,3.2,2.4,4.2,4.1C20.9,10.6,21,10.8,21,11.1z M19.6,11.1c-1.1-1.8-2.6-3.1-4.3-4C15.7,7.9,16,8.7,16,9.7
-		c0,1.4-0.5,2.6-1.5,3.6c-1,1-2.2,1.5-3.6,1.5c-1.4,0-2.6-0.5-3.6-1.5c-1-1-1.5-2.2-1.5-3.6c0-0.9,0.2-1.8,0.7-2.5
-		c-1.7,0.9-3.1,2.2-4.3,4c1,1.5,2.2,2.8,3.8,3.7c1.5,0.9,3.1,1.4,4.9,1.4s3.4-0.5,4.9-1.4C17.3,13.9,18.6,12.6,19.6,11.1z M11.3,7.2
-		c0.1-0.1,0.2-0.2,0.2-0.4c0-0.1-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2c-0.9,0-1.7,0.3-2.4,1c-0.7,0.7-1,1.5-1,2.4
-		c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.2,0.2-0.4C8.6,9,8.8,8.5,9.3,8
-		c0.5-0.5,1-0.7,1.7-0.7C11.1,7.3,11.2,7.3,11.3,7.2z"
-																				fill="currentColor" />
-</g>
-</svg>
-																		<div class="loading-overlay__spinner hidden">
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				xmlns:xlink="http://www.w3.org/1999/xlink"
-																				style="margin: auto; background: transparent; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;"
-																				width="40px" height="40px" viewBox="0 0 100 100"
-																				preserveAspectRatio="xMidYMid">
-                    <circle cx="50" cy="50" fill="none"
-																					stroke="currentColor" stroke-width="7" r="35"
-																					stroke-dasharray="164.93361431346415 56.97787143782138"
-																					style="animation-play-state: running; animation-delay: 0s;">
-                      <animateTransform attributeName="transform"
-																					type="rotate" repeatCount="indefinite"
-																					dur="0.819672131147541s" values="0 50 50;360 50 50"
-																					keyTimes="0;1"
-																					style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
-                    </circle>
-                    </svg>
-																		</div>
-																	</button>
-																	</modal-opener> <quick-add-modal id="QuickAdd-1852908077156"
-																		class="quick-add-modal">
-																	<div role="dialog"
-																		aria-label="Choose options for Tencho 7.3"
-																		aria-modal="true"
-																		class="quick-add-modal__content global-settings-popup"
-																		tabindex="-1">
-																		<button id="ModalClose-1852908077156" type="button"
-																			class="quick-add-modal__toggle" aria-label="Close">
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				aria-hidden="true" focusable="false"
-																				role="presentation" class="icon icon-close"
-																				fill="none" viewBox="0 0 18 17">
-  <path
-																					d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
-																					stroke="currentColor" fill="currentColor">
-</svg>
-
-
-																		</button>
-																		<div id="QuickAddInfo-1852908077156"
-																			class="quick-add-modal__content-info"></div>
-																	</div>
-																	</quick-add-modal></li>
-																<li><product-form>
-																	<form method="post"
-																		action="https://phono-demo.myshopify.com/cart/add"
-																		id="quick-add-template--16769563983972__product-grid1852908077156"
-																		accept-charset="UTF-8"
-																		class="form shopify-product-form"
-																		enctype="multipart/form-data" novalidate="novalidate"
-																		data-type="add-to-cart-form">
-																		<input type="hidden" name="form_type" value="product" /><input
-																			type="hidden" name="utf8" value="✓" /><input
-																			type="hidden" name="id" class="variant-push"
-																			value="17773492797540" disabled>
-																		<button
-																			id="quick-add-template--16769563983972__product-grid1852908077156-submit"
-																			type="submit" name="add"
-																			class="quick-add__submit  button--full-width button--secondary"
-																			aria-haspopup="dialog"
-																			aria-labelledby="quick-add-template--16769563983972__product-grid1852908077156-submit title-template--16769563983972__product-grid-1852908077156"
-																			aria-live="polite" data-sold-out-message="true">
-
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-																				y="0px" viewBox="0 0 100 100" xml:space="preserve">
-<g>
-	<path
-																					d="M94.4,22.7c-0.4-0.1-0.8-0.2-1.2-0.2H77.5h-7.8H46.1h-7.8h-9.8L25,12.8c-2.1-6-7.8-10-14.2-9.9H6.8c-2.2,0-3.9,1.8-3.9,3.9
-		s1.8,3.9,3.9,3.9h3.9c3,0,5.7,1.9,6.7,4.7l15.2,42.4c1.7,4.7,6.1,7.8,11.1,7.8h32c5.1,0,9.6-3.2,11.2-8l10-30
-		C97.6,25.6,96.5,23.4,94.4,22.7z"></path>
-	<circle cx="42.1" cy="85.3" r="11.8"></circle>
-	<circle cx="73.5" cy="85.3" r="11.8"></circle>
-</g>
-</svg>
-																			<span class="sold-out-message hidden"> Sold
-																				out </span>
-																			<div class="loading-overlay__spinner hidden">
-																				<svg xmlns="http://www.w3.org/2000/svg"
-																					xmlns:xlink="http://www.w3.org/1999/xlink"
-																					style="margin: auto; background: transparent; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;"
-																					width="40px" height="40px" viewBox="0 0 100 100"
-																					preserveAspectRatio="xMidYMid">
-                    <circle cx="50" cy="50" fill="none"
-																						stroke="currentColor" stroke-width="13" r="35"
-																						stroke-dasharray="164.93361431346415 56.97787143782138"
-																						style="animation-play-state: running; animation-delay: 0s;">
-                      <animateTransform attributeName="transform"
-																						type="rotate" repeatCount="indefinite"
-																						dur="0.819672131147541s"
-																						values="0 50 50;360 50 50" keyTimes="0;1"
-																						style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
-                    </circle>
-                  </svg>
-																			</div>
-																		</button>
-																		<input type="hidden" name="product-id"
-																			value="1852908077156" /><input type="hidden"
-																			name="section-id"
-																			value="template--16769563983972__product-grid" />
-																	</form>
-																	</product-form></li>
-															</ul>
-														</div>
-													</div>
-													<div class="card__content">
-														<div class="card__information">
-
-															<h3 class="card__heading h5"
-																id="title-template--16769563983972__product-grid-1852908077156">
-																<a href="${pageContext.servletContext.contextPath}/product/a01"
-																	class="full-unstyled-link"> Tencho 7.3 </a>
-															</h3>
-															<div class="card-information new--tag">
-																<span class="caption-large light"></span>
-																<div class="rating" role="img"
-																	aria-label="5.0 out of 5.0 stars">
-																	<!-- Start of Judge.me code -->
-																	<div class='jdgm-widget jdgm-preview-badge'>
-																		<div style='display: none' class='jdgm-prev-badge'
-																			data-average-rating='5.00' data-number-of-reviews='1'
-																			data-number-of-questions='0'>
-																			<span class='jdgm-prev-badge__stars'
-																				data-score='5.00' tabindex='0'
-																				aria-label='5.00 stars' role='button'> <span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span>
-																			</span> <span class='jdgm-prev-badge__text'> 1 review
-																			</span>
-																		</div>
-																	</div>
-																	<!-- End of Judge.me code -->
-																</div>
-																<p class="rating-text caption">
-																	<span aria-hidden="true">5.0 / 5.0</span>
-																</p>
-																<p class="rating-count caption">
-																	<span aria-hidden="true">(1)</span> <span
-																		class="visually-hidden">1 total reviews</span>
-																</p>
-																<div class="price  product-price-current"
-																	data-price="$125.70">
-																	<div class="price__container">
-																		<div class="price__regular">
-																			<span class="visually-hidden visually-hidden--inline">Regular
-																				price</span> <span class="price-item price-item--regular">
-																				$125.70 </span>
-																		</div>
-																		<div class="price__sale">
-
-																			<span class="visually-hidden visually-hidden--inline">Sale
-																				price</span> <span
-																				class="price-item price-item--sale price-item--last">
-																				$125.70 </span> <span
-																				class="visually-hidden visually-hidden--inline">Regular
-																				price</span> <span> <s
-																				class="price-item price-item--regular"> </s>
-																			</span>
-																		</div>
-																		<small class="unit-price caption hidden"> <span
-																			class="visually-hidden">Unit price</span> <span
-																			class="price-item price-item--last"> <span></span>
-																				<span aria-hidden="true">/</span> <span
-																				class="visually-hidden">&nbsp;per&nbsp;</span> <span>
-																			</span>
-																		</span>
-																		</small>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-														<!--<div class="quick-add">
-                    
-              <product-form><form method="post" action="/cart/add" id="quick-add-template--16769563983972__product-grid1852908077156" accept-charset="UTF-8" class="form shopify-product-form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input type="hidden" name="id" class="variant-push" value="17773492797540" disabled>
-                  <button
-                    id="quick-add-template--16769563983972__product-grid1852908077156-submit"
-                    type="submit"
-                    name="add"
-                    class="quick-add__submit button button--full-width button--secondary"
-                    aria-haspopup="dialog"
-                    aria-labelledby="quick-add-template--16769563983972__product-grid1852908077156-submit title-template--16769563983972__product-grid-1852908077156"
-                    aria-live="polite"
-                    data-sold-out-message="true"
-                    
-                  >
-                    <span>Add to cart
-</span>
-                    <span class="sold-out-message hidden">
-                      Sold out
-                    </span>
-                    <div class="loading-overlay__spinner hidden">
-                      <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                        <circle class="path" fill="currentColor" fill-rule="evenodd" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                      </svg>
-                    </div>
-                  </button><input type="hidden" name="product-id" value="1852908077156" /><input type="hidden" name="section-id" value="template--16769563983972__product-grid" /></form></product-form>                         
-          </div>-->
-														<div class="card__badge bottom left"></div>
-
-
-
-
-
-
-
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="item">
-
-											<link
-												href="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/t/11/assets/component-rating9b61.css?v=105275374934313132631712829870"
-												rel="stylesheet" type="text/css" media="all" />
-											<div class="card-wrapper underline-links-hover">
-												<div
-													class="card
-      card--card
-       card--media
-       color-background-1 gradient
-      
-      "
-													style="--ratio-percent: 125.0%;">
-													<div class="card__inner  ratio"
-														style="--ratio-percent: 125.0%;">
-														<div class="card__media">
-															<div class="media media--transparent media--hover-effect">
-
-																<img
-																	srcset="//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&width=165 165w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&width=360 360w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&width=533 533w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&width=720 720w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758&width=940 940w,//phono-demo.myshopify.com/cdn/shop/products/p5.jpg?v=1560504758 1000w"
-																	src="${pageContext.servletContext.contextPath}/resource/client/cdn/shop/products/p54501.jpg?v=1560504758&amp;width=533"
-																	sizes="(min-width: 1300px) 292px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-																	alt="${ pro.proName }" class="motion-reduce"
-																	loading="lazy" width="1000" height="1200">
-
-															</div>
-														</div>
-														<div class="quick-add">
-
-															<product-form>
-															<form method="post"
-																action="https://phono-demo.myshopify.com/cart/add"
-																id="quick-add-template--16769563983972__product-grid1852911353956"
-																accept-charset="UTF-8" class="form shopify-product-form"
-																enctype="multipart/form-data" novalidate="novalidate"
-																data-type="add-to-cart-form">
-																<input type="hidden" name="form_type" value="product" /><input
-																	type="hidden" name="utf8" value="✓" /><input
-																	type="hidden" name="id" class="variant-push"
-																	value="17773511901284" disabled>
-																<button
-																	id="quick-add-template--16769563983972__product-grid1852911353956-submit"
-																	type="submit" name="add"
-																	class="quick-add__submit button button--full-width button--primary"
-																	aria-haspopup="dialog"
-																	aria-labelledby="quick-add-template--16769563983972__product-grid1852911353956-submit title-template--16769563983972__product-grid-1852911353956"
-																	aria-live="polite" data-sold-out-message="true">
-																	<span>Add to cart </span> <span
-																		class="sold-out-message hidden"> Sold out </span>
-																	<div class="loading-overlay__spinner hidden">
-																		<svg aria-hidden="true" focusable="false"
-																			role="presentation" class="spinner"
-																			viewBox="0 0 66 66"
-																			xmlns="http://www.w3.org/2000/svg">
-                        <circle class="path" fill="currentColor"
-																				fill-rule="evenodd" stroke-width="7" cx="33" cy="33"
-																				r="30"></circle>
-                      </svg>
-																	</div>
-																</button>
-																<input type="hidden" name="product-id"
-																	value="1852911353956" /><input type="hidden"
-																	name="section-id"
-																	value="template--16769563983972__product-grid" />
-															</form>
-															</product-form>
-														</div>
-														<div class="card__content">
-															<div class="card__information">
-																<h3 class="card__heading">
-																	<a href="${pageContext.servletContext.contextPath}/product/a01"
-																		class="full-unstyled-link"> Iphone XR </a>
-																</h3>
-															</div>
-															<div class="card__badge bottom left">
-																<span class="badge badge--bottom-left color-accent-2">
-																	6% <br> OFF
-																</span>
-															</div>
-															<ul class="product-icons top-aligned">
-																<li><dtx-wishlist> <a
-																		href="javascript:void(0);" class="add-wishlist"
-																		data-product_handle="spectronic-xr"> </a></dtx-wishlist></li>
-																<li><modal-opener
-																		data-modal="#QuickAdd-1852911353956">
-																	<button
-																		id="quick-add-template--16769563983972__product-grid1852911353956-submit"
-																		type="submit" name="add"
-																		class="quick-add__submit  button--full-width button--secondary"
-																		aria-haspopup="dialog"
-																		aria-labelledby="quick-add-template--16769563983972__product-grid1852911353956-submit title-template--16769563983972__product-grid-1852911353956"
-																		data-product-url="/products/spectronic-xr">
-																		<svg version="1.1" id="Layer_1" class="icon icon-eye"
-																			xmlns="http://www.w3.org/2000/svg"
-																			xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-																			y="0px" width="22" height="22" viewBox="0 0 22 22"
-																			style="enable-background: new 0 0 22 22;"
-																			xml:space="preserve">
-<g>
-	<path fill-rule="evenodd" clip-rule="evenodd"
-																				d="M21,11.1c0,0.3-0.1,0.5-0.2,0.8c-1,1.7-2.5,3.1-4.2,4.1c-1.8,1-3.6,1.6-5.6,1.6c-2,0-3.8-0.5-5.6-1.6
-		c-1.8-1-3.2-2.4-4.2-4.1c-0.2-0.3-0.2-0.5-0.2-0.8s0.1-0.5,0.2-0.8c1-1.7,2.5-3.1,4.2-4.1c1.8-1,3.6-1.6,5.6-1.6
-		c2,0,3.8,0.5,5.6,1.6c1.8,1,3.2,2.4,4.2,4.1C20.9,10.6,21,10.8,21,11.1z M19.6,11.1c-1.1-1.8-2.6-3.1-4.3-4C15.7,7.9,16,8.7,16,9.7
-		c0,1.4-0.5,2.6-1.5,3.6c-1,1-2.2,1.5-3.6,1.5c-1.4,0-2.6-0.5-3.6-1.5c-1-1-1.5-2.2-1.5-3.6c0-0.9,0.2-1.8,0.7-2.5
-		c-1.7,0.9-3.1,2.2-4.3,4c1,1.5,2.2,2.8,3.8,3.7c1.5,0.9,3.1,1.4,4.9,1.4s3.4-0.5,4.9-1.4C17.3,13.9,18.6,12.6,19.6,11.1z M11.3,7.2
-		c0.1-0.1,0.2-0.2,0.2-0.4c0-0.1-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2c-0.9,0-1.7,0.3-2.4,1c-0.7,0.7-1,1.5-1,2.4
-		c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.2,0.2-0.4C8.6,9,8.8,8.5,9.3,8
-		c0.5-0.5,1-0.7,1.7-0.7C11.1,7.3,11.2,7.3,11.3,7.2z"
-																				fill="currentColor" />
-</g>
-</svg>
-																		<div class="loading-overlay__spinner hidden">
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				xmlns:xlink="http://www.w3.org/1999/xlink"
-																				style="margin: auto; background: transparent; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;"
-																				width="40px" height="40px" viewBox="0 0 100 100"
-																				preserveAspectRatio="xMidYMid">
-                    <circle cx="50" cy="50" fill="none"
-																					stroke="currentColor" stroke-width="7" r="35"
-																					stroke-dasharray="164.93361431346415 56.97787143782138"
-																					style="animation-play-state: running; animation-delay: 0s;">
-                      <animateTransform attributeName="transform"
-																					type="rotate" repeatCount="indefinite"
-																					dur="0.819672131147541s" values="0 50 50;360 50 50"
-																					keyTimes="0;1"
-																					style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
-                    </circle>
-                    </svg>
-																		</div>
-																	</button>
-																	</modal-opener> <quick-add-modal id="QuickAdd-1852911353956"
-																		class="quick-add-modal">
-																	<div role="dialog"
-																		aria-label="Choose options for ${ pro.proName }"
-																		aria-modal="true"
-																		class="quick-add-modal__content global-settings-popup"
-																		tabindex="-1">
-																		<button id="ModalClose-1852911353956" type="button"
-																			class="quick-add-modal__toggle" aria-label="Close">
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				aria-hidden="true" focusable="false"
-																				role="presentation" class="icon icon-close"
-																				fill="none" viewBox="0 0 18 17">
-  <path
-																					d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
-																					stroke="currentColor" fill="currentColor">
-</svg>
-
-
-																		</button>
-																		<div id="QuickAddInfo-1852911353956"
-																			class="quick-add-modal__content-info"></div>
-																	</div>
-																	</quick-add-modal></li>
-																<li><product-form>
-																	<form method="post"
-																		action="https://phono-demo.myshopify.com/cart/add"
-																		id="quick-add-template--16769563983972__product-grid1852911353956"
-																		accept-charset="UTF-8"
-																		class="form shopify-product-form"
-																		enctype="multipart/form-data" novalidate="novalidate"
-																		data-type="add-to-cart-form">
-																		<input type="hidden" name="form_type" value="product" /><input
-																			type="hidden" name="utf8" value="✓" /><input
-																			type="hidden" name="id" class="variant-push"
-																			value="17773511901284" disabled>
-																		<button
-																			id="quick-add-template--16769563983972__product-grid1852911353956-submit"
-																			type="submit" name="add"
-																			class="quick-add__submit  button--full-width button--secondary"
-																			aria-haspopup="dialog"
-																			aria-labelledby="quick-add-template--16769563983972__product-grid1852911353956-submit title-template--16769563983972__product-grid-1852911353956"
-																			aria-live="polite" data-sold-out-message="true">
-
-																			<svg xmlns="http://www.w3.org/2000/svg"
-																				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-																				y="0px" viewBox="0 0 100 100" xml:space="preserve">
-<g>
-	<path
-																					d="M94.4,22.7c-0.4-0.1-0.8-0.2-1.2-0.2H77.5h-7.8H46.1h-7.8h-9.8L25,12.8c-2.1-6-7.8-10-14.2-9.9H6.8c-2.2,0-3.9,1.8-3.9,3.9
-		s1.8,3.9,3.9,3.9h3.9c3,0,5.7,1.9,6.7,4.7l15.2,42.4c1.7,4.7,6.1,7.8,11.1,7.8h32c5.1,0,9.6-3.2,11.2-8l10-30
-		C97.6,25.6,96.5,23.4,94.4,22.7z"></path>
-	<circle cx="42.1" cy="85.3" r="11.8"></circle>
-	<circle cx="73.5" cy="85.3" r="11.8"></circle>
-</g>
-</svg>
-																			<span class="sold-out-message hidden"> Sold
-																				out </span>
-																			<div class="loading-overlay__spinner hidden">
-																				<svg xmlns="http://www.w3.org/2000/svg"
-																					xmlns:xlink="http://www.w3.org/1999/xlink"
-																					style="margin: auto; background: transparent; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;"
-																					width="40px" height="40px" viewBox="0 0 100 100"
-																					preserveAspectRatio="xMidYMid">
-                    <circle cx="50" cy="50" fill="none"
-																						stroke="currentColor" stroke-width="13" r="35"
-																						stroke-dasharray="164.93361431346415 56.97787143782138"
-																						style="animation-play-state: running; animation-delay: 0s;">
-                      <animateTransform attributeName="transform"
-																						type="rotate" repeatCount="indefinite"
-																						dur="0.819672131147541s"
-																						values="0 50 50;360 50 50" keyTimes="0;1"
-																						style="animation-play-state: running; animation-delay: 0s;"></animateTransform>
-                    </circle>
-                  </svg>
-																			</div>
-																		</button>
-																		<input type="hidden" name="product-id"
-																			value="1852911353956" /><input type="hidden"
-																			name="section-id"
-																			value="template--16769563983972__product-grid" />
-																	</form>
-																	</product-form></li>
-															</ul>
-														</div>
-													</div>
-													<div class="card__content">
-														<div class="card__information">
-
-															<h3 class="card__heading h5"
-																id="title-template--16769563983972__product-grid-1852911353956">
-																<a href="${pageContext.servletContext.contextPath}/product/a01"
-																	class="full-unstyled-link"> IPHONE XR </a>
-															</h3>
-															<div class="card-information new--tag">
-																<span class="caption-large light"></span>
-																<div class="rating" role="img"
-																	aria-label="5.0 out of 5.0 stars">
-																	<!-- Start of Judge.me code -->
-																	<div class='jdgm-widget jdgm-preview-badge'>
-																		<div style='display: none' class='jdgm-prev-badge'
-																			data-average-rating='5.00' data-number-of-reviews='1'
-																			data-number-of-questions='0'>
-																			<span class='jdgm-prev-badge__stars'
-																				data-score='5.00' tabindex='0'
-																				aria-label='5.00 stars' role='button'> <span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span><span
-																				class='jdgm-star jdgm--on'></span>
-																			</span> <span class='jdgm-prev-badge__text'> 1 review
-																			</span>
-																		</div>
-																	</div>
-																	<!-- End of Judge.me code -->
-																</div>
-																<p class="rating-text caption">
-																	<span aria-hidden="true">5.0 / 5.0</span>
-																</p>
-																<p class="rating-count caption">
-																	<span aria-hidden="true">(1)</span> <span
-																		class="visually-hidden">1 total reviews</span>
-																</p>
-																<div
-																	class="price  price--on-sale  product-price-current"
-																	data-price="$935.03">
-																	<div class="price__container">
-																		<div class="price__regular">
-																			<span class="visually-hidden visually-hidden--inline">Regular
-																				price</span> <span class="price-item price-item--regular">
-																				$935.03 </span>
-																		</div>
-																		<div class="price__sale">
-
-																			<span class="visually-hidden visually-hidden--inline">Sale
-																				price</span> <span
-																				class="price-item price-item--sale price-item--last">
-																				$935.03 </span> <span
-																				class="visually-hidden visually-hidden--inline">Regular
-																				price</span> <span> <s
-																				class="price-item price-item--regular">
-
-																					$1,000.00 </s>
-																			</span>
-																		</div>
-																		<small class="unit-price caption hidden"> <span
-																			class="visually-hidden">Unit price</span> <span
-																			class="price-item price-item--last"> <span></span>
-																				<span aria-hidden="true">/</span> <span
-																				class="visually-hidden">&nbsp;per&nbsp;</span> <span>
-																			</span>
-																		</span>
-																		</small>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-														<div class="card__badge bottom left">
-															<span class="badge badge--bottom-left a color-accent-2">
-																${ pro.discount }% </span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
+							
 
 
 						</div>
@@ -2352,8 +1751,7 @@
 																</div>
 															</div>
 															<div class="quick-add">
-																<product-form>
-																<a
+																<product-form> <a
 																	id="quick-add-template--16769563983972__product-grid1852911353956-submit"
 																	type="submit" name="add"
 																	class="quick-add__submit button button--full-width button--primary"
@@ -2362,7 +1760,7 @@
 																	aria-live="polite" data-sold-out-message="true"
 																	href="${pageContext.servletContext.contextPath}/product/${pro.proId}">
 																	<span>Add to cart </span> <span
-																		class="sold-out-message hidden"> Sold out </span>
+																	class="sold-out-message hidden"> Sold out </span>
 																	<div class="loading-overlay__spinner hidden">
 																		<svg aria-hidden="true" focusable="false"
 																			role="presentation" class="spinner"
@@ -2373,13 +1771,13 @@
 																				r="30"></circle>
                       </svg>
 																	</div>
-																</a>
-																</product-form>
+																</a> </product-form>
 															</div>
 															<div class="card__content">
 																<div class="card__information">
 																	<h3 class="card__heading">
-																		<a href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
+																		<a
+																			href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
 																			class="full-unstyled-link">${ pro.proName } </a>
 																	</h3>
 																</div>
@@ -2506,7 +1904,8 @@
 
 																<h3 class="card__heading h5"
 																	id="title-template--16769563983972__product-grid-1852911353956">
-																	<a href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
+																	<a
+																		href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
 																		class="full-unstyled-link"> ${ pro.proName } </a>
 																</h3>
 																<div class="card-information new--tag">
@@ -2813,7 +2212,8 @@
 
 																<h3 class="card__heading h5"
 																	id="title-template--16769563983972__product-grid-1852907782244">
-																	<a href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
+																	<a
+																		href="${pageContext.servletContext.contextPath}/product/${ pro.proId }"
 																		class="full-unstyled-link"> ${ pro.proName } </a>
 																</h3>
 																<div class="card-information new--tag">
@@ -2864,9 +2264,7 @@
 																					class="visually-hidden visually-hidden--inline">Sale
 																					price</span> <span
 																					class="price-item price-item--sale price-item--last">
-																					${ pro.salePrice } </span>
-																				</s>
-																				</span>
+																					${ pro.salePrice } </span> </s> </span>
 																			</div>
 																			<small class="unit-price caption hidden"> <span
 																				class="visually-hidden">Unit price</span> <span
@@ -2927,19 +2325,18 @@
 
 								</c:forEach>
 							</ul>
-							<div class="mailbox-controls">
+							<div class="mailbox-controls flex">
 								<c:forEach var="i" begin="1" end="${totalpage}">
 									<c:choose>
 										<c:when test="${i==currentpage}">
-											<span class="btn btn-default btn-sm checkbox-toggle">${ i }</span>
+											<span class="btn btn-default btn-sm checkbox-toggle pag current">${ i }</span>
 										</c:when>
 										<c:otherwise>
 											<a
 												href="${pageContext.servletContext.contextPath}/${category.catId}/products?pageno=${i}">
-												<span class="btn btn-default btn-sm checkbox-toggle"
-												style="color: blue">${i}</span>
+												<span class="btn btn-default btn-sm checkbox-toggle pag">${i}</span>
 											</a>
-											</i>
+											
 
 										</c:otherwise>
 									</c:choose>

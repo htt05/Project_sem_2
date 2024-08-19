@@ -32,12 +32,16 @@
 					<!-- form start -->
 					<f:form
 						action="${pageContext.servletContext.contextPath}/admin/category-blog/add"
-						method="POST" role="form" modelAttribute="cat">
+						method="POST" role="form" modelAttribute="cat" enctype="multipart/form-data">
 						<div class="box-body">
 							<div class="form-group">
 								<label for="category_name">Tên danh mục</label>
-								<f:input path="title" type="text" class="form-control"/>
+								<f:input path="title" type="text" class="form-control" />
 								<f:errors cssClass="text-danger" path="title"></f:errors>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Ảnh</label> <input name="photo"
+									type="file" class="form-control" accept="image/*" />
 							</div>
 							<div class="form-group">
 								<label for="">Chọn trạng thái</label>
