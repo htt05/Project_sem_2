@@ -14,8 +14,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
@@ -35,12 +39,16 @@ public class Product implements Serializable{
 	@NotEmpty(message = "Tên sản phẩm không được để trống")
 	private String proName;
 	@NotNull(message = "Giá sản phẩm không được để trống")
+	@Digits(integer = 10, fraction = 2, message = "Giá trị phải là một số với tối đa 10 chữ số nguyên và 2 chữ số thập phân")
 	private float price;
+	@Min(value = 0, message = "Khuyến mãi lớn hơn 0")
+	@Max(value = 100, message = "Khuyến mãi nhỏ hơn 100%")
 	private int discount;
 	private double salePrice;
 	private String proSlug;
 	private String description;
 	private String picture;
+	@Digits(integer = 7,fraction = 0, message = "Giá trị phải là một số với tối đa 7 chữ số")
 	private int available;
 	@NotNull(message = "Trạng thái không được để trống")
 	private Byte status;

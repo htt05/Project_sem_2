@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.CategoryIlpm;
 import dto.CategoryPage;
-import dto.OrderPage;
 import entities.Category;
 
 @Controller
@@ -135,4 +134,5 @@ public class CategoryCTRL {
 		}
 		return "redirect:/admin/category";
 	}
+
 }
