@@ -2,6 +2,7 @@ package controllers.admin;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -62,6 +63,17 @@ public class ColorCTRLAdmin {
 
 	@RequestMapping(value = "color/add", method = RequestMethod.POST)
 	public String save(@Valid @ModelAttribute("color") Color color, BindingResult result, Model model) {
+		List<Color> list = colorIlpm.search("");
+		for (Color c : list) {
+			if (color.getName().equalsIgnoreCase(c.getName())) {
+				Boolean error = true;
+				model.addAttribute("error", error);
+				model.addAttribute("message", "Tên màu bị trùng!");
+				model.addAttribute("color", color);
+				model.addAttribute("page", "color/create");
+				return "admin/index";
+			}
+		}
 		if (result.hasErrors()) {
 			model.addAttribute("color", color);
 			model.addAttribute("page", "color/create");
@@ -95,6 +107,17 @@ public class ColorCTRLAdmin {
 
 	@RequestMapping(value = "color/update", method = RequestMethod.POST)
 	public String update(@ModelAttribute("color") Color color, Model model) {
+		List<Color> list = colorIlpm.search("");
+		for (Color c : list) {
+			if (color.getName().equalsIgnoreCase(c.getName()) && color.getId()!=c.getId()) {
+				Boolean error = true;
+				model.addAttribute("error", error);
+				model.addAttribute("message", "Tên màu bị trùng!");
+				model.addAttribute("color", color);
+				model.addAttribute("page", "color/edit");
+				return "admin/index";
+			}
+		}
 		try {
 			colorIlpm.update(color);
 			boolean success = true;
