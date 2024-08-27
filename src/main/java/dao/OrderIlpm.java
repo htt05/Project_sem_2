@@ -82,7 +82,7 @@ public class OrderIlpm implements OrderDAO {
 	public List<Order> getOrders(int userId) {
 		List<Order> list = new ArrayList<Order>();
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("SELECT o FROM Order o JOIN Account a ON o.accountId =a.id where a.id = :id");
+		Query query = session.createQuery("SELECT o FROM Order o JOIN Account a ON o.accountId =a.id where a.id = :id order by created_at desc");
 		query.setParameter("id", userId);
 		list = query.getResultList();
 		session.close();

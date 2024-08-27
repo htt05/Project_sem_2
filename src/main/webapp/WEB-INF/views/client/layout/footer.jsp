@@ -93,19 +93,19 @@
 
 							<ul
 								class="footer-block__details-content list-menu list-menu--inline list-unstyled center">
-								<li><a href="search.html"
+								<li><a href="#"
 									class="link link--text list-menu__item list-menu__item--link">
 										Search </a></li>
-								<li><a href="search.html"
+								<li><a href="#"
 									class="link link--text list-menu__item list-menu__item--link">
 										Help </a></li>
-								<li><a href="search.html"
+								<li><a href="#"
 									class="link link--text list-menu__item list-menu__item--link">
 										Information </a></li>
-								<li><a href="pages/contact-us.html"
+								<li><a href="#"
 									class="link link--text list-menu__item list-menu__item--link">
 										Privacy Policy </a></li>
-								<li><a href="pages/shipping-details.html"
+								<li><a href="#"
 									class="link link--text list-menu__item list-menu__item--link">
 										Shipping Details </a></li>
 							</ul>

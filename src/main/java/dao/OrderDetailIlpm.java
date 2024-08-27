@@ -29,7 +29,7 @@ public class OrderDetailIlpm implements OrderDetailDAO {
 		List<Cart> list = new ArrayList<Cart>();
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery(
-				"SELECT c.id, c.name, s.id, s.ram, s.storage, p.proId, p.proName, p.picture, p.salePrice, p.price, p.discount, od.quantity FROM OrderDetail  od JOIN Product p ON od.productId = p.proId JOIN Color c ON od.colorId = c.id JOIN Storage s ON od.storageId = s.id WHERE od.orderId = :id");
+				"SELECT c.id, c.name, s.id, s.ram, s.storage, p.proId, p.proName, p.picture, p.salePrice, p.price, p.discount, od.quantity FROM OrderDetail  od JOIN Product p ON od.productId = p.proId JOIN Color c ON od.colorId = c.id JOIN Storage s ON od.storageId = s.id WHERE od.orderId = :id ");
 		query.setParameter("id", orderId);
 		List<Object[]> results = query.getResultList();
 		for (Object[] rs : results) {
