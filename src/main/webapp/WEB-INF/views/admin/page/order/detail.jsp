@@ -90,10 +90,10 @@
 								role="grid" aria-describedby="example2_info">
 								<thead>
 									<tr role="row"></tr>
-									<th class="sorting col-md-1">STT</th>
+									<th class="sorting col-md-2">Mã sp</th>
 									<th class="sorting_asc col-md-3">Tên sản phẩm</th>
 									<th class="sorting_asc col-md-2">Giá sản phẩm</th>
-									<th class="sorting col-md-2">Số lượng</th>
+									<th class="sorting col-md-1">Số lượng</th>
 									<th class="sorting col-md-2">Thành tiền</th>
 								</thead>
 								<tbody>
@@ -175,11 +175,11 @@
 										: '' }Đã
 												giao</f:option>
 										</c:when>
-										<c:when test="${ order.status == 3 }">
-											<f:option value="3">
-												${ order.status == 3 ? selected
+										<c:when test="${ order.status == 4 }">
+											<f:option value="4">
+												${ order.status == 4 ? selected
 										: '' }Đã
-												giao</f:option>
+												hủy</f:option>
 										</c:when>
 									</c:choose>
 								</f:select>

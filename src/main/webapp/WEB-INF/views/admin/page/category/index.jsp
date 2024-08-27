@@ -64,7 +64,7 @@
 								<c:forEach var="cat" items="${ categories }">
 									<tr>
 										<td>${ cat.catId }</td>
-										<td>${ cat.catName }</td>
+										<td><a href="${pageContext.servletContext.contextPath}/admin/category/${cat.catId}/products">${ cat.catName }</a></td>
 										<td>${ cat.status ? '<span
 											class="label label-success">Hiển thị</span>' : '<span
 											class="label label-warning">Tạm ẩn</span>' }</td>

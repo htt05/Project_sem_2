@@ -78,15 +78,7 @@
 										href="${pageContext.servletContext.contextPath}/admin/order/view/${order.id}"
 										style="margin-right: 10px"><button type="" class="">
 												<i class="fa fa-edit"></i>
-											</button></a>
-										<form action="{{ route('order.destroy', $item) }}"
-											method="GET">
-											<button type="submit" class="text-danger"
-												onclick="return confirm('Bạn có chắc chắn muốn xóa')"
-												class="">
-												<i class="fa fa-trash"></i>
-											</button>
-										</form></td>
+											</button></a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

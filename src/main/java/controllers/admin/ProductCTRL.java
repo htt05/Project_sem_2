@@ -278,4 +278,15 @@ public class ProductCTRL {
 		model.addAttribute("page", "product/demo");
 		return "admin/index";
 	}
+	
+	@RequestMapping(value = { "category/{catId}/products" })
+	public String index(Model model, Integer pageno, @PathVariable("catId") int catId) {
+		model.addAttribute("page", "product/index");
+		pageno = pageno == null ? 1 : pageno;
+		ProductPage pp = productIlpm.paging(catId, pageno, 5);
+		model.addAttribute("products", pp.getProducts());
+		model.addAttribute("totalpage", pp.getTotalPages());
+		model.addAttribute("currentpage", pageno);
+		return "admin/index";
+	}
 }

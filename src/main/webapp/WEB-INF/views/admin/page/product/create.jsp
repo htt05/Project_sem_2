@@ -79,13 +79,13 @@
 
 										<div class="form-group col-md-4">
 											<label for="exampleInputEmail1">Khuyến mãi</label>
-											<f:input path="discount" class="form-control" />
-											<small id="helpId" class="form-text text-danger"> </small>
+											<f:input path="discount" class="form-control"/>
+											<f:errors cssClass="text-danger" path="discount"></f:errors>
 										</div>
 										<div class="form-group col-md-4">
 											<label for="exampleInputEmail1">Số lượng</label>
 											<f:input path="available" class="form-control" />
-											<small id="helpId" class="form-text text-danger"> </small>
+											<f:errors cssClass="text-danger" path="available"></f:errors>
 										</div>
 									</div>
 									<div class="row">
