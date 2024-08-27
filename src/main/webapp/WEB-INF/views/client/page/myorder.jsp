@@ -83,160 +83,159 @@
 					class="page-width section-template--16769563951204__cart-items-padding">
 				<div class="title-wrapper-with-link">
 					<h1 class="title title--primary">Your order</h1>
-					<a href="${pageContext.servletContext.contextPath}/collection"
+					<a href="${pageContext.servletContext.contextPath}/collections"
 						class="underlined-link">Continue shopping</a>
 				</div>
-				<form action="/cart" class="cart__contents critical-hidden"
-					method="post" id="cart">
-					<div class="cart__items" id="main-cart-items"
-						data-id="template--16769563951204__cart-items">
-						<div class="js-contents">
-							<table class="cart-items">
-								<caption class="visually-hidden">Your order</caption>
-								<thead>
-									<tr>
-										<th class="caption-with-letter-spacing" colspan="2"
-											scope="col">Product</th>
-										<th
-											class="cart-items__heading--wide small-hide caption-with-letter-spacing"
-											colspan="1" scope="col">Shipment Details</th>
+				<div class="cart__items" id="main-cart-items"
+					data-id="template--16769563951204__cart-items">
+					<div class="js-contents">
+						<table class="cart-items">
+							<caption class="visually-hidden">Your order</caption>
+							<thead>
+								<tr>
+									<th class="caption-with-letter-spacing" colspan="2" scope="col">Product</th>
+									<th
+										class="cart-items__heading--wide small-hide caption-with-letter-spacing"
+										colspan="1" scope="col">Shipment Details</th>
 
-										<th class="small-hide right caption-with-letter-spacing"
-											colspan="1" scope="col">Total</th>
-									</tr>
-								</thead>
+									<th class="small-hide right caption-with-letter-spacing"
+										colspan="1" scope="col">Total</th>
+								</tr>
+							</thead>
 
-								<tbody>
-									<c:forEach var="order" items="${ orders }">
-										<tr class="cart-item" id="CartItem-1">
-											<td class="cart-item__media"><a
-												href="/products/affinity-p40-pro?variant=17773526974564"
-												class="cart-item__link" aria-hidden="true" tabindex="-1">
-											</a>
-												<div
-													class="cart-item__image-container gradient global-media-settings">
-													<img
-														src="//phono-demo.myshopify.com/cdn/shop/products/p7_dd9c198a-6656-4739-9bee-40b506ba7a8c.jpg?v=1560496214&amp;width=300"
-														class="cart-item__image" alt="Affinity P40 Pro"
-														loading="lazy" width="120" height="150">
-												</div></td>
+							<tbody>
+								<c:forEach var="order" items="${ orders }">
+									<tr class="cart-item" id="CartItem-1">
+										<td class="cart-item__media"><a
+											href="/products/affinity-p40-pro?variant=17773526974564"
+											class="cart-item__link" aria-hidden="true" tabindex="-1">
+										</a>
+											<div
+												class="cart-item__image-container gradient global-media-settings">
+												<img
+													src="//phono-demo.myshopify.com/cdn/shop/products/p7_dd9c198a-6656-4739-9bee-40b506ba7a8c.jpg?v=1560496214&amp;width=300"
+													class="cart-item__image" alt="Affinity P40 Pro"
+													loading="lazy" width="120" height="150">
+											</div></td>
 
-											<td class="cart-item__details"><span>Person
-													ordering: </span><span>${ user.fullName }</span>
+										<td class="cart-item__details"><span>Person
+												ordering: </span><span>${ user.fullName }</span>
+											<dl>
+												<div class="product-option">
+													<dt class="product-option">$${ order.totalPrice }</dt>
+												</div>
+												<div class="product-option">
+													<dt>Status:</dt>
+													<dd>
+														<c:choose>
+															<c:when test="${ order.status == 0 }"> Unprocess</c:when>
+															<c:when test="${ order.status == 1 }">Processing</c:when>
+															<c:when test="${ order.status == 2 }">Delivering</c:when>
+															<c:when test="${ order.status == 3 }">Delivered</c:when>
+															<c:when test="${ order.status == 4 }">Canceled</c:when>
+														</c:choose>
+													</dd>
+												</div>
+												<c:if test="${ order.status == 0 }">
+													<div class="product-option">
+														<form
+															action="${pageContext.servletContext.contextPath}/order/cancel"
+															method="POST">
+															<input type="hidden" name="userId" value="${ user.id }" />
+															<input type="hidden" name="id" value="${ order.id }" />
+															<input type="hidden" name="status" value="4" />
+															<button type="submit" class="btn btn-primary"
+																onclick="return confirm('Are you sure you want to cancel your order?')">Cancel</button>
+														</form>
+													</div>
+												</c:if>
+											</dl>
+
+											<p class="product-option"></p>
+											<ul class="discounts list-unstyled" role="list"
+												aria-label="Discount"></ul></td>
+
+										<td class="cart-item__totals right medium-hide large-up-hide">
+											<div class="loading-overlay hidden">
+												<div class="loading-overlay__spinner">
+													<svg aria-hidden="true" focusable="false"
+														role="presentation" class="spinner" viewBox="0 0 66 66"
+														xmlns="http://www.w3.org/2000/svg">
+                          <circle class="path" fill="none"
+															stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+												</div>
+											</div>
+											<div class="cart-item__price-wrapper">
+												<span class="price price--end"> </span>
+											</div>
+										</td>
+
+										<td class="cart-item__quantity">
+											<div class="cart-item__quantity-wrapper">
 												<dl>
 													<div class="product-option">
-														<dt class="product-option">$${ order.totalPrice }</dt>
+														<dt>Receiver:</dt>
+														<dd>${ order.name }</dd>
 													</div>
 													<div class="product-option">
-														<dt>Status:</dt>
-														<dd>
-															<c:choose>
-																<c:when test="${ order.status == 0 }"> Unprocess</c:when>
-																<c:when test="${ order.status == 1 }">Processing</c:when>
-																<c:when test="${ order.status == 2 }">Delivering</c:when>
-																<c:when test="${ order.status == 3 }">Delivered</c:when>
-																<c:when test="${ order.status == 4 }">Canceled</c:when>
-															</c:choose>
-														</dd>
+														<dt class="product-option">Phone:</dt>
+														<dd class="product-option">${ order.phone }</dd>
 													</div>
-													<c:if test="${ order.status == 0 }">
-														<div class="product-option">
-															<form action="${pageContext.servletContext.contextPath}/order/cancel" method="POST">
-																<input type="hidden" name="userId" value="${ user.id }" />
-																<input type="hidden" name="id" value="${ order.id }" />
-																<input type="hidden" name="status" value="4" />
-																<button type="submit" class="btn btn-primary"
-																	onclick="return confirm('Are you sure you want to cancel your order?')">Cancel</button>
-															</form>
-														</div>
-													</c:if>
+													<div class="product-option">
+														<dt class="product-option">Address:</dt>
+														<dd class="product-option">${ order.address }</dd>
+													</div>
 												</dl>
-
-												<p class="product-option"></p>
-												<ul class="discounts list-unstyled" role="list"
-													aria-label="Discount"></ul></td>
-
-											<td class="cart-item__totals right medium-hide large-up-hide">
-												<div class="loading-overlay hidden">
-													<div class="loading-overlay__spinner">
-														<svg aria-hidden="true" focusable="false"
-															role="presentation" class="spinner" viewBox="0 0 66 66"
-															xmlns="http://www.w3.org/2000/svg">
-                          <circle class="path" fill="none"
-																stroke-width="6" cx="33" cy="33" r="30"></circle>
-                        </svg>
-													</div>
-												</div>
-												<div class="cart-item__price-wrapper">
-													<span class="price price--end"> </span>
-												</div>
-											</td>
-
-											<td class="cart-item__quantity">
-												<div class="cart-item__quantity-wrapper">
-													<dl>
-														<div class="product-option">
-															<dt>Receiver:</dt>
-															<dd>${ order.name }</dd>
-														</div>
-														<div class="product-option">
-															<dt class="product-option">Phone:</dt>
-															<dd class="product-option">${ order.phone }</dd>
-														</div>
-														<div class="product-option">
-															<dt class="product-option">Address:</dt>
-															<dd class="product-option">${ order.address }</dd>
-														</div>
-													</dl>
-												</div>
-												<div class="cart-item__error" id="Line-item-error-1"
-													role="alert">
-													<small class="cart-item__error-text"></small>
-													<svg aria-hidden="true" focusable="false"
-														role="presentation" class="icon icon-error"
-														viewBox="0 0 13 13">
+											</div>
+											<div class="cart-item__error" id="Line-item-error-1"
+												role="alert">
+												<small class="cart-item__error-text"></small>
+												<svg aria-hidden="true" focusable="false"
+													role="presentation" class="icon icon-error"
+													viewBox="0 0 13 13">
                         <circle cx="6.5" cy="6.50049" r="5.5"
-															stroke="white" stroke-width="2"></circle>
+														stroke="white" stroke-width="2"></circle>
                         <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B"
-															stroke="#EB001B" stroke-width="0.7"></circle>
+														stroke="#EB001B" stroke-width="0.7"></circle>
                         <path
-															d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z"
-															fill="white"></path>
+														d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z"
+														fill="white"></path>
                         <path
-															d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
-															fill="white" stroke="#EB001B" stroke-width="0.7">
+														d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+														fill="white" stroke="#EB001B" stroke-width="0.7">
                       </path></svg>
-												</div>
-											</td>
+											</div>
+										</td>
 
-											<td class="cart-item__totals right small-hide">
-												<div class="loading-overlay hidden">
-													<div class="loading-overlay__spinner">
-														<svg aria-hidden="true" focusable="false"
-															role="presentation" class="spinner" viewBox="0 0 66 66"
-															xmlns="http://www.w3.org/2000/svg">
+										<td class="cart-item__totals right small-hide">
+											<div class="loading-overlay hidden">
+												<div class="loading-overlay__spinner">
+													<svg aria-hidden="true" focusable="false"
+														role="presentation" class="spinner" viewBox="0 0 66 66"
+														xmlns="http://www.w3.org/2000/svg">
                           <circle class="path" fill="none"
-																stroke-width="6" cx="33" cy="33" r="30"></circle>
+															stroke-width="6" cx="33" cy="33" r="30"></circle>
                         </svg>
-													</div>
 												</div>
+											</div>
 
-												<div class="cart-item__price-wrapper">
-													<span class="price price--end"> $${ order.totalPrice } </span>
-												</div>
-											</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
+											<div class="cart-item__price-wrapper">
+												<span class="price price--end"> $${ order.totalPrice
+													} </span>
+											</div>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
 					</div>
+				</div>
 
-					<p class="visually-hidden" id="cart-live-region-text"
-						aria-live="polite" role="status"></p>
-					<p class="visually-hidden" id="shopping-cart-line-item-status"
-						aria-live="polite" aria-hidden="true" role="status">Loading...</p>
-				</form>
+				<p class="visually-hidden" id="cart-live-region-text"
+					aria-live="polite" role="status"></p>
+				<p class="visually-hidden" id="shopping-cart-line-item-status"
+					aria-live="polite" aria-hidden="true" role="status">Loading...</p>
 				</cart-items>
 		</div>
 		</c:if>

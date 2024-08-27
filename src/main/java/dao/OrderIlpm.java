@@ -95,7 +95,7 @@ public class OrderIlpm implements OrderDAO {
 		session.beginTransaction();
 		int records = 0;
 		Query query = null;
-		query = session.createQuery("from Order");
+		query = session.createQuery("from Order order by created_at desc");
 		records = query.getResultList().size();
 		query.setFirstResult((pageno - 1) * pagesize).setMaxResults(pagesize).getResultList();
 		List result = query.getResultList();

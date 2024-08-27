@@ -82,7 +82,7 @@
 					class="page-width section-template--16769563951204__cart-items-padding">
 				<div class="title-wrapper-with-link">
 					<h1 class="title title--primary">Your cart</h1>
-					<a href="${pageContext.servletContext.contextPath}/collection"
+					<a href="${pageContext.servletContext.contextPath}/collections"
 						class="underlined-link">Continue shopping</a>
 				</div>
 				<form action="/cart" class="cart__contents critical-hidden"
@@ -357,7 +357,7 @@
 
 			<div class="cart__warnings">
 				<h1 class="cart__empty-text">Your cart is empty</h1>
-				<a href="${pageContext.servletContext.contextPath}/collection"
+				<a href="${pageContext.servletContext.contextPath}/collections"
 					class="button"> Continue shopping </a>
 			</div>
 

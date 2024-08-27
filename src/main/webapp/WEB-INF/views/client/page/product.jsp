@@ -402,7 +402,7 @@ a.slick-next.pull-right:before {
 									<form
 										action="${pageContext.servletContext.contextPath}/addToCart"
 										method="GET">
-										<input type="hidden" name="proId" value="${ pro.proId }"/>
+										<input type="hidden" name="proId" value="${ pro.proId }" />
 										<div
 											class="product-form__input product-attributes switch-options">
 											<p class="product-label">Color</p>
@@ -412,7 +412,7 @@ a.slick-next.pull-right:before {
 														<c:if test="${ac==c.id }">
 															<input type="radio"
 																id="template--16769564246116__main-${status.index}"
-																name="colorId" value="${c.id}" checked/>
+																name="colorId" value="${c.id}" checked />
 															<div data-value="${c.name}" class="swatch-element">
 																<div class="tooltip">
 																	<label
@@ -439,7 +439,7 @@ a.slick-next.pull-right:before {
 														<c:if test="${as==storage.id }">
 															<input type="radio"
 																id="template--16769564246116__main-2-${status.index }"
-																name="storageId" value="${storage.id}" checked/>
+																name="storageId" value="${storage.id}" checked />
 															<label
 																for="template--16769564246116__main-2-${status.index }">
 																${storage.storage }/${storage.ram } </label>
@@ -634,10 +634,10 @@ a.slick-next.pull-right:before {
 													data-type="add-to-cart-form">-->
 												<div class="product-form__buttons">
 													<button type="submit"
-														class="product-form__submit button button--full-width button--secondary"<%-- onclick="addCart('${pro.proId}')" --%>>
+														class="product-form__submit button button--full-width button--secondary">
 														<span>Add to cart </span>
 													</button>
-													<button type="button" 
+													<button type="button"
 														class="product-form__submit button button--full-width button--secondary"
 														data-testid="Checkout-button">Buy it now</button>
 												</div>
@@ -1007,9 +1007,25 @@ keyframes tap-double { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1111,7 +1127,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
+
+
+
+
+
+
+
+
 
 
 
@@ -1211,7 +1243,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 12
+
+
+
+
+
+
+
+
 
 
 
@@ -1311,7 +1359,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1413,9 +1477,25 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1517,6 +1597,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1566,7 +1654,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -1668,7 +1772,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -1770,9 +1890,25 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -1874,6 +2010,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotateX
 
 
@@ -1923,7 +2067,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -2025,7 +2185,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -2077,6 +2253,14 @@ rotateX
 ;
 }
 50
+
+
+
+
+
+
+
+
 
 
 
@@ -2180,7 +2364,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -2280,7 +2480,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -2382,7 +2598,23 @@ rotateX
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -2491,9 +2723,25 @@ keyframes tap-circle { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -2595,7 +2843,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 scale
+
+
+
+
+
+
+
+
 
 
 
@@ -2695,7 +2959,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
 
 
 
@@ -2795,7 +3075,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -2896,6 +3192,14 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
@@ -2947,7 +3251,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 .6
+
+
+
+
+
+
+
+
 
 
 
@@ -3049,9 +3369,25 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -3153,6 +3489,14 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 scale
 
 
@@ -3202,7 +3546,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -3304,7 +3664,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 
@@ -3355,6 +3731,14 @@ scale
 
 ;
 opacity
+
+
+
+
+
+
+
+
 
 
 
@@ -3456,7 +3840,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 .5
+
+
+
+
+
+
+
+
 
 
 

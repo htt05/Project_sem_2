@@ -480,7 +480,7 @@ ul.dt-sc-list-inline>li ul.sub-menu-lists>li.active a {
 									<ul class="sub-menu-lists   dt-sc-column  five-column    ">
 										<c:forEach var="cat" items="${ categories }">
 											<li class=""><a class="headding"
-												href="collections/android-phones.html"> ${cat.catName }
+												href="${pageContext.servletContext.contextPath}/${ cat.catId }/products"> ${cat.catName }
 											</a>
 												<ul>
 													<c:forEach var="product" items="${cat.products}">
