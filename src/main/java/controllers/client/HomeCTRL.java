@@ -83,7 +83,7 @@ public class HomeCTRL {
 		int max = cat.getProducts().size();
 		catId = catId == null ? 0 : catId;
 		pageno = pageno == null ? 1 : pageno;
-		ProductPage pp = productIlpm.paging(catId, pageno, 1);
+		ProductPage pp = productIlpm.paging(catId, pageno, 4);
 		model.addAttribute("products", pp.getProducts());
 		model.addAttribute("totalpage", pp.getTotalPages());
 		model.addAttribute("currentpage", pageno);

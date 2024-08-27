@@ -62,7 +62,7 @@
 									<h4>
 										<strong>${ blog.title }</strong>
 									</h4>
-									<p>${ blog.desDetail }</p>
+									<p>${ blog.des }</p>
 									<ul class="list-inline">
 										<li><a
 											href="${pageContext.servletContext.contextPath}/admin/blog/update/${ blog.id }"

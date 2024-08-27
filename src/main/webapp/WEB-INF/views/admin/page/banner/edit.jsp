@@ -48,6 +48,16 @@
 								src="${pageContext.servletContext.contextPath}/${ ban.image }"
 								width="200px" style="margin-bottom: 15px" alt="" />
 							<div class="form-group">
+								<label for="">Vị trí</label>
+								<div class="form-check form-check-inline">
+									<label class="form-check-label"> <f:radiobutton
+											path="type" value="top" label="Đầu trang" /> <f:radiobutton
+											path="type" value="mid" label="Giữa trang" />
+									</label>
+								</div>
+								<f:errors cssClass="text-danger form-text" path="type"></f:errors>
+							</div>
+							<div class="form-group">
 								<label for="exampleInputEmail1">Chọn trạng thái</label>
 								<div class="form-check form-check-inline">
 									<div class="form-check form-check-inline">
